@@ -40,6 +40,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .w{cursor:pointer;border-radius:3px}.w:hover,.w.on{background:color-mix(in srgb,var(--gold) 40%,transparent)}
 .pop{position:absolute;z-index:20;width:270px;background:var(--surface);color:var(--ink);border:1.5px solid var(--teal);border-radius:10px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:15px/1.45 Calibri,system-ui,sans-serif}
 .pop .tr{font:700 20px Cambria,Georgia,serif;color:var(--teal)}
+.sbar{display:flex;margin:6px 0 14px}.sbar input{flex:1;min-width:0;padding:13px 16px;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-right:0;border-radius:999px 0 0 999px}.sbar button{display:flex;align-items:center;padding:0 18px;background:var(--teal);color:#fff;border:0;border-radius:0 999px 999px 0;cursor:pointer}.sbar input:focus-visible,.sbar button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .opt.good{border-color:#2e9e5b;background:color-mix(in srgb,#2e9e5b 24%,var(--surface))}.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,var(--surface))}
 </style>
 </head>
@@ -247,11 +248,11 @@ function ai(){
  document.getElementById("hm").onclick=()=>{closePop();home()};
  document.getElementById("vv").onclick=vocab;
 }
-function vocab(){
+function myVocab(){
  closePop();
- app.innerHTML=`<h1>VOCABULARY ALPHA</h1>${V.length?V.map((x,i)=>`<div class="card"><b>${esc(x.word)}</b> <span class="muted">${esc(x.pos||"")}</span><div class="big" style="font-size:24px">${esc(x.translation)}</div><p style="margin:8px 0 10px">${esc(x.example)}<br><span class="muted">${esc(x.example_ru||"")}</span></p><button class="btn alt" data-i="${i}">Remove</button></div>`).join(""):'<div class="card">No saved words yet. Open AI MODE ALPHA, click a word and press "Save to vocabulary".</div>'}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
- app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{V.splice(+b.dataset.i,1);saveV();vocab()});
- document.getElementById("hm").onclick=home;
+ app.innerHTML=`<h1>My vocabulary</h1>${V.length?V.map((x,i)=>`<div class="card"><b>${esc(x.word)}</b> <span class="muted">${esc(x.pos||"")}</span><div class="big" style="font-size:24px">${esc(x.translation)}</div><p style="margin:8px 0 10px">${esc(x.example)}<br><span class="muted">${esc(x.example_ru||"")}</span></p><button class="btn alt" data-i="${i}">Remove</button></div>`).join(""):'<div class="card">No saved words yet. Open AI MODE ALPHA, click a word and press "Save to vocabulary".</div>'}<div class="row"><button class="btn alt" id="hm">Back</button></div>`;
+ app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{V.splice(+b.dataset.i,1);saveV();myVocab()});
+ document.getElementById("hm").onclick=vocab;
 }
 // ===== AI PRACTICE =====
 const WARN="The exercises you will see are AI-generated and will use your free daily limits. Proceed with caution.";
@@ -306,6 +307,28 @@ async function vocabRun(t){
   const r=await callAI({task:"vocab",type:t,words});
   quiz(VT[t],`<p class="muted">${VH[t]}</p>`,r.items,()=>confirmScreen(VT[t],()=>vocabRun(t),vocabMenu),vocabMenu);
  }catch(e){failed(vocabMenu)}
+}
+function vocab(){
+ closePop();
+ app.innerHTML=`<h1>VOCABULARY ALPHA</h1><button class="btn tbtn" id="mv">My vocabulary (${V.length})</button><button class="btn tbtn" id="dc">Dictionary</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ document.getElementById("mv").onclick=myVocab;document.getElementById("dc").onclick=dict;document.getElementById("hm").onclick=home;
+}
+function dict(){
+ app.innerHTML=`<h1>Dictionary</h1><form class="sbar" id="sf"><input id="sq" type="search" placeholder="Type an English word" maxlength="40" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="English word"><button type="submit" aria-label="Search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button></form><div id="res"></div><div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ document.getElementById("bk").onclick=vocab;
+ document.getElementById("sf").onsubmit=async e=>{
+  e.preventDefault();
+  const w=document.getElementById("sq").value.trim(),res=document.getElementById("res");
+  if(!/^[A-Za-z][A-Za-z'’ -]{0,39}$/.test(w)){res.innerHTML=`<div class="card warn">Type one English word or a short phrase, using letters only.</div>`;return}
+  res.innerHTML=`<div class="card muted">Searching\u2026</div>`;
+  try{
+   const r=await callAI({task:"define",word:w});
+   if(r.notfound){res.innerHTML=`<div class="card">No translation found for <b>${esc(w)}</b>. Check the spelling and try again.</div>`;return}
+   const tr=r.translations.join(", "),saved=hasV(r.base);
+   res.innerHTML=`<div class="card"><div class="muted">${esc(r.pos)}</div><b style="font-size:20px">${esc(r.base)}</b><div class="big" style="font-size:26px;margin:4px 0">${esc(tr)}</div><p style="margin:8px 0 12px">${esc(r.example)}<br><span class="muted">${esc(r.example_ru)}</span></p><button class="btn" id="ad" ${saved?"disabled":""}>${saved?"Added \u2713":"Add to vocabulary"}</button></div>`;
+   document.getElementById("ad").onclick=ev=>{V.push({word:r.base,pos:r.pos,translation:tr.slice(0,60),example:r.example,example_ru:r.example_ru});saveV();ev.target.textContent="Added \u2713";ev.target.disabled=true};
+  }catch(err){res.innerHTML=`<div class="card warn">${err&&err.message=="na"?"The AI isn't connected yet.":"Couldn't get a translation. Try again."}</div>`}
+ };
 }
 function soon(){app.innerHTML=`<h1>Test 3</h1><div class="card">Coming later.</div><button class="btn" id="hm">Back to main screen</button>`;document.getElementById("hm").onclick=home}
 function intro(t){
