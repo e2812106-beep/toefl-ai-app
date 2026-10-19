@@ -50,7 +50,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 // ===== SETTINGS =====
 // Hosted on your own site, paste the "Publish to web" CSV links of your two Google Sheet tabs.
 // Empty = built-in sample. minutes = [routing module, second module].
-const CFG={tasksUrl:"",questionsUrl:"",minutes:[20,10],hardThreshold:0.6};
+const CFG={tasksUrl:"https://docs.google.com/spreadsheets/d/e/2PACX-1vQjHmKt-OLF4xWkxALXstd5n0zYJBUFUDjYCXecrAHpt3Li_LG1XLGewV1XU6n_xdweGR1WLr6hQc9D/pub?gid=0&single=true&output=csv",questionsUrl:"https://docs.google.com/spreadsheets/d/e/2PACX-1vQjHmKt-OLF4xWkxALXstd5n0zYJBUFUDjYCXecrAHpt3Li_LG1XLGewV1XU6n_xdweGR1WLr6hQc9D/pub?gid=748811149&single=true&output=csv",minutes:[20,10],hardThreshold:0.6};
 
 // ===== SAMPLE MATERIAL (same columns as the sheet) =====
 // type: ctw (complete the words) | daily (read in daily life) | academic (academic reading)
@@ -158,8 +158,9 @@ const T2_Q=[
 {task:"t2h1",q:"“Accumulates” is closest in meaning to",opts:["disappears","builds up","moves quickly","changes direction"],correct:"B"},
 {task:"t2h1",q:"Which is NOT mentioned as a possible drawback or limitation?",opts:["Less useful solar warmth in cooler seasons","Glare affecting nearby people","Results depending on local conditions","Reflective roofs making rainfall more acidic"],correct:"D"},
 {task:"t2h1",q:"How does the final sentence relate to the rest of the passage?",opts:["It recommends treating reflective roofs as one part of a wider approach.","It claims reflective roofs have no practical value.","It introduces evidence that contradicts every earlier point.","It explains how to manufacture reflective coating."],correct:"A"}];
-const TESTS={1:{tasks:SAMPLE_TASKS,q:SAMPLE_Q},2:{tasks:T2_TASKS,q:T2_Q}};
-let D={tasks:[],q:[],source:"sample"};
+const BUILTIN={tasks:[...SAMPLE_TASKS.map(t=>({...t,test:"Test 1"})),...T2_TASKS.map(t=>({...t,test:"Test 2"}))],q:[...SAMPLE_Q,...T2_Q]};
+let ALL=BUILTIN;
+let D={tasks:[],q:[],source:"builtin"};
 async function load(){
  if(!(CFG.tasksUrl&&CFG.questionsUrl))return;
  try{
@@ -168,14 +169,14 @@ async function load(){
    const type=(r.type||"").toLowerCase();
    if(!r.task_id||!["ctw","daily","academic"].includes(type)||!r.text)throw new Error("Tasks sheet, row "+(i+2)+": needs task_id, text and a type of ctw, daily or academic.");
    if(type=="ctw"&&!/\w+\[\w+\]/.test(r.text))throw new Error("Tasks sheet, row "+(i+2)+": a ctw text needs hidden letters in brackets, like inves[tigate].");
-   return {id:r.task_id,module:r.module,level:(r.level||"all").toLowerCase(),type,title:r.title,text:r.text}});
+   return {id:r.task_id,test:r.test_id||"",module:r.module,level:(r.level||"all").toLowerCase(),type,title:r.title,text:r.text}});
   const ids=tasks.map(t=>t.id);
   const q=parseCSV(qt).map((r,i)=>{
    const kind=(r.type||"").toLowerCase(),o=kind=="insert"?["At [A]","At [B]","At [C]","At [D]"]:[r.option_a,r.option_b,r.option_c,r.option_d];if(kind=="sentence")o.fill("-");
    if(!ids.includes(r.task_id)||!r.question||o.some(x=>!x)||(kind=="sentence"?!r.correct:!/^[ABCD]$/i.test(r.correct)))throw new Error("Questions sheet, row "+(i+2)+": needs a task_id that exists in Tasks, a question, four options and a correct letter (A–D).");
    return {task:r.task_id,q:r.question,opts:o,kind,correct:kind=="sentence"?r.correct:r.correct.toUpperCase()}});
-  TESTS[1]={tasks,q};D.source="sheet";
- }catch(e){D.error=e.message||"Could not load the sheet. Showing the sample material."}
+  ALL={tasks,q};D.source="sheet";
+ }catch(e){D.error=e.message||"Could not load the sheet. Showing the built-in tests instead."}
 }
 
 // ===== EXAM =====
@@ -199,11 +200,36 @@ function score(){let r=0,t=0;S.items.forEach((it,i)=>{const a=S.ans[i];
 const done=i=>{const a=S.ans[i],it=S.items[i];return it.k=="mc"?a!=null:!!a&&it.bl.every((b,k)=>(a[k]||"").length==b.ans.length)};
 
 function home(){
- app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose a practice test.</p>${[1,2,3].map(n=>`<button class="btn tbtn" data-n="${n}">${n==3?"AI MODE ALPHA":"Test "+n}</button>`).join("")}<button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
- app.querySelectorAll(".tbtn").forEach(b=>b.onclick=()=>intro(+b.dataset.n));
+ app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p><button class="btn tbtn" id="st">SAVED TESTS</button><button class="btn tbtn" id="rx">RANDOM EXAM</button><button class="btn tbtn" id="aim">AI MODE ALPHA</button><button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
+ document.getElementById("st").onclick=savedTests;
+ document.getElementById("rx").onclick=randomExam;
+ document.getElementById("aim").onclick=ai;
  document.getElementById("vb").onclick=vocab;
  document.getElementById("pr").onclick=practice;
 }
+function savedTests(){
+ const names=[...new Set(ALL.tasks.map(t=>t.test).filter(Boolean))];
+ app.innerHTML=`<h1>Saved tests</h1>${D.error?`<div class="card warn">${esc(D.error)}</div>`:""}${names.length?names.map((n,i)=>`<button class="btn tbtn" data-i="${i}">${esc(n)}</button>`).join(""):'<div class="card">No tests yet.</div>'}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>intro(names[+b.dataset.i]));
+ document.getElementById("hm").onclick=home;
+}
+function randomSet(){
+ const T=ALL.tasks,pk=a=>[...a].sort(()=>Math.random()-.5);
+ const qn=t=>t.type=="ctw"?[...t.text.matchAll(RX)].length:ALL.q.filter(q=>q.task==t.id).length;
+ const isLong=t=>t.text.length>450,sel=f=>T.filter(f);
+ const pickTo=(first,rest,target)=>{const c=[];let n=0;
+  for(const pool of first){const t=pk(pool.filter(x=>!c.includes(x)))[0];if(t){c.push(t);n+=qn(t)}}
+  const more=pk(rest.filter(x=>!c.includes(x)));
+  while(n<target&&more.length){const t=more.shift();c.push(t);n+=qn(t)}
+  return c};
+ const m1=x=>x.module=="1"&&x.level=="all";
+ const ctw=sel(x=>m1(x)&&x.type=="ctw"),sh=sel(x=>m1(x)&&x.type=="daily"&&!isLong(x)),lg=sel(x=>m1(x)&&x.type=="daily"&&isLong(x)),ac=sel(x=>m1(x)&&x.type=="academic");
+ const r1=pickTo([ctw,sh,lg,ac],[...sh,...lg,...ac],33);
+ const lv=(l,ty)=>sel(x=>x.module=="2"&&x.level==l&&x.type==ty);
+ const re=pickTo([lv("easy","ctw")],lv("easy","daily"),14);
+ const rh=pickTo([lv("hard","ctw"),lv("hard","academic")],lv("hard","academic"),14);
+ return [...new Set([...r1,...re,...rh])]}
+function randomExam(){D.tasks=randomSet();intro("Random exam",true)}
 // ===== AI MODE ALPHA + VOCABULARY ALPHA =====
 const ART=["The Man Who Received a Letter from Tomorrow","At exactly 8:17 on a rainy Tuesday morning, Daniel found a small envelope under his apartment door.","There was no stamp, no return address, and no name on the front. Inside, he found a single piece of paper with six words written in black ink:","“Do not take the 8:30 train.”","Daniel laughed. Someone was playing a prank on him. He threw the letter into the bin, grabbed his coat, and hurried to the station.","At 8:27, he stood on the platform, waiting for the train. Then he noticed an old woman sitting on a bench across from him. She was staring directly at him.","“Did you get the letter?” she asked.","Daniel froze. “What letter?”","She sighed. “I was hoping you wouldn't come.”","Before he could ask another question, the train arrived. The doors opened, and people began stepping inside."];
 let V=[];try{V=JSON.parse(localStorage.getItem("toefl_vocab")||"[]")}catch(e){}
@@ -331,15 +357,16 @@ function dict(){
  };
 }
 function soon(){app.innerHTML=`<h1>Test 3</h1><div class="card">Coming later.</div><button class="btn" id="hm">Back to main screen</button>`;document.getElementById("hm").onclick=home}
-function intro(t){
- if(t==3)return ai();
- D.tasks=TESTS[t].tasks;D.q=TESTS[t].q;const n=D.tasks.length;
- app.innerHTML=`<h1>Test ${t}</h1>
+function intro(name,rnd){
+ if(!rnd)D.tasks=ALL.tasks.filter(t=>t.test==name);
+ D.q=ALL.q;const n=D.tasks.length;
+ app.innerHTML=`<h1>${esc(name)}</h1>
  <p>Module 1 (routing) is the same for everyone. Your result decides whether Module 2 is easier or harder. Each module has one timer, and you can move back and forth inside it. Once you finish Module 1, you can't return to it.</p>
- <div class="card"><b>${CFG.minutes[0]} min</b> for Module 1 · <b>${CFG.minutes[1]} min</b> for Module 2 · ${n} tasks in the library<br>
- <span class="muted">${D.source=="sheet"?"Loaded from your Google Sheet.":"Using the built-in sample material."}</span>
+ <div class="card"><b>${CFG.minutes[0]} min</b> for Module 1 · <b>${CFG.minutes[1]} min</b> for Module 2 · ${n} tasks in this exam<br>
+ <span class="muted">${D.source=="sheet"?"Loaded from your Google Sheet.":"Using the built-in tests."}</span>
  ${D.error?`<p class="warn">${esc(D.error)}</p>`:""}</div>
- <div class="row"><button class="btn alt" id="hm">Back</button><button class="btn" id="go">Start Module 1</button></div>`;document.getElementById("hm").onclick=home;
+ <div class="row"><button class="btn alt" id="hm">Back</button><button class="btn" id="go">Start Module 1</button></div>`;
+ document.getElementById("hm").onclick=rnd?home:savedTests;
  document.getElementById("go").onclick=()=>{S.scores=[];S.hist=[];S.level=null;S.items=build(1);startMod(1)};
 }
 function startMod(m){
