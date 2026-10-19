@@ -41,6 +41,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .pop{position:absolute;z-index:20;width:270px;background:var(--surface);color:var(--ink);border:1.5px solid var(--teal);border-radius:10px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:15px/1.45 Calibri,system-ui,sans-serif}
 .pop .tr{font:700 20px Cambria,Georgia,serif;color:var(--teal)}
 .sbar{display:flex;margin:6px 0 14px}.sbar input{flex:1;min-width:0;padding:13px 16px;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-right:0;border-radius:999px 0 0 999px}.sbar button{display:flex;align-items:center;padding:0 18px;background:var(--teal);color:#fff;border:0;border-radius:0 999px 999px 0;cursor:pointer}.sbar input:focus-visible,.sbar button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}.ov .card{max-width:360px;width:100%;margin:0}
 .opt.good{border-color:#2e9e5b;background:color-mix(in srgb,#2e9e5b 24%,var(--surface))}.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,var(--surface))}
 </style>
 </head>
@@ -199,18 +200,40 @@ function score(){let r=0,t=0;S.items.forEach((it,i)=>{const a=S.ans[i];
  else it.bl.forEach((b,k)=>{t++;if(a&&(a[k]||"").trim().toLowerCase()==b.ans.toLowerCase())r++})});return{r,t}}
 const done=i=>{const a=S.ans[i],it=S.items[i];return it.k=="mc"?a!=null:!!a&&it.bl.every((b,k)=>(a[k]||"").length==b.ans.length)};
 
+// ===== NAVIGATION (browser back button) =====
+let R=[],idx=0,guard=false,ign=0,GEN=0;
+const goBack=()=>history.back();
+function go(fn){R.length=idx+1;R.push(fn);idx++;history.pushState({i:idx},"");guard=false;GEN++;closePop();fn()}
+function swap(fn){R[idx]=fn;guard=false;GEN++;closePop();fn()}
+function toHome(){idx?history.go(-idx):home()}
+function leaveDialog(target){
+ const old=document.getElementById("ov");if(old)old.remove();
+ const label=guard||"exercise",o=document.createElement("div");o.id="ov";o.className="ov";
+ o.innerHTML=`<div class="card"><b>Leave this ${label}?</b><p style="margin:6px 0 12px">Your progress will be lost.</p><div class="row" style="margin:0"><button class="btn alt" id="stay">Stay</button><button class="btn" id="leave">Leave</button></div></div>`;
+ document.body.appendChild(o);
+ document.getElementById("stay").onclick=()=>o.remove();
+ document.getElementById("leave").onclick=()=>{o.remove();clearInterval(S.tick);guard=false;GEN++;R[idx]=null;history.go(target-idx)};
+}
+window.addEventListener("popstate",e=>{
+ if(ign){ign--;return}
+ const i=(e.state&&e.state.i)||0;
+ if(guard&&i!==idx){ign=1;history.go(idx-i);leaveDialog(i);return}
+ idx=i;guard=false;GEN++;closePop();
+ const ov=document.getElementById("ov");if(ov)ov.remove();
+ (R[i]||(R[i]=home))();
+});
 function home(){
  app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p><button class="btn tbtn" id="st">SAVED TESTS</button><button class="btn tbtn" id="rx">RANDOM EXAM</button><button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
- document.getElementById("st").onclick=savedTests;
+ document.getElementById("st").onclick=()=>go(savedTests);
  document.getElementById("rx").onclick=randomExam;
- document.getElementById("vb").onclick=vocab;
- document.getElementById("pr").onclick=practice;
+ document.getElementById("vb").onclick=()=>go(vocab);
+ document.getElementById("pr").onclick=()=>go(practice);
 }
 function savedTests(){
  const names=[...new Set(ALL.tasks.map(t=>t.test).filter(Boolean))];
  app.innerHTML=`<h1>Saved tests</h1>${D.error?`<div class="card warn">${esc(D.error)}</div>`:""}${names.length?names.map((n,i)=>`<button class="btn tbtn" data-i="${i}">${esc(n)}</button>`).join(""):'<div class="card">No tests yet.</div>'}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
- app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>intro(names[+b.dataset.i]));
- document.getElementById("hm").onclick=home;
+ app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const nm=names[+b.dataset.i];go(()=>intro(nm))});
+ document.getElementById("hm").onclick=goBack;
 }
 function randomSet(){
  const T=ALL.tasks,pk=a=>[...a].sort(()=>Math.random()-.5);
@@ -228,7 +251,7 @@ function randomSet(){
  const re=pickTo([lv("easy","ctw")],lv("easy","daily"),14);
  const rh=pickTo([lv("hard","ctw"),lv("hard","academic")],lv("hard","academic"),14);
  return [...new Set([...r1,...re,...rh])]}
-function randomExam(){D.tasks=randomSet();intro("Random exam",true)}
+function randomExam(){const fixed=randomSet();go(()=>{D.tasks=fixed;intro("Random exam",true)})}
 // ===== CLICKABLE WORDS + VOCABULARY =====
 let V=[];try{V=JSON.parse(localStorage.getItem("toefl_vocab")||"[]")}catch(e){}
 const saveV=()=>{try{localStorage.setItem("toefl_vocab",JSON.stringify(V))}catch(e){}};
@@ -281,70 +304,75 @@ function myVocab(){
  closePop();
  app.innerHTML=`<h1>My vocabulary</h1>${V.length?V.map((x,i)=>`<div class="card"><b>${esc(x.word)}</b> <span class="muted">${esc(x.pos||"")}</span><div class="big" style="font-size:24px">${esc(x.translation)}</div><p style="margin:8px 0 10px">${wrap(x.example)}<br><span class="muted">${esc(x.example_ru||"")}</span></p><button class="btn alt" data-i="${i}">Remove</button></div>`).join(""):'<div class="card">No saved words yet. Look words up in the Dictionary, or click words in the AI text practice, and press "Save to vocabulary".</div>'}<div class="row"><button class="btn alt" id="hm">Back</button></div>`;
  app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{V.splice(+b.dataset.i,1);saveV();myVocab()});
- document.getElementById("hm").onclick=vocab;
+ document.getElementById("hm").onclick=goBack;
 }
 // ===== AI PRACTICE =====
 const WARN="The exercises you will see are AI-generated and will use your free daily limits. Proceed with caution.";
 const VT={fill:"Fill in the blanks",translate:"Translate from Russian to English",match:"Match to the definition"};
 const VH={fill:"Choose the word that fits each gap.",translate:"Choose the English word that matches the Russian.",match:"Choose the word that matches each definition."};
-function confirmScreen(title,onOk,onNo){
+function confirmScreen(title,onOk){
  app.innerHTML=`<h1>${esc(title)}</h1><div class="card"><b class="warn">Warning</b><p style="margin:6px 0 0">${WARN}</p></div><div class="row"><button class="btn alt" id="no">Cancel</button><button class="btn" id="ok">Confirm</button></div>`;
- document.getElementById("ok").onclick=onOk;document.getElementById("no").onclick=onNo;
+ document.getElementById("ok").onclick=onOk;document.getElementById("no").onclick=goBack;
 }
 function loading(m){app.innerHTML=`<h1>Please wait</h1><div class="card"><span class="muted">${m} This can take up to 20 seconds.</span></div>`}
-function failed(back){
+function failed(){
+ guard=false;
  app.innerHTML=`<h1>Something went wrong</h1><div class="card"><p class="warn" style="margin:0">The AI could not create the exercise. Try again in a moment. If this keeps happening, the free daily limit may be used up.</p></div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
- document.getElementById("bk").onclick=back;
+ document.getElementById("bk").onclick=goBack;
 }
 function practice(){
  app.innerHTML=`<h1>AI PRACTICE</h1><button class="btn tbtn" id="pv">Train vocabulary</button><button class="btn tbtn" id="pt">Train text</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
- document.getElementById("pv").onclick=()=>V.length<3?vocabMenu():confirmScreen("Train vocabulary",vocabMenu,practice);
- document.getElementById("pt").onclick=()=>confirmScreen("Train text",textRun,practice);
- document.getElementById("hm").onclick=home;
+ document.getElementById("pv").onclick=()=>V.length<3?go(vocabMenu):go(()=>confirmScreen("Train vocabulary",()=>swap(vocabMenu)));
+ document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",textRun));
+ document.getElementById("hm").onclick=goBack;
 }
 function quiz(head,top,items,again,back){
- const got=[];
+ const got=[];guard="exercise";
  app.innerHTML=`<h1>${esc(head)}</h1>${top}${items.map((it,i)=>`<div class="q">${i+1}. ${wrap(it.prompt)}</div>${it.options.map((o,k)=>`<button class="opt" data-i="${i}" data-k="${k}"><b>${"ABCD"[k]}.</b> ${wrap(o)}</button>`).join("")}`).join("")}<div class="card" id="sc" hidden></div><div class="row"><button class="btn alt" id="rs">Reset</button><button class="btn" id="bk">Back to menu</button></div>`;
  app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
   const i=+b.dataset.i,k=+b.dataset.k;if(got[i]!=null)return;got[i]=k;
   app.querySelectorAll(`.opt[data-i="${i}"]`).forEach(x=>{const kk=+x.dataset.k;x.classList.add("locked");if(kk==items[i].answer)x.classList.add("good");else if(kk==k)x.classList.add("bad")});
-  if(items.every((_,j)=>got[j]!=null)){const sc=document.getElementById("sc");sc.hidden=false;sc.innerHTML=`<b>Score: ${items.filter((it,j)=>got[j]==it.answer).length} / ${items.length}</b>`}
+  if(items.every((_,j)=>got[j]!=null)){guard=false;const sc=document.getElementById("sc");sc.hidden=false;sc.innerHTML=`<b>Score: ${items.filter((it,j)=>got[j]==it.answer).length} / ${items.length}</b>`}
  });
- document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=back;
+ document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=goBack;
 }
 async function textRun(){
+ const tok=++GEN;guard="exercise";R[idx]=()=>confirmScreen("Train text",textRun);
  loading("Generating a text and 4 questions\u2026");
  try{
   const r=await callAI({task:"text"});
+  if(tok!==GEN)return;
   const top=`<p class="muted">Click any word to see its translation and add it to your vocabulary. In the answer options this works after you answer.</p><div class="passage" style="max-height:none"><h2>${wrap(r.title)}</h2>${wrap(r.text)}</div>`;
-  quiz("Train text",top,r.questions.map(q=>({prompt:q.q,options:q.options,answer:q.answer})),()=>confirmScreen("Train text",textRun,practice),practice);
- }catch(e){failed(practice)}
+  quiz("Train text",top,r.questions.map(q=>({prompt:q.q,options:q.options,answer:q.answer})),()=>swap(()=>confirmScreen("Train text",textRun)));
+ }catch(e){if(tok===GEN)failed()}
 }
 function vocabMenu(){
  if(V.length<3){
   app.innerHTML=`<h1>Train vocabulary</h1><div class="card">Save at least 3 words first. Look words up in the Dictionary, or click words in the AI text practice, and press "Save to vocabulary". You have ${V.length} saved.</div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
-  document.getElementById("bk").onclick=practice;return;
+  document.getElementById("bk").onclick=goBack;return;
  }
  app.innerHTML=`<h1>Train vocabulary</h1><p class="muted">${V.length} saved words. Choose an exercise.</p>${Object.keys(VT).map(t=>`<button class="btn tbtn" data-t="${t}">${VT[t]}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
- app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>vocabRun(b.dataset.t));
- document.getElementById("bk").onclick=practice;
+ app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{const t=b.dataset.t;go(()=>vocabRun(t))});
+ document.getElementById("bk").onclick=goBack;
 }
 async function vocabRun(t){
+ const tok=++GEN;guard="exercise";R[idx]=()=>confirmScreen(VT[t],()=>vocabRun(t));
  loading("Generating the exercise\u2026");
  const words=[...V].sort(()=>Math.random()-.5).slice(0,5).map(x=>({word:x.word,translation:x.translation}));
  try{
   const r=await callAI({task:"vocab",type:t,words});
-  quiz(VT[t],`<p class="muted">${VH[t]}</p>`,r.items,()=>confirmScreen(VT[t],()=>vocabRun(t),vocabMenu),vocabMenu);
- }catch(e){failed(vocabMenu)}
+  if(tok!==GEN)return;
+  quiz(VT[t],`<p class="muted">${VH[t]}</p>`,r.items,()=>swap(()=>confirmScreen(VT[t],()=>vocabRun(t))));
+ }catch(e){if(tok===GEN)failed()}
 }
 function vocab(){
  closePop();
  app.innerHTML=`<h1>VOCABULARY ALPHA</h1><button class="btn tbtn" id="mv">My vocabulary (${V.length})</button><button class="btn tbtn" id="dc">Dictionary</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
- document.getElementById("mv").onclick=myVocab;document.getElementById("dc").onclick=dict;document.getElementById("hm").onclick=home;
+ document.getElementById("mv").onclick=()=>go(myVocab);document.getElementById("dc").onclick=()=>go(dict);document.getElementById("hm").onclick=goBack;
 }
 function dict(){
  app.innerHTML=`<h1>Dictionary</h1><form class="sbar" id="sf"><input id="sq" type="search" placeholder="Type an English word" maxlength="40" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="English word"><button type="submit" aria-label="Search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button></form><div id="res"></div><div class="row"><button class="btn alt" id="bk">Back</button></div>`;
- document.getElementById("bk").onclick=vocab;
+ document.getElementById("bk").onclick=goBack;
  document.getElementById("sf").onsubmit=async e=>{
   e.preventDefault();
   const w=document.getElementById("sq").value.trim(),res=document.getElementById("res");
@@ -369,11 +397,11 @@ function intro(name,rnd){
  <span class="muted">${D.source=="sheet"?"Loaded from your Google Sheet.":"Using the built-in tests."}</span>
  ${D.error?`<p class="warn">${esc(D.error)}</p>`:""}</div>
  <div class="row"><button class="btn alt" id="hm">Back</button><button class="btn" id="go">Start Module 1</button></div>`;
- document.getElementById("hm").onclick=rnd?home:savedTests;
- document.getElementById("go").onclick=()=>{S.scores=[];S.hist=[];S.level=null;S.items=build(1);startMod(1)};
+ document.getElementById("hm").onclick=goBack;
+ document.getElementById("go").onclick=()=>{S.scores=[];S.hist=[];S.level=null;S.items=build(1);go(()=>startMod(1))};
 }
 function startMod(m){
- S.mod=m;S.i=0;S.ans=[];S.rev=false;S.left=CFG.minutes[m-1]*60;
+ S.mod=m;S.i=0;S.ans=[];S.rev=false;S.left=CFG.minutes[m-1]*60;guard="test";
  clearInterval(S.tick);
  S.tick=setInterval(()=>{S.left--;const t=document.getElementById("t");if(t)t.textContent=fmt(Math.max(S.left,0));if(S.left<=0)endMod()},1000);
  show();
@@ -425,6 +453,7 @@ function mistakes(){const out=[];
   }}));
  return out}
 function results(){
+ guard=false;R[idx]=results;
  const [a,b]=S.scores,hard=S.level=="hard",mk=mistakes();
  app.innerHTML=`<h1>Reading complete</h1>
  <div class="card"><div class="big">${a.r+b.r}/${a.t+b.t}</div><p class="muted">raw score (correct answers)</p></div>
@@ -435,8 +464,9 @@ function results(){
  <h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Review your mistakes (${mk.length})</h2>
  ${mk.length?mk.join(""):'<div class="card">No mistakes. Every answer was correct.</div>'}
  <button class="btn" id="again">Practice again</button>`;
- document.getElementById("again").onclick=home;
+ document.getElementById("again").onclick=toHome;
 }
+history.replaceState({i:0},"");R[0]=home;
 load().then(home);
 </script>
 </body>
