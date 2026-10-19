@@ -37,7 +37,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .grid .cur{outline:2px solid var(--gold)}
 .sn{cursor:pointer;border-radius:3px}.sn:hover{background:color-mix(in srgb,var(--gold) 25%,transparent)}.sn.sel{background:color-mix(in srgb,var(--gold) 45%,transparent)}.mk{color:var(--teal)}.ok{color:var(--teal)}.tbtn,.tb2{display:block;width:100%;margin:0 0 10px;padding:16px;text-align:left;font-size:18px}
 .art{font:19px/1.9 Cambria,Georgia,serif}.art h1{font-size:26px;line-height:1.3}
-.w{cursor:pointer;border-radius:3px}.w:hover,.w.on{background:color-mix(in srgb,var(--gold) 40%,transparent)}
+.w{cursor:pointer;border-radius:3px}.opt:not(.locked) .w{cursor:inherit}.opt:not(.locked) .w:hover{background:none}.w:hover,.w.on{background:color-mix(in srgb,var(--gold) 40%,transparent)}
 .pop{position:absolute;z-index:20;width:270px;background:var(--surface);color:var(--ink);border:1.5px solid var(--teal);border-radius:10px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:15px/1.45 Calibri,system-ui,sans-serif}
 .pop .tr{font:700 20px Cambria,Georgia,serif;color:var(--teal)}
 .sbar{display:flex;margin:6px 0 14px}.sbar input{flex:1;min-width:0;padding:13px 16px;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-right:0;border-radius:999px 0 0 999px}.sbar button{display:flex;align-items:center;padding:0 18px;background:var(--teal);color:#fff;border:0;border-radius:0 999px 999px 0;cursor:pointer}.sbar input:focus-visible,.sbar button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -200,10 +200,9 @@ function score(){let r=0,t=0;S.items.forEach((it,i)=>{const a=S.ans[i];
 const done=i=>{const a=S.ans[i],it=S.items[i];return it.k=="mc"?a!=null:!!a&&it.bl.every((b,k)=>(a[k]||"").length==b.ans.length)};
 
 function home(){
- app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p><button class="btn tbtn" id="st">SAVED TESTS</button><button class="btn tbtn" id="rx">RANDOM EXAM</button><button class="btn tbtn" id="aim">AI MODE ALPHA</button><button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
+ app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p><button class="btn tbtn" id="st">SAVED TESTS</button><button class="btn tbtn" id="rx">RANDOM EXAM</button><button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
  document.getElementById("st").onclick=savedTests;
  document.getElementById("rx").onclick=randomExam;
- document.getElementById("aim").onclick=ai;
  document.getElementById("vb").onclick=vocab;
  document.getElementById("pr").onclick=practice;
 }
@@ -230,13 +229,12 @@ function randomSet(){
  const rh=pickTo([lv("hard","ctw"),lv("hard","academic")],lv("hard","academic"),14);
  return [...new Set([...r1,...re,...rh])]}
 function randomExam(){D.tasks=randomSet();intro("Random exam",true)}
-// ===== AI MODE ALPHA + VOCABULARY ALPHA =====
-const ART=["The Man Who Received a Letter from Tomorrow","At exactly 8:17 on a rainy Tuesday morning, Daniel found a small envelope under his apartment door.","There was no stamp, no return address, and no name on the front. Inside, he found a single piece of paper with six words written in black ink:","“Do not take the 8:30 train.”","Daniel laughed. Someone was playing a prank on him. He threw the letter into the bin, grabbed his coat, and hurried to the station.","At 8:27, he stood on the platform, waiting for the train. Then he noticed an old woman sitting on a bench across from him. She was staring directly at him.","“Did you get the letter?” she asked.","Daniel froze. “What letter?”","She sighed. “I was hoping you wouldn't come.”","Before he could ask another question, the train arrived. The doors opened, and people began stepping inside."];
+// ===== CLICKABLE WORDS + VOCABULARY =====
 let V=[];try{V=JSON.parse(localStorage.getItem("toefl_vocab")||"[]")}catch(e){}
 const saveV=()=>{try{localStorage.setItem("toefl_vocab",JSON.stringify(V))}catch(e){}};
 const hasV=w=>V.some(x=>x.word.toLowerCase()==w.toLowerCase());
 const CACHE={};
-const wrap=s=>{let o="",l=0;for(const m of s.matchAll(/[A-Za-z]+(?:['’][A-Za-z]+)*/g)){o+=esc(s.slice(l,m.index))+`<span class="w" tabindex="0" role="button">${m[0]}</span>`;l=m.index+m[0].length}return o+esc(s.slice(l))};
+const wrap=s=>{let o="",l=0;for(const m of s.matchAll(/[A-Za-z]+(?:['’][A-Za-z]+)*/g)){o+=esc(s.slice(l,m.index))+`<span class="w">${m[0]}</span>`;l=m.index+m[0].length}return o+esc(s.slice(l))};
 const AI_URL="https://toefl-ai.e2812106.workers.dev/"; // the address of your Cloudflare Worker
 async function callAI(payload){
  if(!AI_URL||AI_URL.startsWith("PASTE"))throw new Error("na");
@@ -247,11 +245,22 @@ async function callAI(payload){
 const askAI=(word,ctx)=>callAI({task:"lookup",word,context:ctx});
 function closePop(){const p=document.getElementById("pop");if(p)p.remove();document.querySelectorAll(".w.on").forEach(x=>x.classList.remove("on"))}
 function place(p,sp){const r=sp.getBoundingClientRect(),w=p.offsetWidth||270;p.style.left=Math.max(8,Math.min(r.left+scrollX,innerWidth-w-8))+"px";p.style.top=(r.bottom+scrollY+8)+"px"}
-document.addEventListener("click",e=>{if(!e.target.closest(".pop,.w"))closePop()});
+document.addEventListener("click",e=>{
+ const sp=e.target.closest(".w");
+ if(sp){const o=sp.closest(".opt");if(o&&!o.classList.contains("locked")){closePop();return}lookup(sp);return}
+ if(!e.target.closest(".pop"))closePop();
+},true);
 document.addEventListener("keydown",e=>{if(e.key=="Escape")closePop()});
+function ctxOf(sp){
+ const b=sp.closest("p,.passage,.q,.opt,.card,h1,h2")||sp.parentElement;
+ const r=document.createRange();r.selectNodeContents(b);r.setEnd(sp,0);
+ const pos=r.toString().length,t=b.textContent;
+ const a=Math.max(t.lastIndexOf(".",pos-1),t.lastIndexOf("?",pos-1),t.lastIndexOf("!",pos-1),t.lastIndexOf("\n",pos-1))+1;
+ let e=t.slice(pos).search(/[.!?\n]/);e=e<0?t.length:pos+e+1;
+ return t.slice(a,e).trim().slice(0,600)||sp.textContent}
 async function lookup(sp){
  closePop();sp.classList.add("on");
- const word=sp.textContent,ctx=sp.parentElement.textContent;
+ const word=sp.textContent,ctx=ctxOf(sp);
  const p=document.createElement("div");p.className="pop";p.id="pop";document.body.appendChild(p);
  p.innerHTML=`<b>${esc(word)}</b><p class="muted" style="margin:6px 0 0">Translating…</p>`;place(p,sp);
  try{
@@ -268,15 +277,9 @@ async function lookup(sp){
   p.innerHTML=`<b>${esc(word)}</b><p class="warn" style="margin:6px 0 0">${m}</p>`;place(p,sp);
  }
 }
-function ai(){
- app.innerHTML=`<p class="muted">AI MODE ALPHA · click any word to see its translation</p><div class="art">${ART.map((s,i)=>i?`<p>${wrap(s)}</p>`:`<h1>${wrap(s)}</h1>`).join("")}</div><div class="row"><button class="btn alt" id="hm">Back to main screen</button><button class="btn alt" id="vv">Vocabulary</button></div>`;
- app.querySelectorAll(".w").forEach(sp=>{sp.onclick=()=>lookup(sp);sp.onkeydown=e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();lookup(sp)}}});
- document.getElementById("hm").onclick=()=>{closePop();home()};
- document.getElementById("vv").onclick=vocab;
-}
 function myVocab(){
  closePop();
- app.innerHTML=`<h1>My vocabulary</h1>${V.length?V.map((x,i)=>`<div class="card"><b>${esc(x.word)}</b> <span class="muted">${esc(x.pos||"")}</span><div class="big" style="font-size:24px">${esc(x.translation)}</div><p style="margin:8px 0 10px">${esc(x.example)}<br><span class="muted">${esc(x.example_ru||"")}</span></p><button class="btn alt" data-i="${i}">Remove</button></div>`).join(""):'<div class="card">No saved words yet. Open AI MODE ALPHA, click a word and press "Save to vocabulary".</div>'}<div class="row"><button class="btn alt" id="hm">Back</button></div>`;
+ app.innerHTML=`<h1>My vocabulary</h1>${V.length?V.map((x,i)=>`<div class="card"><b>${esc(x.word)}</b> <span class="muted">${esc(x.pos||"")}</span><div class="big" style="font-size:24px">${esc(x.translation)}</div><p style="margin:8px 0 10px">${wrap(x.example)}<br><span class="muted">${esc(x.example_ru||"")}</span></p><button class="btn alt" data-i="${i}">Remove</button></div>`).join(""):'<div class="card">No saved words yet. Look words up in the Dictionary, or click words in the AI text practice, and press "Save to vocabulary".</div>'}<div class="row"><button class="btn alt" id="hm">Back</button></div>`;
  app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{V.splice(+b.dataset.i,1);saveV();myVocab()});
  document.getElementById("hm").onclick=vocab;
 }
@@ -301,10 +304,10 @@ function practice(){
 }
 function quiz(head,top,items,again,back){
  const got=[];
- app.innerHTML=`<h1>${esc(head)}</h1>${top}${items.map((it,i)=>`<div class="q">${i+1}. ${esc(it.prompt)}</div>${it.options.map((o,k)=>`<button class="opt" data-i="${i}" data-k="${k}"><b>${"ABCD"[k]}.</b> ${esc(o)}</button>`).join("")}`).join("")}<div class="card" id="sc" hidden></div><div class="row"><button class="btn alt" id="rs">Reset</button><button class="btn" id="bk">Back to menu</button></div>`;
+ app.innerHTML=`<h1>${esc(head)}</h1>${top}${items.map((it,i)=>`<div class="q">${i+1}. ${wrap(it.prompt)}</div>${it.options.map((o,k)=>`<button class="opt" data-i="${i}" data-k="${k}"><b>${"ABCD"[k]}.</b> ${wrap(o)}</button>`).join("")}`).join("")}<div class="card" id="sc" hidden></div><div class="row"><button class="btn alt" id="rs">Reset</button><button class="btn" id="bk">Back to menu</button></div>`;
  app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
   const i=+b.dataset.i,k=+b.dataset.k;if(got[i]!=null)return;got[i]=k;
-  app.querySelectorAll(`.opt[data-i="${i}"]`).forEach(x=>{const kk=+x.dataset.k;if(kk==items[i].answer)x.classList.add("good");else if(kk==k)x.classList.add("bad")});
+  app.querySelectorAll(`.opt[data-i="${i}"]`).forEach(x=>{const kk=+x.dataset.k;x.classList.add("locked");if(kk==items[i].answer)x.classList.add("good");else if(kk==k)x.classList.add("bad")});
   if(items.every((_,j)=>got[j]!=null)){const sc=document.getElementById("sc");sc.hidden=false;sc.innerHTML=`<b>Score: ${items.filter((it,j)=>got[j]==it.answer).length} / ${items.length}</b>`}
  });
  document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=back;
@@ -313,13 +316,13 @@ async function textRun(){
  loading("Generating a text and 4 questions\u2026");
  try{
   const r=await callAI({task:"text"});
-  const top=`<div class="passage" style="max-height:none"><h2>${esc(r.title)}</h2>${esc(r.text)}</div>`;
+  const top=`<p class="muted">Click any word to see its translation and add it to your vocabulary. In the answer options this works after you answer.</p><div class="passage" style="max-height:none"><h2>${wrap(r.title)}</h2>${wrap(r.text)}</div>`;
   quiz("Train text",top,r.questions.map(q=>({prompt:q.q,options:q.options,answer:q.answer})),()=>confirmScreen("Train text",textRun,practice),practice);
  }catch(e){failed(practice)}
 }
 function vocabMenu(){
  if(V.length<3){
-  app.innerHTML=`<h1>Train vocabulary</h1><div class="card">Save at least 3 words first. Open AI MODE ALPHA, click words in the article and press "Save to vocabulary". You have ${V.length} saved.</div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
+  app.innerHTML=`<h1>Train vocabulary</h1><div class="card">Save at least 3 words first. Look words up in the Dictionary, or click words in the AI text practice, and press "Save to vocabulary". You have ${V.length} saved.</div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
   document.getElementById("bk").onclick=practice;return;
  }
  app.innerHTML=`<h1>Train vocabulary</h1><p class="muted">${V.length} saved words. Choose an exercise.</p>${Object.keys(VT).map(t=>`<button class="btn tbtn" data-t="${t}">${VT[t]}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
@@ -351,7 +354,7 @@ function dict(){
    const r=await callAI({task:"define",word:w});
    if(r.notfound){res.innerHTML=`<div class="card">No translation found for <b>${esc(w)}</b>. Check the spelling and try again.</div>`;return}
    const tr=r.translations.join(", "),saved=hasV(r.base);
-   res.innerHTML=`<div class="card"><div class="muted">${esc(r.pos)}</div><b style="font-size:20px">${esc(r.base)}</b><div class="big" style="font-size:26px;margin:4px 0">${esc(tr)}</div><p style="margin:8px 0 12px">${esc(r.example)}<br><span class="muted">${esc(r.example_ru)}</span></p><button class="btn" id="ad" ${saved?"disabled":""}>${saved?"Added \u2713":"Add to vocabulary"}</button></div>`;
+   res.innerHTML=`<div class="card"><div class="muted">${esc(r.pos)}</div><b style="font-size:20px">${esc(r.base)}</b><div class="big" style="font-size:26px;margin:4px 0">${esc(tr)}</div><p style="margin:8px 0 12px">${wrap(r.example)}<br><span class="muted">${esc(r.example_ru)}</span></p><button class="btn" id="ad" ${saved?"disabled":""}>${saved?"Added \u2713":"Add to vocabulary"}</button></div>`;
    document.getElementById("ad").onclick=ev=>{V.push({word:r.base,pos:r.pos,translation:tr.slice(0,60),example:r.example,example_ru:r.example_ru});saveV();ev.target.textContent="Added \u2713";ev.target.disabled=true};
   }catch(err){res.innerHTML=`<div class="card warn">${err&&err.message=="na"?"The AI isn't connected yet.":"Couldn't get a translation. Try again."}</div>`}
  };
