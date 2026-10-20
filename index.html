@@ -483,7 +483,8 @@ function endMod(){
   document.getElementById("m2").onclick=()=>startMod(2);
  }else results();
 }
-function mistakes(){const out=[];
+let EX=[];const EXC={};
+function mistakes(){const out=[];EX=[];for(const k in EXC)delete EXC[k];
  S.hist.forEach(h=>h.items.forEach((it,i)=>{const a=h.ans[i];
   if(it.k=="ctw"){
    const w=it.bl.map((b,k)=>({b,y:((a||[])[k]||"").trim()})).filter(x=>x.y.toLowerCase()!=x.b.ans.toLowerCase());
@@ -492,9 +493,25 @@ function mistakes(){const out=[];
    const q=it.q,s=q.kind=="sentence",good=s?(a||"")==q.correct.trim():a!=null&&"ABCD"[a]==q.correct;
    if(!good){const ci="ABCD".indexOf(q.correct);
     const yours=s?(a||""):(a==null?"":"ABCD"[a]+". "+q.opts[a]);
-    out.push(`<div class="card"><b>Module ${h.mod} · ${esc(it.t.title)}</b><p>${esc(q.q)}</p><p><span class="muted">Your answer:</span> <span class="warn">${esc(yours||"No answer")}</span></p><p><span class="muted">Correct answer:</span> <b class="ok">${esc(s?q.correct:"ABCD"[ci]+". "+q.opts[ci])}</b></p></div>`)}
+    const cor=s?q.correct:"ABCD"[ci]+". "+q.opts[ci],n=EX.length;
+    EX.push({kind:q.kind||"",passage:q.kind=="insert"?it.t.text:it.t.text.replace(/\{[A-D]\}/g,""),question:q.q,options:s?[]:q.opts,correct:cor,chosen:yours});
+    out.push(`<div class="card"><b>Module ${h.mod} · ${esc(it.t.title)}</b><p>${esc(q.q)}</p><p><span class="muted">Your answer:</span> <span class="warn">${esc(yours||"No answer")}</span></p><p><span class="muted">Correct answer:</span> <b class="ok">${esc(cor)}</b></p><button class="btn alt" data-ex="${n}">Show AI explanation</button><div id="exb${n}"></div></div>`)}
   }}));
  return out}
+async function explain(i,b){
+ const box=document.getElementById("exb"+i),e=EX[i];
+ if(!box||!e)return;
+ b.disabled=true;b.textContent="Thinking\u2026";box.innerHTML="";
+ try{
+  const r=EXC[i]||(EXC[i]=await callAI({task:"explain",...e}));
+  if(!r||!r.explanation)throw new Error("empty");
+  box.innerHTML=`<p style="margin:10px 0 0"><b>Explanation:</b> ${esc(r.explanation)}</p><p class="muted" style="margin:6px 0 0;font-size:14px">AI-generated, so it can be wrong. Check it against the passage.</p>`;
+  b.remove();
+ }catch(err){
+  delete EXC[i];b.disabled=false;b.textContent="Try again";
+  box.innerHTML=`<p class="warn" style="margin:10px 0 0">Couldn't get an explanation. Try again in a moment. If this keeps happening, the free daily limit may be used up.</p>`;
+ }
+}
 function results(){
  guard=false;R[idx]=results;
  const [a,b]=S.scores,hard=S.level=="hard",mk=mistakes();
@@ -507,6 +524,7 @@ function results(){
  <h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Review your mistakes (${mk.length})</h2>
  ${mk.length?mk.join(""):'<div class="card">No mistakes. Every answer was correct.</div>'}
  <button class="btn" id="again">Practice again</button>`;
+ app.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>explain(+b.dataset.ex,b));
  document.getElementById("again").onclick=toHome;
 }
 history.replaceState({i:0},"");R[0]=home;
