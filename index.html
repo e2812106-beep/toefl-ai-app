@@ -225,11 +225,12 @@ window.addEventListener("popstate",e=>{
  (R[i]||(R[i]=home))();
 });
 function home(){
- app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p><button class="btn tbtn" id="st">SAVED TESTS</button><button class="btn tbtn" id="rx">RANDOM EXAM</button><button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
+ app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p><button class="btn tbtn" id="st">SAVED TESTS</button><button class="btn tbtn" id="rx">RANDOM EXAM</button><button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><button class="btn alt tb2" id="pg">MY PROGRESS</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
  document.getElementById("st").onclick=()=>go(savedTests);
  document.getElementById("rx").onclick=randomExam;
  document.getElementById("vb").onclick=()=>go(vocab);
  document.getElementById("pr").onclick=()=>go(practice);
+ document.getElementById("pg").onclick=()=>go(progress);
 }
 function savedTests(){
  const names=[...new Set(ALL.tasks.map(t=>t.test).filter(Boolean))];
@@ -257,6 +258,8 @@ function randomExam(){const fixed=randomSet();go(()=>{D.tasks=fixed;intro("Rando
 // ===== CLICKABLE WORDS + VOCABULARY =====
 let V=[];try{V=JSON.parse(localStorage.getItem("toefl_vocab")||"[]")}catch(e){}
 const saveV=()=>{try{localStorage.setItem("toefl_vocab",JSON.stringify(V))}catch(e){}};
+let P=[];try{const p=JSON.parse(localStorage.getItem("toefl_progress")||"[]");if(Array.isArray(p))P=p.filter(x=>x&&Array.isArray(x.s)&&x.s.length==2&&x.s.every(y=>y&&y.t>0))}catch(e){}
+const saveP=()=>{try{localStorage.setItem("toefl_progress",JSON.stringify(P))}catch(e){}};
 const hasV=w=>V.some(x=>x.word.toLowerCase()==w.toLowerCase());
 const CACHE={};
 const wrap=s=>{let o="",l=0;for(const m of s.matchAll(/[A-Za-z]+(?:['’][A-Za-z]+)*/g)){o+=esc(s.slice(l,m.index))+`<span class="w">${m[0]}</span>`;l=m.index+m[0].length}return o+esc(s.slice(l))};
@@ -442,7 +445,7 @@ function intro(name,rnd){
  ${D.error?`<p class="warn">${esc(D.error)}</p>`:""}</div>
  <div class="row"><button class="btn alt" id="hm">Back</button><button class="btn" id="go">Start Module 1</button></div>`;
  document.getElementById("hm").onclick=goBack;
- document.getElementById("go").onclick=()=>{S.scores=[];S.hist=[];S.level=null;S.items=build(1);go(()=>startMod(1))};
+ document.getElementById("go").onclick=()=>{S.name=name;S.scores=[];S.hist=[];S.level=null;S.items=build(1);go(()=>startMod(1))};
 }
 function startMod(m){
  S.mod=m;S.i=0;S.ans=[];S.rev=false;S.left=CFG.minutes[m-1]*60;guard="test";
@@ -475,6 +478,19 @@ function show(){
  document.getElementById("rv").onclick=()=>{S.rev=!S.rev;show()};
  document.getElementById("nx").onclick=()=>{if(last)endMod();else{S.rev=false;S.i++;show()}};
 }
+function saveRun(){
+ P.push({d:Date.now(),name:S.name||"Test",s:S.scores.map(x=>({r:x.r,t:x.t})),level:S.level});
+ P=P.slice(-200);saveP();
+}
+function progress(){
+ const pc=(r,t)=>t?Math.round(100*r/t):0;
+ const rows=[...P].reverse().map(x=>{
+  const a=x.s[0],b=x.s[1],tr=a.r+b.r,tt=a.t+b.t,p=pc(tr,tt);
+  const when=new Date(x.d).toLocaleString(undefined,{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
+  return `<div class="card"><b>${esc(x.name)}</b> <span class="muted">${esc(when)}</span><div class="big" style="font-size:28px;margin:6px 0">${tr}/${tt} <span class="muted" style="font:600 16px Calibri,system-ui,sans-serif">(${p}%)</span></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="width:${p}%;height:100%;background:var(--teal)"></div></div><p style="margin:8px 0 0">Module 1: ${a.r}/${a.t} (${pc(a.r,a.t)}%)<br>Module 2${x.level?" ("+esc(x.level)+" version)":""}: ${b.r}/${b.t} (${pc(b.r,b.t)}%)</p></div>`}).join("");
+ app.innerHTML=`<h1>My progress</h1><div class="card"><div class="big">${P.length}</div><p class="muted" style="margin:6px 0 0">tests finished</p></div><div class="card"><div class="big">${V.length}</div><p class="muted" style="margin:6px 0 0">words saved</p></div><h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Score history</h2>${rows||'<div class="card">No finished tests yet. Finish a Saved test or a Random exam and your results will appear here.</div>'}<p class="muted">Your progress is saved in this browser on this device only.</p><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ document.getElementById("hm").onclick=goBack;
+}
 function endMod(){
  clearInterval(S.tick);
  const {r,t}=score();S.scores.push({r,t});S.hist.push({mod:S.mod,items:S.items,ans:S.ans});
@@ -482,7 +498,7 @@ function endMod(){
   S.level=r/t>=CFG.hardThreshold?"hard":"easy";S.items=build(2,S.level);
   app.innerHTML=`<h1>Module 1 complete</h1><p>You can't return to it. Module 2 has a ${CFG.minutes[1]}-minute timer that starts when you press the button.</p><button class="btn" id="m2">Start Module 2</button>`;
   document.getElementById("m2").onclick=()=>startMod(2);
- }else results();
+ }else{saveRun();results()}
 }
 let EX=[];const EXC={};
 function mistakes(){const out=[];EX=[];for(const k in EXC)delete EXC[k];
