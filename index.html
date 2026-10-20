@@ -42,6 +42,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .pop .tr{font:700 20px Cambria,Georgia,serif;color:var(--teal)}
 .sbar{display:flex;margin:6px 0 14px}.sbar input{flex:1;min-width:0;padding:13px 16px;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-right:0;border-radius:999px 0 0 999px}.sbar button{display:flex;align-items:center;padding:0 18px;background:var(--teal);color:#fff;border:0;border-radius:0 999px 999px 0;cursor:pointer}.sbar input:focus-visible,.sbar button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}.ov .card{max-width:360px;width:100%;margin:0}
+.sn.good{background:color-mix(in srgb,#2e9e5b 35%,transparent)}.sn.bad{background:color-mix(in srgb,var(--bad) 30%,transparent)}.blank.ok{border-bottom-color:#2e9e5b}.blank.bad{border-bottom-color:var(--bad)}
 .opt.good{border-color:#2e9e5b;background:color-mix(in srgb,#2e9e5b 24%,var(--surface))}.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,var(--surface))}
 </style>
 </head>
@@ -270,7 +271,7 @@ function closePop(){const p=document.getElementById("pop");if(p)p.remove();docum
 function place(p,sp){const r=sp.getBoundingClientRect(),w=p.offsetWidth||270;p.style.left=Math.max(8,Math.min(r.left+scrollX,innerWidth-w-8))+"px";p.style.top=(r.bottom+scrollY+8)+"px"}
 document.addEventListener("click",e=>{
  const sp=e.target.closest(".w");
- if(sp){const o=sp.closest(".opt");if(o&&!o.classList.contains("locked")){closePop();return}lookup(sp);return}
+ if(sp){const o=sp.closest(".opt,.sn");if(o&&!o.classList.contains("locked")){closePop();return}lookup(sp);return}
  if(!e.target.closest(".pop"))closePop();
 },true);
 document.addEventListener("keydown",e=>{if(e.key=="Escape")closePop()});
@@ -314,7 +315,7 @@ function confirmScreen(title,onOk){
  app.innerHTML=`<h1>${esc(title)}</h1><div class="card"><b class="warn">Warning</b><p style="margin:6px 0 0">${WARN}</p></div><div class="row"><button class="btn alt" id="no">Cancel</button><button class="btn" id="ok">Confirm</button></div>`;
  document.getElementById("ok").onclick=onOk;document.getElementById("no").onclick=goBack;
 }
-function loading(m){app.innerHTML=`<h1>Please wait</h1><div class="card"><span class="muted">${m} This can take up to 20 seconds.</span></div>`}
+function loading(m){app.innerHTML=`<h1>Please wait</h1><div class="card"><span class="muted">${m} This can take up to 30 seconds.</span></div>`}
 function failed(){
  guard=false;
  app.innerHTML=`<h1>Something went wrong</h1><div class="card"><p class="warn" style="margin:0">The AI could not create the exercise. Try again in a moment. If this keeps happening, the free daily limit may be used up.</p></div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
@@ -323,7 +324,7 @@ function failed(){
 function practice(){
  app.innerHTML=`<h1>AI PRACTICE</h1><button class="btn tbtn" id="pv">Train vocabulary</button><button class="btn tbtn" id="pt">Train text</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("pv").onclick=()=>V.length<3?go(vocabMenu):go(()=>confirmScreen("Train vocabulary",()=>swap(vocabMenu)));
- document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",textRun));
+ document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));
  document.getElementById("hm").onclick=goBack;
 }
 function quiz(head,top,items,again,back){
@@ -336,15 +337,57 @@ function quiz(head,top,items,again,back){
  });
  document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=goBack;
 }
-async function textRun(){
- const tok=++GEN;guard="exercise";R[idx]=()=>confirmScreen("Train text",textRun);
- loading("Generating a text and 4 questions\u2026");
+const RT={ctw:["Complete the words","ctw"],short:["Read in daily life (short)","daily_short"],long:["Read in daily life (long)","daily_long"],academic:["Academic reading","academic"]};
+function textMenu(){
+ app.innerHTML=`<h1>Train text</h1><p class="muted">Choose a TOEFL reading task. The AI writes a new one in the real exam format.</p>${Object.keys(RT).map(t=>`<button class="btn tbtn" data-t="${t}">${RT[t][0]}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
+ app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{const t=b.dataset.t;go(()=>readRun(t))});
+ document.getElementById("bk").onclick=goBack;
+}
+async function readRun(t){
+ const tok=++GEN,name=RT[t][0];guard="exercise";R[idx]=()=>confirmScreen(name,()=>readRun(t));
+ loading("Generating: "+name.toLowerCase()+"\u2026");
  try{
-  const r=await callAI({task:"text"});
+  const r=await callAI({task:RT[t][1]});
   if(tok!==GEN)return;
-  const top=`<p class="muted">Click any word to see its translation and add it to your vocabulary. In the answer options this works after you answer.</p><div class="passage" style="max-height:none"><h2>${wrap(r.title)}</h2>${wrap(r.text)}</div>`;
-  quiz("Train text",top,r.questions.map(q=>({prompt:q.q,options:q.options,answer:q.answer})),()=>swap(()=>confirmScreen("Train text",textRun)));
+  const again=()=>swap(()=>confirmScreen(name,()=>readRun(t)));
+  if(t=="ctw")ctwQuiz(r.text,again);else readQuiz(name,{title:r.title,text:r.text},r.questions,again);
  }catch(e){if(tok===GEN)failed()}
+}
+function ctwQuiz(text,again){
+ guard="exercise";const full=[],hid=[];
+ const html=esc(text).replace(RX,(_,s,h)=>{const k=hid.length;full.push(s+h);hid.push(h);return `${s}<input class="blank" data-b="${k}" maxlength="${h.length}" size="${h.length+1}" placeholder="${"_".repeat(h.length)}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Missing ${h.length} letters">`});
+ app.innerHTML=`<h1>Complete the words</h1><p class="muted">Type the missing letters in each gap, then press Check.</p><div class="passage" style="max-height:none">${html}</div><div class="card" id="sc" hidden></div><div class="row"><button class="btn" id="ck">Check answers</button></div><div class="row"><button class="btn alt" id="rs">Reset</button><button class="btn alt" id="bk">Back to menu</button></div>`;
+ document.getElementById("ck").onclick=e=>{
+  let ok=0;
+  app.querySelectorAll(".blank").forEach(inp=>{const k=+inp.dataset.b,good=inp.value.trim().toLowerCase()==hid[k].toLowerCase();inp.disabled=true;inp.classList.add(good?"ok":"bad");if(good)ok++;else inp.insertAdjacentHTML("afterend",`<b class="ok"> \u2192 ${esc(full[k])}</b>`)});
+  guard=false;e.target.disabled=true;
+  const sc=document.getElementById("sc");sc.hidden=false;
+  sc.innerHTML=`<b>Score: ${ok} / ${hid.length}</b><p class="muted" style="margin:6px 0 0">Click any word in the completed paragraph to translate it.</p><div class="passage" style="max-height:none;margin:10px 0 0">${wrap(text.replace(RX,"$1$2"))}</div>`;
+ };
+ document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=goBack;
+}
+function passHTML(text,q,sel){
+ const k=q.kind;
+ if(k=="sentence")return text.replace(/\{[A-D]\}/g,"").split("\n\n").map(p=>(p.match(/[^.!?]+[.!?]+\s*/g)||[p]).map(x=>{const t=x.trim(),c=sel==null?"":" locked"+(t==q.answer?" good":t==sel?" bad":"");return `<span class="sn${c}" data-t="${esc(t)}">${wrap(x)}</span>`}).join("")).join("\n\n");
+ if(k=="insert")return text.split(/(\{[A-D]\})/).map(x=>/^\{[A-D]\}$/.test(x)?`<b class="mk">[${x[1]}]</b>`:wrap(x)).join("");
+ return text.replace(/\{[A-D]\}/g,"").split("\n\n").map((p,n)=>(k=="paragraph"?`<b class="mk">Paragraph ${n+1}</b>\n`:"")+wrap(p)).join("\n\n");
+}
+function readQuiz(head,task,qs,again){
+ let i=0;const got=[];guard="exercise";
+ const finish=()=>{
+  guard=false;const n=qs.filter((q,j)=>got[j]==q.answer).length;
+  app.innerHTML=`<h1>${esc(head)}</h1><div class="card"><div class="big">${n} / ${qs.length}</div><p class="muted" style="margin:6px 0 0">correct answers</p></div><div class="row"><button class="btn alt" id="rs">Reset</button><button class="btn" id="bk">Back to menu</button></div>`;
+  document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=goBack;
+ };
+ const draw=()=>{
+  const q=qs[i],sel=got[i],done=sel!=null,last=i==qs.length-1;
+  app.innerHTML=`<h1>${esc(head)}</h1><p class="muted">Question ${i+1} of ${qs.length}. Click any word to translate it (in the options, after you answer).</p><div class="passage" style="max-height:none"><h2>${wrap(task.title)}</h2>${passHTML(task.text,q,sel)}</div><div class="q">${wrap(q.q)}</div>${q.kind=="sentence"?"":q.options.map((o,k)=>`<button class="opt${done?" locked":""}${done&&k==q.answer?" good":done&&k==sel?" bad":""}" data-k="${k}"><b>${"ABCD"[k]}.</b> ${wrap(o)}</button>`).join("")}<div class="row"><button class="btn" id="nx" ${done?"":"disabled"}>${last?"Finish":"Next question"}</button></div><div class="row"><button class="btn alt" id="rs">Reset</button><button class="btn alt" id="bk">Back to menu</button></div>`;
+  app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{if(got[i]!=null)return;got[i]=+b.dataset.k;draw()});
+  app.querySelectorAll(".sn").forEach(x=>x.onclick=()=>{if(got[i]!=null)return;got[i]=x.dataset.t;draw()});
+  document.getElementById("nx").onclick=()=>last?finish():(i++,draw());
+  document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=goBack;
+ };
+ draw();
 }
 function vocabMenu(){
  if(V.length<3){
