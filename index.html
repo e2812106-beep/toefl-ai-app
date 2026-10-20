@@ -44,6 +44,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}.ov .card{max-width:360px;width:100%;margin:0}
 .sn.good{background:color-mix(in srgb,#2e9e5b 35%,transparent)}.sn.bad{background:color-mix(in srgb,var(--bad) 30%,transparent)}.blank.ok{border-bottom-color:#2e9e5b}.blank.bad{border-bottom-color:var(--bad)}
 .opt.good{border-color:#2e9e5b;background:color-mix(in srgb,#2e9e5b 24%,var(--surface))}.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,var(--surface))}
+.hl{background:color-mix(in srgb,var(--gold) 40%,transparent);border-radius:3px}
 </style>
 </head>
 <body>
@@ -498,6 +499,30 @@ function mistakes(){const out=[];EX=[];for(const k in EXC)delete EXC[k];
     out.push(`<div class="card"><b>Module ${h.mod} · ${esc(it.t.title)}</b><p>${esc(q.q)}</p><p><span class="muted">Your answer:</span> <span class="warn">${esc(yours||"No answer")}</span></p><p><span class="muted">Correct answer:</span> <b class="ok">${esc(cor)}</b></p><button class="btn alt" data-ex="${n}">Show AI explanation</button><div id="exb${n}"></div></div>`)}
   }}));
  return out}
+function passageView(text,ev,whole){
+ const mk=x=>x.replace(/\{([A-D])\}/g,'<b class="mk">[$1]</b>');
+ let m=null;
+ if(ev){try{m=text.match(new RegExp(ev.trim().replace(/[.*+?^${}()|[\]\\]/g,"\\$&").replace(/\s+/g,"\\s+")))}catch(e){}}
+ if(!m)return whole?mk(esc(text)):"";
+ const a=m.index,b=a+m[0].length;let s=0,e=text.length;
+ if(!whole){
+  let k=a;while(k>0&&/\s/.test(text[k-1]))k--;
+  if(k>0){k--;while(k>0&&!/[.!?\n]/.test(text[k-1]))k--;while(k<a&&/\s/.test(text[k]))k++;s=k}
+  k=b;while(k<text.length&&/\s/.test(text[k]))k++;
+  if(k<text.length){while(k<text.length&&!/[.!?\n]/.test(text[k]))k++;e=Math.min(k+1,text.length)}
+ }
+ return (s>0?"\u2026 ":"")+mk(esc(text.slice(s,a))+`<span class="hl">${esc(m[0])}</span>`+esc(text.slice(b,e)))+(e<text.length?" \u2026":"");
+}
+function showExpl(i,e,r,box){
+ const ev=e.kind=="sentence"?e.correct:e.kind=="insert"?"{"+e.correct[0]+"}":(r.evidence||"");
+ const ex=passageView(e.passage,ev,false),full=passageView(e.passage,ev,true);let open=false;
+ box.innerHTML=`<div class="passage" id="exp${i}" style="max-height:none;margin:10px 0 0"${ex?"":" hidden"}>${ex}</div><button class="btn alt" id="exf${i}" style="margin-top:8px">Read full passage</button><p style="margin:10px 0 0"><b>Explanation:</b> ${esc(r.explanation)}</p><p class="muted" style="margin:6px 0 0;font-size:14px">AI-generated, so it can be wrong. Check it against the passage.</p>`;
+ document.getElementById("exf"+i).onclick=ev2=>{
+  open=!open;const p=document.getElementById("exp"+i);
+  p.innerHTML=open?full:ex;p.style.maxHeight=open?"50vh":"none";p.hidden=!open&&!ex;
+  ev2.target.textContent=open?(ex?"Show only the excerpt":"Hide full passage"):"Read full passage";
+ };
+}
 async function explain(i,b){
  const box=document.getElementById("exb"+i),e=EX[i];
  if(!box||!e)return;
@@ -505,7 +530,7 @@ async function explain(i,b){
  try{
   const r=EXC[i]||(EXC[i]=await callAI({task:"explain",...e}));
   if(!r||!r.explanation)throw new Error("empty");
-  box.innerHTML=`<p style="margin:10px 0 0"><b>Explanation:</b> ${esc(r.explanation)}</p><p class="muted" style="margin:6px 0 0;font-size:14px">AI-generated, so it can be wrong. Check it against the passage.</p>`;
+  showExpl(i,e,r,box);
   b.remove();
  }catch(err){
   delete EXC[i];b.disabled=false;b.textContent="Try again";
