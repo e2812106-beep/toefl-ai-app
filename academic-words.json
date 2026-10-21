@@ -330,6 +330,1836 @@
      "ru": "непоследовательный; противоречивый"
     }
    ]
+  },
+  {
+   "id": "constitute",
+   "sublist": 1,
+   "word": "constitute",
+   "pos": "verb",
+   "ru": "составлять; образовывать; учреждать",
+   "def": "To form or make up something; to be the parts or elements that combine to create a whole.",
+   "examples": [
+    "International students constitute a significant proportion of the university's population.",
+    "These findings constitute strong evidence that the new treatment is effective."
+   ],
+   "forms": [
+    {
+     "w": "constitute",
+     "pos": "verb",
+     "ru": "составлять; образовывать"
+    },
+    {
+     "w": "constituency",
+     "pos": "noun",
+     "ru": "избирательный округ; группа избирателей"
+    },
+    {
+     "w": "constituent",
+     "pos": "noun / adjective",
+     "ru": "составная часть; составляющий"
+    },
+    {
+     "w": "constitution",
+     "pos": "noun",
+     "ru": "конституция; устройство"
+    },
+    {
+     "w": "constitutional",
+     "pos": "adjective",
+     "ru": "конституционный"
+    },
+    {
+     "w": "constitutionally",
+     "pos": "adverb",
+     "ru": "с конституционной точки зрения"
+    },
+    {
+     "w": "unconstitutional",
+     "pos": "adjective",
+     "ru": "неконституционный"
+    }
+   ]
+  },
+  {
+   "id": "context",
+   "sublist": 1,
+   "word": "context",
+   "pos": "noun",
+   "ru": "контекст; обстоятельства",
+   "def": "The circumstances, information, or conditions that help explain the meaning of something.",
+   "examples": [
+    "It is important to understand historical events in their social and political context.",
+    "The meaning of an unfamiliar word can often be understood from its context."
+   ],
+   "forms": [
+    {
+     "w": "context",
+     "pos": "noun",
+     "ru": "контекст"
+    },
+    {
+     "w": "contextualise",
+     "pos": "verb",
+     "ru": "рассматривать в контексте"
+    },
+    {
+     "w": "contextual",
+     "pos": "adjective",
+     "ru": "контекстуальный"
+    },
+    {
+     "w": "uncontextualised",
+     "pos": "adjective",
+     "ru": "представленный без контекста"
+    }
+   ]
+  },
+  {
+   "id": "contract",
+   "sublist": 1,
+   "word": "contract",
+   "pos": "noun / verb",
+   "ru": "договор; контракт; заключать договор",
+   "def": "A formal agreement between two or more parties; to enter into a formal agreement.",
+   "examples": [
+    "The company signed a contract with an international supplier.",
+    "The university contracted a private company to maintain its facilities."
+   ],
+   "forms": [
+    {
+     "w": "contract",
+     "pos": "noun",
+     "ru": "договор"
+    },
+    {
+     "w": "contract",
+     "pos": "verb",
+     "ru": "заключать договор; сжиматься"
+    }
+   ]
+  },
+  {
+   "id": "create",
+   "sublist": 1,
+   "word": "create",
+   "pos": "verb",
+   "ru": "создавать; творить",
+   "def": "To make or produce something new, such as an idea, object, system, or situation.",
+   "examples": [
+    "The researchers created a new model to explain the results.",
+    "Governments can create opportunities for economic growth by investing in education."
+   ],
+   "forms": [
+    {
+     "w": "create",
+     "pos": "verb",
+     "ru": "создавать"
+    },
+    {
+     "w": "creator",
+     "pos": "noun",
+     "ru": "создатель"
+    },
+    {
+     "w": "creation",
+     "pos": "noun",
+     "ru": "создание; творение"
+    },
+    {
+     "w": "creativity",
+     "pos": "noun",
+     "ru": "креативность; творческие способности"
+    },
+    {
+     "w": "creatively",
+     "pos": "adverb",
+     "ru": "творчески"
+    },
+    {
+     "w": "creative",
+     "pos": "adjective",
+     "ru": "творческий"
+    },
+    {
+     "w": "recreate",
+     "pos": "verb",
+     "ru": "воссоздавать"
+    }
+   ]
+  },
+  {
+   "id": "data",
+   "sublist": 1,
+   "word": "data",
+   "pos": "noun (commonly uncountable)",
+   "ru": "данные",
+   "def": "Facts, figures, or information collected for examination, analysis, or decision-making.",
+   "examples": [
+    "The researchers collected data from 500 university students.",
+    "The data suggest that air pollution has increased over the past decade."
+   ],
+   "forms": [
+    {
+     "w": "data",
+     "pos": "noun",
+     "ru": "данные"
+    }
+   ]
+  },
+  {
+   "id": "definition",
+   "sublist": 1,
+   "word": "definition",
+   "pos": "noun",
+   "ru": "определение",
+   "def": "A statement that explains the exact meaning of a word, concept, or term.",
+   "examples": [
+    "The article provides a clear definition of sustainable development.",
+    "Researchers must define their key terms before conducting the study."
+   ],
+   "forms": [
+    {
+     "w": "definition",
+     "pos": "noun",
+     "ru": "определение"
+    },
+    {
+     "w": "define",
+     "pos": "verb",
+     "ru": "определять; давать определение"
+    },
+    {
+     "w": "definable",
+     "pos": "adjective",
+     "ru": "поддающийся определению"
+    },
+    {
+     "w": "redefine",
+     "pos": "verb",
+     "ru": "переопределять"
+    },
+    {
+     "w": "undefined",
+     "pos": "adjective",
+     "ru": "неопределённый; не имеющий чёткого определения"
+    }
+   ]
+  },
+  {
+   "id": "derived",
+   "sublist": 1,
+   "word": "derived",
+   "pos": "adjective / past participle",
+   "ru": "полученный; происходящий от",
+   "def": "Obtained or developed from another source, substance, idea, or process.",
+   "examples": [
+    "The researchers derived their conclusions from the experimental data.",
+    "Many English words are derived from Latin and Greek."
+   ],
+   "forms": [
+    {
+     "w": "derived",
+     "pos": "adjective",
+     "ru": "полученный из; происходящий от"
+    },
+    {
+     "w": "derivation",
+     "pos": "noun",
+     "ru": "происхождение; выведение"
+    },
+    {
+     "w": "derivative",
+     "pos": "noun / adjective",
+     "ru": "производное слово; производный"
+    },
+    {
+     "w": "derive",
+     "pos": "verb",
+     "ru": "получать; выводить; происходить от"
+    }
+   ]
+  },
+  {
+   "id": "distribution",
+   "sublist": 1,
+   "word": "distribution",
+   "pos": "noun",
+   "ru": "распределение; распространение",
+   "def": "The way something is divided, shared, or spread among people, places, or groups.",
+   "examples": [
+    "The study examined the distribution of income across different social groups.",
+    "The geographical distribution of the species depends on climate conditions."
+   ],
+   "forms": [
+    {
+     "w": "distribution",
+     "pos": "noun",
+     "ru": "распределение"
+    },
+    {
+     "w": "distributor",
+     "pos": "noun",
+     "ru": "распространитель; дистрибьютор"
+    },
+    {
+     "w": "distribute",
+     "pos": "verb",
+     "ru": "распределять; распространять"
+    },
+    {
+     "w": "distributional",
+     "pos": "adjective",
+     "ru": "связанный с распределением"
+    },
+    {
+     "w": "distributive",
+     "pos": "adjective",
+     "ru": "распределительный"
+    },
+    {
+     "w": "redistribute",
+     "pos": "verb",
+     "ru": "перераспределять"
+    },
+    {
+     "w": "redistribution",
+     "pos": "noun",
+     "ru": "перераспределение"
+    }
+   ]
+  },
+  {
+   "id": "economy",
+   "sublist": 1,
+   "word": "economy",
+   "pos": "noun",
+   "ru": "экономика",
+   "def": "The system by which a country or region produces, distributes, and consumes goods and services.",
+   "examples": [
+    "Tourism plays an important role in the country's economy.",
+    "Economic growth can lead to improvements in living standards."
+   ],
+   "forms": [
+    {
+     "w": "economy",
+     "pos": "noun",
+     "ru": "экономика; экономия"
+    },
+    {
+     "w": "economist",
+     "pos": "noun",
+     "ru": "экономист"
+    },
+    {
+     "w": "economics",
+     "pos": "noun",
+     "ru": "экономика как наука"
+    },
+    {
+     "w": "economically",
+     "pos": "adverb",
+     "ru": "экономически"
+    },
+    {
+     "w": "economic",
+     "pos": "adjective",
+     "ru": "экономический"
+    },
+    {
+     "w": "economical",
+     "pos": "adjective",
+     "ru": "экономичный"
+    },
+    {
+     "w": "uneconomical",
+     "pos": "adjective",
+     "ru": "неэкономичный"
+    }
+   ]
+  },
+  {
+   "id": "environment",
+   "sublist": 1,
+   "word": "environment",
+   "pos": "noun",
+   "ru": "окружающая среда; условия",
+   "def": "The natural world, or the conditions and surroundings in which people, animals, or organisations exist and operate.",
+   "examples": [
+    "Industrial activity can have a negative impact on the environment.",
+    "A supportive learning environment helps students develop their academic skills."
+   ],
+   "forms": [
+    {
+     "w": "environment",
+     "pos": "noun",
+     "ru": "окружающая среда; обстановка"
+    },
+    {
+     "w": "environmentalist",
+     "pos": "noun",
+     "ru": "защитник окружающей среды"
+    },
+    {
+     "w": "environmentally",
+     "pos": "adverb",
+     "ru": "с точки зрения воздействия на окружающую среду"
+    },
+    {
+     "w": "environmental",
+     "pos": "adjective",
+     "ru": "экологический; относящийся к окружающей среде"
+    }
+   ]
+  },
+  {
+   "id": "establish",
+   "sublist": 1,
+   "word": "establish",
+   "pos": "verb",
+   "ru": "устанавливать; основывать; учреждать",
+   "def": "To create or start something; to set up an organisation or system; or to determine something with confidence based on evidence.",
+   "examples": [
+    "The researchers conducted several experiments to establish a clear link between sleep quality and academic performance.",
+    "The university plans to establish a new research centre focused on environmental sustainability."
+   ],
+   "forms": [
+    {
+     "w": "establish",
+     "pos": "verb",
+     "ru": "устанавливать; основывать"
+    },
+    {
+     "w": "establishment",
+     "pos": "noun",
+     "ru": "учреждение; создание"
+    },
+    {
+     "w": "established",
+     "pos": "adjective",
+     "ru": "установленный; признанный; устоявшийся"
+    },
+    {
+     "w": "disestablish",
+     "pos": "verb",
+     "ru": "упразднять"
+    },
+    {
+     "w": "disestablishment",
+     "pos": "noun",
+     "ru": "упразднение"
+    }
+   ]
+  },
+  {
+   "id": "estimate",
+   "sublist": 1,
+   "word": "estimate",
+   "pos": "noun / verb",
+   "ru": "оценивать; оценка; приблизительная величина",
+   "def": "To calculate or judge the approximate size, amount, cost, or value of something; an approximate calculation or judgment.",
+   "examples": [
+    "Researchers estimate that global temperatures will continue to rise.",
+    "The initial estimate of the project's cost was lower than the final amount."
+   ],
+   "forms": [
+    {
+     "w": "estimate",
+     "pos": "noun / verb",
+     "ru": "оценка; оценивать"
+    },
+    {
+     "w": "estimation",
+     "pos": "noun",
+     "ru": "оценивание; приблизительная оценка"
+    },
+    {
+     "w": "overestimate",
+     "pos": "verb",
+     "ru": "переоценивать"
+    },
+    {
+     "w": "underestimate",
+     "pos": "verb",
+     "ru": "недооценивать"
+    }
+   ]
+  },
+  {
+   "id": "evidence",
+   "sublist": 1,
+   "word": "evidence",
+   "pos": "noun",
+   "ru": "доказательства; свидетельства; данные",
+   "def": "Information, facts, or observations that support or help establish whether something is true.",
+   "examples": [
+    "There is strong evidence that regular exercise improves mental health.",
+    "The researchers collected evidence to support their hypothesis."
+   ],
+   "forms": [
+    {
+     "w": "evidence",
+     "pos": "noun",
+     "ru": "доказательства; свидетельства"
+    },
+    {
+     "w": "evident",
+     "pos": "adjective",
+     "ru": "очевидный"
+    },
+    {
+     "w": "evidently",
+     "pos": "adverb",
+     "ru": "очевидно"
+    }
+   ]
+  },
+  {
+   "id": "export",
+   "sublist": 1,
+   "word": "export",
+   "pos": "noun / verb",
+   "ru": "экспортировать; экспорт",
+   "def": "To sell or send goods or services to another country; goods or services sold abroad.",
+   "examples": [
+    "The country exports agricultural products to several European markets.",
+    "Oil exports account for a large share of the nation's income."
+   ],
+   "forms": [
+    {
+     "w": "export",
+     "pos": "noun",
+     "ru": "экспорт; экспортируемый товар"
+    },
+    {
+     "w": "export",
+     "pos": "verb",
+     "ru": "экспортировать"
+    },
+    {
+     "w": "exporter",
+     "pos": "noun",
+     "ru": "экспортёр"
+    },
+    {
+     "w": "exports",
+     "pos": "plural noun",
+     "ru": "экспортные товары"
+    }
+   ]
+  },
+  {
+   "id": "factors",
+   "sublist": 1,
+   "word": "factors",
+   "pos": "plural noun",
+   "ru": "факторы",
+   "def": "Facts, conditions, or circumstances that influence a result or situation.",
+   "examples": [
+    "Several factors influence students' academic performance, including motivation and access to resources.",
+    "Researchers examined the factors responsible for the decline in air quality."
+   ],
+   "forms": [
+    {
+     "w": "factors",
+     "pos": "plural noun",
+     "ru": "факторы"
+    },
+    {
+     "w": "factor",
+     "pos": "noun",
+     "ru": "фактор"
+    }
+   ]
+  },
+  {
+   "id": "finance",
+   "sublist": 1,
+   "word": "finance",
+   "pos": "noun / verb",
+   "ru": "финансировать; финансы",
+   "def": "The management of money, investments, and other financial resources; to provide money for a project, activity, or organisation.",
+   "examples": [
+    "The government plans to finance the construction of new hospitals.",
+    "Students often need to learn how to manage their personal finances effectively."
+   ],
+   "forms": [
+    {
+     "w": "finance",
+     "pos": "noun / verb",
+     "ru": "финансы; финансировать"
+    },
+    {
+     "w": "financier",
+     "pos": "noun",
+     "ru": "финансист"
+    },
+    {
+     "w": "finances",
+     "pos": "plural noun",
+     "ru": "финансовые средства; финансы"
+    },
+    {
+     "w": "financial",
+     "pos": "adjective",
+     "ru": "финансовый"
+    },
+    {
+     "w": "financially",
+     "pos": "adverb",
+     "ru": "в финансовом отношении"
+    }
+   ]
+  },
+  {
+   "id": "formula",
+   "sublist": 1,
+   "word": "formula",
+   "pos": "noun",
+   "ru": "формула",
+   "def": "A mathematical rule expressed using symbols, or a particular method or set of principles used to achieve a result.",
+   "examples": [
+    "The researchers developed a formula to calculate the rate of population growth.",
+    "There is no simple formula for achieving academic success."
+   ],
+   "forms": [
+    {
+     "w": "formula",
+     "pos": "noun",
+     "ru": "формула"
+    },
+    {
+     "w": "formulae / formulas",
+     "pos": "plural noun",
+     "ru": "формулы"
+    },
+    {
+     "w": "formulation",
+     "pos": "noun",
+     "ru": "формулировка; разработка"
+    },
+    {
+     "w": "formulate",
+     "pos": "verb",
+     "ru": "формулировать; разрабатывать"
+    },
+    {
+     "w": "reformulate",
+     "pos": "verb",
+     "ru": "переформулировать"
+    },
+    {
+     "w": "reformulation",
+     "pos": "noun",
+     "ru": "переформулировка"
+    }
+   ]
+  },
+  {
+   "id": "function",
+   "sublist": 1,
+   "word": "function",
+   "pos": "noun / verb",
+   "ru": "функция; функционировать",
+   "def": "The purpose or role of something; to work or operate in a particular way.",
+   "examples": [
+    "One important function of the human brain is to process information.",
+    "The system functions more efficiently after the recent update."
+   ],
+   "forms": [
+    {
+     "w": "function",
+     "pos": "noun",
+     "ru": "функция"
+    },
+    {
+     "w": "function",
+     "pos": "verb",
+     "ru": "функционировать"
+    },
+    {
+     "w": "functionally",
+     "pos": "adverb",
+     "ru": "функционально"
+    },
+    {
+     "w": "functional",
+     "pos": "adjective",
+     "ru": "функциональный"
+    },
+    {
+     "w": "functioned",
+     "pos": "verb form",
+     "ru": "функционировал"
+    },
+    {
+     "w": "functioning",
+     "pos": "adjective / noun",
+     "ru": "функционирующий; функционирование"
+    }
+   ]
+  },
+  {
+   "id": "identify",
+   "sublist": 1,
+   "word": "identify",
+   "pos": "verb",
+   "ru": "определять; выявлять; идентифицировать",
+   "def": "To recognise, name, or establish what something or someone is; to discover and describe a particular problem, factor, or characteristic.",
+   "examples": [
+    "The researchers identified three major factors contributing to climate change.",
+    "The purpose of the experiment was to identify the causes of the observed behaviour."
+   ],
+   "forms": [
+    {
+     "w": "identify",
+     "pos": "verb",
+     "ru": "определять; выявлять"
+    },
+    {
+     "w": "identification",
+     "pos": "noun",
+     "ru": "идентификация; определение"
+    },
+    {
+     "w": "identity",
+     "pos": "noun",
+     "ru": "личность; идентичность"
+    },
+    {
+     "w": "identifiable",
+     "pos": "adjective",
+     "ru": "поддающийся идентификации"
+    },
+    {
+     "w": "identified",
+     "pos": "adjective / past participle",
+     "ru": "выявленный; идентифицированный"
+    },
+    {
+     "w": "identifying",
+     "pos": "adjective / participle",
+     "ru": "определяющий; выявляющий"
+    },
+    {
+     "w": "unidentifiable",
+     "pos": "adjective",
+     "ru": "не поддающийся идентификации"
+    }
+   ]
+  },
+  {
+   "id": "income",
+   "sublist": 1,
+   "word": "income",
+   "pos": "noun",
+   "ru": "доход; заработок",
+   "def": "Money received from work, investments, business activities, or other sources over a particular period.",
+   "examples": [
+    "The study examined the relationship between income and educational opportunities.",
+    "Many households spend a large proportion of their income on housing."
+   ],
+   "forms": [
+    {
+     "w": "income",
+     "pos": "noun",
+     "ru": "доход"
+    }
+   ]
+  },
+  {
+   "id": "indicate",
+   "sublist": 1,
+   "word": "indicate",
+   "pos": "verb",
+   "ru": "указывать; свидетельствовать; обозначать",
+   "def": "To show, point out, or suggest that something exists, is true, or is likely to happen.",
+   "examples": [
+    "The results indicate that regular exercise can improve memory.",
+    "A high unemployment rate may indicate problems in the national economy."
+   ],
+   "forms": [
+    {
+     "w": "indicate",
+     "pos": "verb",
+     "ru": "указывать; свидетельствовать"
+    },
+    {
+     "w": "indication",
+     "pos": "noun",
+     "ru": "указание; признак"
+    },
+    {
+     "w": "indicator",
+     "pos": "noun",
+     "ru": "показатель; индикатор"
+    },
+    {
+     "w": "indicative",
+     "pos": "adjective",
+     "ru": "свидетельствующий о; показательный"
+    }
+   ]
+  },
+  {
+   "id": "individual",
+   "sublist": 1,
+   "word": "individual",
+   "pos": "noun / adjective",
+   "ru": "отдельный; индивидуальный; человек",
+   "def": "A single person or thing considered separately from others; relating to one particular person or thing.",
+   "examples": [
+    "Each individual has different learning needs and preferences.",
+    "The researchers analysed the individual responses before comparing the results."
+   ],
+   "forms": [
+    {
+     "w": "individual",
+     "pos": "noun / adjective",
+     "ru": "человек; отдельный; индивидуальный"
+    },
+    {
+     "w": "individuality",
+     "pos": "noun",
+     "ru": "индивидуальность"
+    },
+    {
+     "w": "individualism",
+     "pos": "noun",
+     "ru": "индивидуализм"
+    },
+    {
+     "w": "individualist",
+     "pos": "noun",
+     "ru": "индивидуалист"
+    },
+    {
+     "w": "individually",
+     "pos": "adverb",
+     "ru": "индивидуально; по отдельности"
+    },
+    {
+     "w": "individualised",
+     "pos": "adjective",
+     "ru": "индивидуализированный"
+    },
+    {
+     "w": "individualistic",
+     "pos": "adjective",
+     "ru": "индивидуалистический"
+    }
+   ]
+  },
+  {
+   "id": "interpret",
+   "sublist": 1,
+   "word": "interpret",
+   "pos": "verb",
+   "ru": "интерпретировать; толковать; объяснять",
+   "def": "To explain or understand the meaning of something, such as information, evidence, data, or an event.",
+   "examples": [
+    "Researchers must interpret the results carefully before drawing conclusions.",
+    "Different scientists may interpret the same evidence in different ways."
+   ],
+   "forms": [
+    {
+     "w": "interpret",
+     "pos": "verb",
+     "ru": "интерпретировать; толковать"
+    },
+    {
+     "w": "interpretation",
+     "pos": "noun",
+     "ru": "интерпретация; толкование"
+    },
+    {
+     "w": "interpretive",
+     "pos": "adjective",
+     "ru": "интерпретационный"
+    },
+    {
+     "w": "misinterpret",
+     "pos": "verb",
+     "ru": "неправильно истолковывать"
+    },
+    {
+     "w": "misinterpretation",
+     "pos": "noun",
+     "ru": "неправильное толкование"
+    },
+    {
+     "w": "misinterpreted",
+     "pos": "verb form",
+     "ru": "неверно истолкованный"
+    },
+    {
+     "w": "misinterpreting",
+     "pos": "verb form",
+     "ru": "неверно истолковывающий"
+    },
+    {
+     "w": "reinterpret",
+     "pos": "verb",
+     "ru": "переосмысливать"
+    },
+    {
+     "w": "reinterpretation",
+     "pos": "noun",
+     "ru": "переосмысление"
+    }
+   ]
+  },
+  {
+   "id": "involve",
+   "sublist": 1,
+   "word": "involve",
+   "pos": "verb",
+   "ru": "вовлекать; включать; подразумевать",
+   "def": "To include someone or something in an activity or situation, or to require something as a necessary part of a process.",
+   "examples": [
+    "The research project involves collecting data from several hundred participants.",
+    "Improving public health often involves cooperation between governments, scientists, and local communities."
+   ],
+   "forms": [
+    {
+     "w": "involve",
+     "pos": "verb",
+     "ru": "вовлекать; включать"
+    },
+    {
+     "w": "involvement",
+     "pos": "noun",
+     "ru": "участие; вовлечённость"
+    },
+    {
+     "w": "involved",
+     "pos": "adjective",
+     "ru": "вовлечённый; участвующий"
+    },
+    {
+     "w": "uninvolved",
+     "pos": "adjective",
+     "ru": "не участвующий; не вовлечённый"
+    }
+   ]
+  },
+  {
+   "id": "issues",
+   "sublist": 1,
+   "word": "issues",
+   "pos": "plural noun",
+   "ru": "вопросы; проблемы; спорные вопросы",
+   "def": "Important subjects, problems, or matters that need attention, discussion, or a solution.",
+   "examples": [
+    "Climate change is one of the most pressing issues facing modern society.",
+    "The researchers discussed ethical issues related to the use of personal data."
+   ],
+   "forms": [
+    {
+     "w": "issues",
+     "pos": "plural noun",
+     "ru": "вопросы; проблемы"
+    },
+    {
+     "w": "issue",
+     "pos": "noun",
+     "ru": "вопрос; проблема"
+    },
+    {
+     "w": "issue",
+     "pos": "verb",
+     "ru": "выпускать; издавать; выдавать"
+    },
+    {
+     "w": "issuing",
+     "pos": "verb form",
+     "ru": "выпускающий; выдающий"
+    }
+   ]
+  },
+  {
+   "id": "labour",
+   "sublist": 1,
+   "word": "labour",
+   "pos": "noun / verb",
+   "ru": "труд; рабочая сила; работать",
+   "def": "Physical or mental work, especially work done to produce goods or provide services; to work hard at a task.",
+   "examples": [
+    "The cost of labour has increased significantly in recent years.",
+    "The construction project requires a large labour force."
+   ],
+   "forms": [
+    {
+     "w": "labour",
+     "pos": "noun",
+     "ru": "труд; рабочая сила"
+    },
+    {
+     "w": "labour",
+     "pos": "verb",
+     "ru": "трудиться"
+    },
+    {
+     "w": "laboured",
+     "pos": "adjective / verb form",
+     "ru": "напряжённый; выполненный с усилием"
+    },
+    {
+     "w": "labouring",
+     "pos": "adjective / verb form",
+     "ru": "трудящийся; работающий"
+    }
+   ]
+  },
+  {
+   "id": "legal",
+   "sublist": 1,
+   "word": "legal",
+   "pos": "adjective",
+   "ru": "законный; юридический",
+   "def": "Allowed or required by law, or relating to the law and legal systems.",
+   "examples": [
+    "Researchers must obtain legal permission before collecting certain types of personal data.",
+    "The government introduced new legal regulations to protect consumers."
+   ],
+   "forms": [
+    {
+     "w": "legal",
+     "pos": "adjective",
+     "ru": "законный; юридический"
+    },
+    {
+     "w": "legality",
+     "pos": "noun",
+     "ru": "законность"
+    },
+    {
+     "w": "legalise",
+     "pos": "verb",
+     "ru": "легализовать"
+    },
+    {
+     "w": "legally",
+     "pos": "adverb",
+     "ru": "законно; юридически"
+    },
+    {
+     "w": "illegal",
+     "pos": "adjective",
+     "ru": "незаконный"
+    },
+    {
+     "w": "illegality",
+     "pos": "noun",
+     "ru": "незаконность"
+    },
+    {
+     "w": "illegally",
+     "pos": "adverb",
+     "ru": "незаконно"
+    }
+   ]
+  },
+  {
+   "id": "legislate",
+   "sublist": 1,
+   "word": "legislate",
+   "pos": "verb",
+   "ru": "принимать законы; издавать законодательные акты; устанавливать законом",
+   "def": "To make or pass laws, usually through an official government or legislative body.",
+   "examples": [
+    "The government plans to legislate against the illegal use of personal data.",
+    "Some countries legislate to protect workers from discrimination in the workplace."
+   ],
+   "forms": [
+    {
+     "w": "legislate",
+     "pos": "verb",
+     "ru": "принимать законы"
+    },
+    {
+     "w": "legislation",
+     "pos": "noun",
+     "ru": "законодательство"
+    },
+    {
+     "w": "legislator",
+     "pos": "noun",
+     "ru": "законодатель"
+    },
+    {
+     "w": "legislature",
+     "pos": "noun",
+     "ru": "законодательный орган"
+    },
+    {
+     "w": "legislative",
+     "pos": "adjective",
+     "ru": "законодательный"
+    }
+   ]
+  },
+  {
+   "id": "major",
+   "sublist": 1,
+   "word": "major",
+   "pos": "adjective / noun / verb",
+   "ru": "основной; значительный; крупный",
+   "def": "Important, serious, or large in size or effect. As a noun, it can refer to the main field of study at a university.",
+   "examples": [
+    "Lack of funding is a major obstacle to scientific research.",
+    "The majority of participants reported positive results after the programme."
+   ],
+   "forms": [
+    {
+     "w": "major",
+     "pos": "adjective",
+     "ru": "основной; значительный"
+    },
+    {
+     "w": "major",
+     "pos": "verb",
+     "ru": "специализироваться на определённой дисциплине, особенно в американских университетах"
+    },
+    {
+     "w": "majority",
+     "pos": "noun",
+     "ru": "большинство"
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "sublist": 1,
+   "word": "method",
+   "pos": "noun",
+   "ru": "метод; способ",
+   "def": "A particular way of doing something, especially a planned or systematic way of studying or solving a problem.",
+   "examples": [
+    "The researchers used a new method to measure air quality.",
+    "The methodology section explains how the data were collected and analysed."
+   ],
+   "forms": [
+    {
+     "w": "method",
+     "pos": "noun",
+     "ru": "метод; способ"
+    },
+    {
+     "w": "methodology",
+     "pos": "noun",
+     "ru": "методология; система методов"
+    },
+    {
+     "w": "methodical",
+     "pos": "adjective",
+     "ru": "методичный; систематический"
+    },
+    {
+     "w": "methodological",
+     "pos": "adjective",
+     "ru": "методологический"
+    }
+   ]
+  },
+  {
+   "id": "occurrence",
+   "sublist": 1,
+   "word": "occurrence",
+   "pos": "noun",
+   "ru": "случай; событие; возникновение",
+   "def": "An event or incident that happens, especially one that happens repeatedly or at a particular time.",
+   "examples": [
+    "The occurrence of extreme weather events has increased in recent decades.",
+    "Researchers examined the frequency of this occurrence in different populations."
+   ],
+   "forms": [
+    {
+     "w": "occurrence",
+     "pos": "noun",
+     "ru": "случай; событие; возникновение"
+    },
+    {
+     "w": "occur",
+     "pos": "verb",
+     "ru": "происходить; случаться"
+    },
+    {
+     "w": "occurring",
+     "pos": "verb (present participle)",
+     "ru": "происходящий"
+    },
+    {
+     "w": "reoccur",
+     "pos": "verb",
+     "ru": "повторяться; возникать снова"
+    },
+    {
+     "w": "reoccurring",
+     "pos": "adjective",
+     "ru": "повторяющийся"
+    }
+   ]
+  },
+  {
+   "id": "percent",
+   "sublist": 1,
+   "word": "percent",
+   "pos": "noun",
+   "ru": "процент",
+   "def": "One part in every hundred; a way of expressing a proportion or rate.",
+   "examples": [
+    "Approximately 30 percent of the participants reported experiencing stress.",
+    "The percentage of students who completed the course increased significantly."
+   ],
+   "forms": [
+    {
+     "w": "percent",
+     "pos": "noun",
+     "ru": "процент"
+    },
+    {
+     "w": "percentage",
+     "pos": "noun",
+     "ru": "процент; процентное соотношение"
+    }
+   ]
+  },
+  {
+   "id": "period",
+   "sublist": 1,
+   "word": "period",
+   "pos": "noun",
+   "ru": "период; промежуток времени",
+   "def": "A length of time during which something happens or a particular stage of an activity or process.",
+   "examples": [
+    "The study examined changes in employment over a ten-year period.",
+    "Participants were asked to complete a questionnaire periodically throughout the experiment."
+   ],
+   "forms": [
+    {
+     "w": "period",
+     "pos": "noun",
+     "ru": "период; промежуток времени"
+    },
+    {
+     "w": "periodical",
+     "pos": "noun / adjective",
+     "ru": "периодическое издание; периодический"
+    },
+    {
+     "w": "periodically",
+     "pos": "adverb",
+     "ru": "периодически"
+    },
+    {
+     "w": "periodic",
+     "pos": "adjective",
+     "ru": "периодический; происходящий через определённые промежутки времени"
+    }
+   ]
+  },
+  {
+   "id": "policy",
+   "sublist": 1,
+   "word": "policy",
+   "pos": "noun",
+   "ru": "политика; курс действий; правила",
+   "def": "A set of rules, principles, or guidelines adopted by an organization or government to make decisions and achieve particular goals.",
+   "examples": [
+    "The government introduced a new policy to reduce air pollution.",
+    "The university's admission policy requires applicants to demonstrate academic proficiency."
+   ],
+   "forms": [
+    {
+     "w": "policy",
+     "pos": "noun",
+     "ru": "политика; курс действий; правила"
+    }
+   ]
+  },
+  {
+   "id": "principle",
+   "sublist": 1,
+   "word": "principle",
+   "pos": "noun",
+   "ru": "принцип; основополагающее правило",
+   "def": "A fundamental rule, belief, or idea that guides decisions, behavior, or the development of a theory or system.",
+   "examples": [
+    "The research was conducted according to the principles of scientific integrity.",
+    "Equal access to education is a fundamental principle of the institution."
+   ],
+   "forms": [
+    {
+     "w": "principle",
+     "pos": "noun",
+     "ru": "принцип; основополагающее правило"
+    },
+    {
+     "w": "principles",
+     "pos": "plural noun",
+     "ru": "принципы"
+    },
+    {
+     "w": "principled",
+     "pos": "adjective",
+     "ru": "принципиальный; руководствующийся принципами"
+    },
+    {
+     "w": "unprincipled",
+     "pos": "adjective",
+     "ru": "беспринципный"
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "sublist": 1,
+   "word": "procedure",
+   "pos": "noun",
+   "ru": "процедура; порядок действий; методика",
+   "def": "An established or systematic way of doing something, especially a series of steps followed to achieve a particular result.",
+   "examples": [
+    "The researchers followed a standardized procedure to collect the data.",
+    "Before the experiment begins, all participants must understand the safety procedures."
+   ],
+   "forms": [
+    {
+     "w": "procedure",
+     "pos": "noun",
+     "ru": "процедура; порядок действий; методика"
+    },
+    {
+     "w": "proceedings",
+     "pos": "plural noun",
+     "ru": "разбирательство; ход заседания; материалы судебного процесса"
+    },
+    {
+     "w": "proceeds",
+     "pos": "plural noun",
+     "ru": "выручка; поступления"
+    },
+    {
+     "w": "proceed",
+     "pos": "verb",
+     "ru": "продолжать; приступать; действовать далее"
+    },
+    {
+     "w": "procedural",
+     "pos": "adjective",
+     "ru": "процедурный; связанный с установленным порядком действий"
+    }
+   ]
+  },
+  {
+   "id": "process",
+   "sublist": 1,
+   "word": "process",
+   "pos": "noun",
+   "ru": "процесс; последовательность действий",
+   "def": "A series of actions or stages through which something develops, changes, or is achieved.",
+   "examples": [
+    "The learning process becomes more effective when students receive regular feedback.",
+    "The data were processed using specialized statistical software."
+   ],
+   "forms": [
+    {
+     "w": "process",
+     "pos": "noun",
+     "ru": "процесс; последовательность действий"
+    },
+    {
+     "w": "process",
+     "pos": "verb",
+     "ru": "обрабатывать; перерабатывать"
+    },
+    {
+     "w": "processed",
+     "pos": "adjective / verb (past participle)",
+     "ru": "обработанный"
+    },
+    {
+     "w": "processing",
+     "pos": "noun / verb (present participle)",
+     "ru": "обработка; обработка данных"
+    }
+   ]
+  },
+  {
+   "id": "requirement",
+   "sublist": 1,
+   "word": "requirement",
+   "pos": "noun",
+   "ru": "требование; необходимое условие",
+   "def": "Something that is necessary or officially demanded for a particular purpose.",
+   "examples": [
+    "A strong command of academic English is a requirement for admission to the program.",
+    "The experiment requires a controlled environment to produce reliable results."
+   ],
+   "forms": [
+    {
+     "w": "requirement",
+     "pos": "noun",
+     "ru": "требование; необходимое условие"
+    },
+    {
+     "w": "require",
+     "pos": "verb",
+     "ru": "требовать; нуждаться в"
+    },
+    {
+     "w": "required",
+     "pos": "adjective / verb (past participle)",
+     "ru": "обязательный; требуемый"
+    }
+   ]
+  },
+  {
+   "id": "researcher",
+   "sublist": 1,
+   "word": "researcher",
+   "pos": "noun",
+   "ru": "исследователь; научный сотрудник",
+   "def": "A person who systematically investigates a subject to discover new information or develop knowledge.",
+   "examples": [
+    "The researcher collected data from more than 500 university students.",
+    "Researchers have identified several factors that influence academic performance."
+   ],
+   "forms": [
+    {
+     "w": "researcher",
+     "pos": "noun",
+     "ru": "исследователь; научный сотрудник"
+    },
+    {
+     "w": "research",
+     "pos": "noun",
+     "ru": "исследование; научная работа"
+    },
+    {
+     "w": "research",
+     "pos": "verb",
+     "ru": "исследовать; проводить исследование"
+    }
+   ]
+  },
+  {
+   "id": "respondent",
+   "sublist": 1,
+   "word": "respondent",
+   "pos": "noun",
+   "ru": "респондент; участник опроса",
+   "def": "A person who answers questions, especially in a survey, questionnaire, or research study.",
+   "examples": [
+    "Each respondent was asked to evaluate the quality of the educational program.",
+    "Most respondents reported that access to digital resources improved their learning experience."
+   ],
+   "forms": [
+    {
+     "w": "respondent",
+     "pos": "noun",
+     "ru": "респондент; участник опроса"
+    },
+    {
+     "w": "response",
+     "pos": "noun",
+     "ru": "ответ; реакция; отклик"
+    },
+    {
+     "w": "responsiveness",
+     "pos": "noun",
+     "ru": "отзывчивость; способность быстро реагировать"
+    },
+    {
+     "w": "respond",
+     "pos": "verb",
+     "ru": "отвечать; реагировать"
+    },
+    {
+     "w": "responsive",
+     "pos": "adjective",
+     "ru": "отзывчивый; реагирующий"
+    },
+    {
+     "w": "unresponsive",
+     "pos": "adjective",
+     "ru": "не реагирующий; неотзывчивый"
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "sublist": 1,
+   "word": "role",
+   "pos": "noun",
+   "ru": "роль; функция",
+   "def": "The function, purpose, or position that a person or thing has within a particular situation, system, or organization.",
+   "examples": [
+    "Parental involvement plays an important role in children's academic development.",
+    "The study investigated the role of technology in improving workplace productivity."
+   ],
+   "forms": [
+    {
+     "w": "role",
+     "pos": "noun",
+     "ru": "роль; функция"
+    }
+   ]
+  },
+  {
+   "id": "section",
+   "sublist": 1,
+   "word": "section",
+   "pos": "noun",
+   "ru": "раздел; секция; часть",
+   "def": "One of the separate parts into which a document, organization, area, or larger structure is divided.",
+   "examples": [
+    "The final section of the report presents the study's main conclusions.",
+    "The questionnaire was divided into three sections to make it easier to complete."
+   ],
+   "forms": [
+    {
+     "w": "section",
+     "pos": "noun",
+     "ru": "раздел; секция; часть"
+    },
+    {
+     "w": "sectioned",
+     "pos": "adjective / verb (past participle)",
+     "ru": "разделённый на секции; разделённый на части"
+    }
+   ]
+  },
+  {
+   "id": "sector",
+   "sublist": 1,
+   "word": "sector",
+   "pos": "noun",
+   "ru": "сектор; отрасль; сфера",
+   "def": "A distinct part of an economy, society, or area of activity, often consisting of related organizations or industries.",
+   "examples": [
+    "The technology sector has experienced considerable growth over the past decade.",
+    "Governments often invest in the education sector to improve long-term economic development."
+   ],
+   "forms": [
+    {
+     "w": "sector",
+     "pos": "noun",
+     "ru": "сектор; отрасль; сфера"
+    }
+   ]
+  },
+  {
+   "id": "significance",
+   "sublist": 1,
+   "word": "significance",
+   "pos": "noun",
+   "ru": "значимость; важность; значение",
+   "def": "The importance, meaning, or value of something; in statistics, the degree to which a result is unlikely to have occurred by chance under a specified statistical model.",
+   "examples": [
+    "The findings highlight the significance of early childhood education.",
+    "The treatment group showed a significant improvement compared with the control group."
+   ],
+   "forms": [
+    {
+     "w": "significance",
+     "pos": "noun",
+     "ru": "значимость; важность; значение"
+    },
+    {
+     "w": "signify",
+     "pos": "verb",
+     "ru": "означать; свидетельствовать о"
+    },
+    {
+     "w": "significantly",
+     "pos": "adverb",
+     "ru": "значительно; существенно"
+    },
+    {
+     "w": "significant",
+     "pos": "adjective",
+     "ru": "значительный; существенный"
+    },
+    {
+     "w": "signifying",
+     "pos": "verb (present participle)",
+     "ru": "означающий; свидетельствующий о"
+    },
+    {
+     "w": "insignificant",
+     "pos": "adjective",
+     "ru": "незначительный; несущественный"
+    },
+    {
+     "w": "insignificantly",
+     "pos": "adverb",
+     "ru": "незначительно; несущественно"
+    }
+   ]
+  },
+  {
+   "id": "similarities",
+   "sublist": 1,
+   "word": "similarities",
+   "pos": "plural noun",
+   "ru": "сходства; общие черты",
+   "def": "Features, qualities, or characteristics that two or more people, objects, or situations have in common.",
+   "examples": [
+    "The researchers identified several similarities between the two educational systems.",
+    "Although the studies used different methods, their conclusions were similarly structured."
+   ],
+   "forms": [
+    {
+     "w": "similarities",
+     "pos": "plural noun",
+     "ru": "сходства; общие черты"
+    },
+    {
+     "w": "similarity",
+     "pos": "noun",
+     "ru": "сходство; подобие"
+    },
+    {
+     "w": "similarly",
+     "pos": "adverb",
+     "ru": "аналогично; подобным образом"
+    },
+    {
+     "w": "similar",
+     "pos": "adjective",
+     "ru": "похожий; сходный"
+    },
+    {
+     "w": "dissimilar",
+     "pos": "adjective",
+     "ru": "непохожий; отличающийся"
+    }
+   ]
+  },
+  {
+   "id": "source",
+   "sublist": 1,
+   "word": "source",
+   "pos": "noun",
+   "ru": "источник; первоисточник",
+   "def": "A person, document, place, or thing from which information, evidence, materials, or something else originates.",
+   "examples": [
+    "Academic researchers should evaluate the reliability of every source before using it.",
+    "The report cites several sources to support its main argument."
+   ],
+   "forms": [
+    {
+     "w": "source",
+     "pos": "noun",
+     "ru": "источник; первоисточник"
+    }
+   ]
+  },
+  {
+   "id": "specification",
+   "sublist": 1,
+   "word": "specification",
+   "pos": "noun",
+   "ru": "спецификация; технические требования; подробное описание",
+   "def": "A detailed description of the requirements, characteristics, or features that something must have.",
+   "examples": [
+    "The project specification clearly defines the system's functional requirements.",
+    "The researchers focused specifically on the effects of sleep deprivation on memory."
+   ],
+   "forms": [
+    {
+     "w": "specification",
+     "pos": "noun",
+     "ru": "спецификация; технические требования; подробное описание"
+    },
+    {
+     "w": "specificity",
+     "pos": "noun",
+     "ru": "конкретность; специфичность"
+    },
+    {
+     "w": "specifics",
+     "pos": "plural noun",
+     "ru": "подробности; конкретные детали"
+    },
+    {
+     "w": "specifically",
+     "pos": "adverb",
+     "ru": "конкретно; в частности; специально"
+    },
+    {
+     "w": "specific",
+     "pos": "adjective",
+     "ru": "конкретный; определённый; специфический"
+    }
+   ]
+  },
+  {
+   "id": "structure",
+   "sublist": 1,
+   "word": "structure",
+   "pos": "noun",
+   "ru": "структура; строение; организация",
+   "def": "The way in which the parts of something are arranged, organized, or connected.",
+   "examples": [
+    "The structure of the essay should allow the reader to follow the argument logically.",
+    "The organization restructured its departments to improve operational efficiency."
+   ],
+   "forms": [
+    {
+     "w": "structure",
+     "pos": "noun",
+     "ru": "структура; строение; организация"
+    },
+    {
+     "w": "structure",
+     "pos": "verb",
+     "ru": "структурировать; организовывать"
+    },
+    {
+     "w": "structural",
+     "pos": "adjective",
+     "ru": "структурный; относящийся к структуре"
+    },
+    {
+     "w": "structured",
+     "pos": "adjective / verb (past participle)",
+     "ru": "структурированный; организованный"
+    },
+    {
+     "w": "restructure",
+     "pos": "verb",
+     "ru": "реструктурировать; перестраивать"
+    },
+    {
+     "w": "restructured",
+     "pos": "adjective / verb (past participle)",
+     "ru": "реструктурированный; перестроенный"
+    },
+    {
+     "w": "restructures",
+     "pos": "verb (third-person singular)",
+     "ru": "реструктурирует; перестраивает"
+    },
+    {
+     "w": "restructuring",
+     "pos": "noun / verb (present participle)",
+     "ru": "реструктуризация; перестройка"
+    },
+    {
+     "w": "unstructured",
+     "pos": "adjective",
+     "ru": "неструктурированный; неорганизованный"
+    }
+   ]
+  },
+  {
+   "id": "theorist",
+   "sublist": 1,
+   "word": "theorist",
+   "pos": "noun",
+   "ru": "теоретик",
+   "def": "A person who develops, studies, or explains theories about a subject or a system of ideas.",
+   "examples": [
+    "The theorist proposed a new explanation for the relationship between language and thought.",
+    "Although the approach is theoretically sound, further research is needed to confirm its effectiveness."
+   ],
+   "forms": [
+    {
+     "w": "theorist",
+     "pos": "noun",
+     "ru": "теоретик"
+    },
+    {
+     "w": "theory",
+     "pos": "noun",
+     "ru": "теория"
+    },
+    {
+     "w": "theoretically",
+     "pos": "adverb",
+     "ru": "теоретически"
+    },
+    {
+     "w": "theoretical",
+     "pos": "adjective",
+     "ru": "теоретический"
+    }
+   ]
+  },
+  {
+   "id": "variability",
+   "sublist": 1,
+   "word": "variability",
+   "pos": "noun",
+   "ru": "изменчивость; вариативность; степень разброса",
+   "def": "The extent to which something differs, changes, or takes different values across observations, conditions, or periods.",
+   "examples": [
+    "The researchers observed considerable variability in test scores among participants.",
+    "Individual variability should be taken into account when interpreting the results of the experiment."
+   ],
+   "forms": [
+    {
+     "w": "variability",
+     "pos": "noun",
+     "ru": "изменчивость; вариативность; степень разброса"
+    },
+    {
+     "w": "variables",
+     "pos": "plural noun",
+     "ru": "переменные"
+    },
+    {
+     "w": "variance",
+     "pos": "noun",
+     "ru": "дисперсия; отклонение"
+    },
+    {
+     "w": "variant",
+     "pos": "noun / adjective",
+     "ru": "вариант; вариантный"
+    },
+    {
+     "w": "variation",
+     "pos": "noun",
+     "ru": "изменение; вариация; различие"
+    },
+    {
+     "w": "vary",
+     "pos": "verb",
+     "ru": "варьироваться; различаться; изменять"
+    },
+    {
+     "w": "variably",
+     "pos": "adverb",
+     "ru": "изменчиво; по-разному"
+    },
+    {
+     "w": "variable",
+     "pos": "noun / adjective",
+     "ru": "переменная; изменчивый"
+    },
+    {
+     "w": "varied",
+     "pos": "adjective / verb (past tense or past participle)",
+     "ru": "разнообразный; изменившийся"
+    },
+    {
+     "w": "varying",
+     "pos": "adjective / verb (present participle)",
+     "ru": "различающийся; меняющийся"
+    },
+    {
+     "w": "invariable",
+     "pos": "adjective",
+     "ru": "неизменный; постоянный"
+    },
+    {
+     "w": "invariably",
+     "pos": "adverb",
+     "ru": "неизменно; всегда"
+    }
+   ]
   }
  ]
 }
