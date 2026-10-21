@@ -414,8 +414,8 @@ async function vocabRun(t){
 }
 function vocab(){
  closePop();
- app.innerHTML=`<h1>VOCABULARY ALPHA</h1><button class="btn tbtn" id="mv">My vocabulary (${V.length})</button><button class="btn tbtn" id="dc">Dictionary</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
- document.getElementById("mv").onclick=()=>go(myVocab);document.getElementById("dc").onclick=()=>go(dict);document.getElementById("hm").onclick=goBack;
+ app.innerHTML=`<h1>VOCABULARY ALPHA</h1><button class="btn tbtn" id="mv">My vocabulary (${V.length})</button><button class="btn tbtn" id="dc">Dictionary</button><button class="btn tbtn" id="av">Academic vocabulary</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ document.getElementById("mv").onclick=()=>go(myVocab);document.getElementById("dc").onclick=()=>go(dict);document.getElementById("av").onclick=()=>go(acad);document.getElementById("hm").onclick=goBack;
 }
 function dict(){
  app.innerHTML=`<h1>Dictionary</h1><form class="sbar" id="sf"><input id="sq" type="search" placeholder="Type an English word" maxlength="40" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="English word"><button type="submit" aria-label="Search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button></form><div id="res"></div><div class="row"><button class="btn alt" id="bk">Back</button></div>`;
@@ -433,6 +433,63 @@ function dict(){
    document.getElementById("ad").onclick=ev=>{V.push({word:r.base,pos:r.pos,translation:tr.slice(0,60),example:r.example,example_ru:r.example_ru});saveV();ev.target.textContent="Added \u2713";ev.target.disabled=true};
   }catch(err){res.innerHTML=`<div class="card warn">${err&&err.message=="na"?"The AI isn't connected yet.":"Couldn't get a translation. Try again."}</div>`}
  };
+}
+// ===== ACADEMIC VOCABULARY =====
+let AW=null;
+async function loadAcad(){
+ if(AW)return AW;
+ const r=await fetch("academic-words.json?v=1");
+ if(!r.ok)throw new Error("http "+r.status);
+ const j=await r.json();
+ if(!j||!Array.isArray(j.words))throw new Error("bad data");
+ return AW=j.words;
+}
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+function comingSoon(b){
+ if(b.dataset.cs)return;
+ const t=b.innerHTML;b.dataset.cs="1";b.textContent="Coming soon";
+ setTimeout(()=>{b.innerHTML=t;delete b.dataset.cs},1500);
+}
+function acad(){
+ app.innerHTML=`<h1>Academic vocabulary</h1><p class="muted">Study the academic word list for the TOEFL.</p><button class="btn tbtn" id="ap">Start practice</button><button class="btn tbtn" id="ae">Explore the word list</button><div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ document.getElementById("ap").onclick=e=>comingSoon(e.currentTarget);
+ document.getElementById("ae").onclick=()=>go(acadLists);
+ document.getElementById("bk").onclick=goBack;
+}
+function acadLists(){
+ app.innerHTML=`<h1>Word list</h1><p class="muted">Choose a sublist. Sublist 1 has the most frequent words.</p>${[1,2,3,4,5,6,7,8,9,10].map(n=>n==1?`<button class="btn tbtn" data-n="1">Sublist 1</button>`:`<button class="btn alt tb2" data-n="${n}" style="opacity:.6">Sublist ${n}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ app.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>+b.dataset.n==1?go(()=>acadList(1)):comingSoon(b));
+ document.getElementById("bk").onclick=goBack;
+}
+async function acadList(n){
+ const tok=GEN;
+ app.innerHTML=`<h1>Sublist ${n}</h1><div class="card"><span class="muted">Loading\u2026</span></div>`;
+ try{await loadAcad()}catch(e){
+  if(tok!==GEN)return;
+  app.innerHTML=`<h1>Sublist ${n}</h1><div class="card warn">Couldn't load the word list. Check your connection and try again.</div><div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+  document.getElementById("bk").onclick=goBack;return;
+ }
+ if(tok!==GEN)return;
+ const ws=AW.filter(w=>w.sublist==n);
+ const rel=w=>{const r=w.forms.filter(f=>f.w.toLowerCase()!=w.word.toLowerCase()).map(f=>f.w);return r.length?`<span class="muted" style="display:block;font-size:14px">${esc(r.slice(0,4).join(", ")+(r.length>4?", \u2026":""))}</span>`:""};
+ app.innerHTML=`<h1>Sublist ${n}</h1><p class="muted">${ws.length} word families. Tap a word to see the full entry.</p>${ws.map((w,k)=>`<button class="opt" data-k="${k}"><span style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="display:block"><b style="font-size:18px">${esc(w.word)}</b> <span class="muted">${esc(w.pos)}</span><span style="display:block">${esc(w.ru)}</span>${rel(w)}</span><span style="color:var(--teal);font-size:26px" aria-hidden="true">\u203A</span></span></button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ app.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>go(()=>acadWord(n,+b.dataset.k)));
+ document.getElementById("bk").onclick=goBack;
+}
+function acadWord(n,k){
+ const ws=(AW||[]).filter(w=>w.sublist==n),w=ws[k];
+ if(!w){swap(()=>acadList(n));return}
+ scrollTo(0,0);
+ const fam=w.forms.map(f=>`<div style="padding:8px 0;border-top:1px solid var(--line)"><b>${esc(f.w)}</b> <span class="muted">${esc(f.pos)}</span>${f.w.toLowerCase()==w.word.toLowerCase()?' <span class="ok">\u00B7 main word</span>':""}${f.ru?`<div>${esc(f.ru)}</div>`:""}</div>`).join("");
+ app.innerHTML=`<h1 style="margin-bottom:4px">${esc(w.word)}</h1><p style="margin:0 0 12px"><span class="muted">Sublist ${n} \u00B7 ${esc(cap(w.pos))}</span><br><span class="muted">Not learned</span></p>
+ <div class="card"><div class="muted">Meaning</div><div class="tr" style="font:700 20px Cambria,Georgia,serif;color:var(--teal)">${esc(w.ru)}</div></div>
+ <div class="card"><div class="muted">Definition</div><p style="margin:4px 0 0">${esc(w.def)}</p></div>
+ <div class="card"><div class="muted">${w.examples.length>1?"Examples":"Example"}</div>${w.examples.map(x=>`<p style="margin:8px 0 0">${wrap(x)}</p>`).join("")}</div>
+ <div class="card"><div class="muted" style="margin-bottom:4px">Word family</div>${fam}</div>
+ <div class="row"><button class="btn alt" id="ml">Mark as learned</button><button class="btn" id="nx" ${k>=ws.length-1?"disabled":""}>Next word \u203A</button></div>
+ <div class="row"><button class="btn alt" id="bk">Back to the list</button></div>`;
+ document.getElementById("nx").onclick=()=>swap(()=>acadWord(n,k+1));
+ document.getElementById("bk").onclick=goBack;
 }
 function soon(){app.innerHTML=`<h1>Test 3</h1><div class="card">Coming later.</div><button class="btn" id="hm">Back to main screen</button>`;document.getElementById("hm").onclick=home}
 function intro(name,rnd){
