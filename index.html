@@ -484,7 +484,7 @@ async function acadList(n){
  if(tok!==GEN)return;
  const ws=AW.filter(w=>w.sublist==n);
  const rel=w=>{const r=w.forms.filter(f=>f.w.toLowerCase()!=w.word.toLowerCase()).map(f=>f.w);return r.length?`<span class="muted" style="display:block;font-size:14px">${esc(r.slice(0,4).join(", ")+(r.length>4?", \u2026":""))}</span>`:""};
- app.innerHTML=`<h1>Sublist ${n}</h1><p class="muted">${ws.length} word families. Tap a word to see the full entry.</p>${ws.map((w,k)=>`<button class="opt" data-k="${k}"><span style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="display:block"><b style="font-size:18px">${esc(w.word)}</b> <span class="muted">${esc(w.pos)}</span><span style="display:block">${esc(w.ru)}</span>${rel(w)}</span><span style="color:var(--teal);font-size:26px" aria-hidden="true">\u203A</span></span></button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ app.innerHTML=`<h1>Sublist ${n}</h1><p class="muted">${ws.length} word families. Tap a word to see the full entry.</p>${ws.map((w,k)=>`<button class="opt" data-k="${k}"><span style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="display:block"><b style="font-size:18px">${esc(w.word)}</b>${isL(w.id)?' <span class="ok" role="img" aria-label="Learned">\u2713</span>':""} <span class="muted">${esc(w.pos)}</span><span style="display:block">${esc(w.ru)}</span>${rel(w)}</span><span style="color:var(--teal);font-size:26px" aria-hidden="true">\u203A</span></span></button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
  app.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>go(()=>acadWord(n,+b.dataset.k)));
  document.getElementById("bk").onclick=goBack;
 }
@@ -556,13 +556,14 @@ function saveRun(){
  P=P.slice(-200);saveP();
 }
 function progress(){
- const pc=(r,t)=>t?Math.round(100*r/t):0;
+ const tok=GEN,pc=(r,t)=>t?Math.round(100*r/t):0;
  const rows=[...P].reverse().map(x=>{
   const a=x.s[0],b=x.s[1],tr=a.r+b.r,tt=a.t+b.t,p=pc(tr,tt);
   const when=new Date(x.d).toLocaleString(undefined,{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
   return `<div class="card"><b>${esc(x.name)}</b> <span class="muted">${esc(when)}</span><div class="big" style="font-size:28px;margin:6px 0">${tr}/${tt} <span class="muted" style="font:600 16px Calibri,system-ui,sans-serif">(${p}%)</span></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="width:${p}%;height:100%;background:var(--teal)"></div></div><p style="margin:8px 0 0">Module 1: ${a.r}/${a.t} (${pc(a.r,a.t)}%)<br>Module 2${x.level?" ("+esc(x.level)+" version)":""}: ${b.r}/${b.t} (${pc(b.r,b.t)}%)</p></div>`}).join("");
- app.innerHTML=`<h1>My progress</h1><div class="card"><div class="big">${P.length}</div><p class="muted" style="margin:6px 0 0">tests finished</p></div><div class="card"><div class="big">${V.length}</div><p class="muted" style="margin:6px 0 0">words saved</p></div><h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Score history</h2>${rows||'<div class="card">No finished tests yet. Finish a Saved test or a Random exam and your results will appear here.</div>'}<p class="muted">Your progress is saved in this browser on this device only.</p><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.innerHTML=`<h1>My progress</h1><div class="card"><div class="big">${P.length}</div><p class="muted" style="margin:6px 0 0">tests finished</p></div><div class="card"><div class="big">${V.length}</div><p class="muted" style="margin:6px 0 0">words saved</p></div><div class="card"><div class="big" id="apn">${Object.keys(AL).length}</div><p class="muted" style="margin:6px 0 0">academic words learned</p></div><h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Score history</h2>${rows||'<div class="card">No finished tests yet. Finish a Saved test or a Random exam and your results will appear here.</div>'}<p class="muted">Your progress is saved in this browser on this device only.</p><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("hm").onclick=goBack;
+ loadAcad().then(()=>{const e=document.getElementById("apn");if(tok===GEN&&e)e.textContent=AW.filter(w=>isL(w.id)).length}).catch(()=>{});
 }
 function endMod(){
  clearInterval(S.tick);
