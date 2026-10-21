@@ -436,6 +436,9 @@ function dict(){
 }
 // ===== ACADEMIC VOCABULARY =====
 let AW=null;
+let AL={};try{const a=JSON.parse(localStorage.getItem("toefl_academic")||"{}");if(a&&a.learned&&typeof a.learned=="object"&&!Array.isArray(a.learned))AL=a.learned}catch(e){}
+const saveAL=()=>{try{localStorage.setItem("toefl_academic",JSON.stringify({learned:AL}))}catch(e){}};
+const isL=id=>Object.prototype.hasOwnProperty.call(AL,id);
 async function loadAcad(){
  if(AW)return AW;
  const r=await fetch("academic-words.json?v=1");
@@ -457,9 +460,18 @@ function acad(){
  document.getElementById("bk").onclick=goBack;
 }
 function acadLists(){
- app.innerHTML=`<h1>Word list</h1><p class="muted">Choose a sublist. Sublist 1 has the most frequent words.</p>${[1,2,3,4,5,6,7,8,9,10].map(n=>n==1?`<button class="btn tbtn" data-n="1">Sublist 1</button>`:`<button class="btn alt tb2" data-n="${n}" style="opacity:.6">Sublist ${n}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ const tok=GEN;
+ app.innerHTML=`<h1>Word list</h1><div style="margin:0 0 16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b>Your progress</b><span class="muted" id="apt">\u2026</span></div><div role="progressbar" aria-label="Academic vocabulary progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="apb" style="height:12px;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden"><div id="apf" style="width:0;height:100%;background:var(--teal);transition:width .6s ease"></div></div></div><p class="muted">Choose a sublist. Sublist 1 has the most frequent words.</p>${[1,2,3,4,5,6,7,8,9,10].map(n=>n==1?`<button class="btn tbtn" data-n="1">Sublist 1</button>`:`<button class="btn alt tb2" data-n="${n}" style="opacity:.6">Sublist ${n}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
  app.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>+b.dataset.n==1?go(()=>acadList(1)):comingSoon(b));
  document.getElementById("bk").onclick=goBack;
+ loadAcad().then(()=>{
+  const t=document.getElementById("apt"),f=document.getElementById("apf");
+  if(tok!==GEN||!t||!f)return;
+  const tot=AW.length,c=AW.filter(w=>isL(w.id)).length,p=tot?100*c/tot:0;
+  t.textContent=c+" out of "+tot+" learned";
+  document.getElementById("apb").setAttribute("aria-valuenow",Math.round(p));
+  requestAnimationFrame(()=>{f.style.width=c?"max(6px,"+p+"%)":"0"});
+ }).catch(()=>{const t=document.getElementById("apt");if(tok===GEN&&t)t.textContent="\u2014"});
 }
 async function acadList(n){
  const tok=GEN;
@@ -481,7 +493,7 @@ function acadWord(n,k){
  if(!w){swap(()=>acadList(n));return}
  scrollTo(0,0);
  const fam=w.forms.map(f=>`<div style="padding:8px 0;border-top:1px solid var(--line)"><b>${esc(f.w)}</b> <span class="muted">${esc(f.pos)}</span>${f.w.toLowerCase()==w.word.toLowerCase()?' <span class="ok">\u00B7 main word</span>':""}${f.ru?`<div>${esc(f.ru)}</div>`:""}</div>`).join("");
- app.innerHTML=`<h1 style="margin-bottom:4px">${esc(w.word)}</h1><p style="margin:0 0 12px"><span class="muted">Sublist ${n} \u00B7 ${esc(cap(w.pos))}</span><br><span class="muted">Not learned</span></p>
+ app.innerHTML=`<h1 style="margin-bottom:4px">${esc(w.word)}</h1><p style="margin:0 0 12px"><span class="muted">Sublist ${n} \u00B7 ${esc(cap(w.pos))}</span><br><span id="als" class="muted">Not learned</span></p>
  <div class="card"><div class="muted">Meaning</div><div class="tr" style="font:700 20px Cambria,Georgia,serif;color:var(--teal)">${esc(w.ru)}</div></div>
  <div class="card"><div class="muted">Definition</div><p style="margin:4px 0 0">${esc(w.def)}</p></div>
  <div class="card"><div class="muted">${w.examples.length>1?"Examples":"Example"}</div>${w.examples.map(x=>`<p style="margin:8px 0 0">${wrap(x)}</p>`).join("")}</div>
@@ -490,6 +502,10 @@ function acadWord(n,k){
  <div class="row"><button class="btn alt" id="bk">Back to the list</button></div>`;
  document.getElementById("nx").onclick=()=>swap(()=>acadWord(n,k+1));
  document.getElementById("bk").onclick=goBack;
+ const st=document.getElementById("als"),ml=document.getElementById("ml");
+ const paint=()=>{const L=isL(w.id);st.textContent=L?"Learned \u2713":"Not learned";st.className=L?"ok":"muted";ml.textContent=L?"Learned \u2713":"Mark as learned";ml.style.borderColor=L?"var(--teal)":"";ml.style.color=L?"var(--teal)":"";ml.setAttribute("aria-pressed",L)};
+ ml.onclick=()=>{if(isL(w.id))delete AL[w.id];else AL[w.id]=Date.now();saveAL();paint()};
+ paint();
 }
 function soon(){app.innerHTML=`<h1>Test 3</h1><div class="card">Coming later.</div><button class="btn" id="hm">Back to main screen</button>`;document.getElementById("hm").onclick=home}
 function intro(name,rnd){
