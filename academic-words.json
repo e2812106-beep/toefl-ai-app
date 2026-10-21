@@ -1,0 +1,335 @@
+{
+ "version": 1,
+ "words": [
+  {
+   "id": "analysis",
+   "sublist": 1,
+   "word": "analysis",
+   "pos": "noun",
+   "ru": "анализ",
+   "def": "The detailed examination of something in order to understand it or explain how it works.",
+   "examples": [
+    "The analysis of the data revealed a significant difference between the two groups.",
+    "Students must write an analysis of the author's main argument."
+   ],
+   "forms": [
+    {
+     "w": "analysis",
+     "pos": "noun",
+     "ru": "анализ"
+    },
+    {
+     "w": "analyst",
+     "pos": "noun",
+     "ru": "аналитик"
+    },
+    {
+     "w": "analyse",
+     "pos": "verb",
+     "ru": "анализировать"
+    },
+    {
+     "w": "analytic / analytical",
+     "pos": "adjective",
+     "ru": "аналитический"
+    },
+    {
+     "w": "analytically",
+     "pos": "adverb",
+     "ru": "аналитически"
+    }
+   ]
+  },
+  {
+   "id": "approach",
+   "sublist": 1,
+   "word": "approach",
+   "pos": "noun / verb",
+   "ru": "подход; приближаться",
+   "def": "A way of dealing with a problem or situation; to deal with something in a particular way.",
+   "examples": [
+    "The researchers used a different approach to studying language acquisition.",
+    "We need to approach this problem from a new perspective."
+   ],
+   "forms": [
+    {
+     "w": "approach",
+     "pos": "noun / verb",
+     "ru": "подходить к проблеме; приближаться"
+    },
+    {
+     "w": "approachable",
+     "pos": "adjective",
+     "ru": "открытый для общения, доступный"
+    },
+    {
+     "w": "unapproachable",
+     "pos": "adjective",
+     "ru": "необщительный, недоступный"
+    }
+   ]
+  },
+  {
+   "id": "area",
+   "sublist": 1,
+   "word": "area",
+   "pos": "noun",
+   "ru": "область; сфера; территория",
+   "def": "A particular subject, activity, or field of study; also, a specific part of a place or region.",
+   "examples": [
+    "Environmental protection is an important area of scientific research.",
+    "The university plans to invest more money in the area of artificial intelligence."
+   ],
+   "forms": [
+    {
+     "w": "area",
+     "pos": "noun",
+     "ru": "область, сфера, площадь"
+    }
+   ]
+  },
+  {
+   "id": "assessment",
+   "sublist": 1,
+   "word": "assessment",
+   "pos": "noun",
+   "ru": "оценка; оценивание",
+   "def": "The process of evaluating something to understand its quality, value, importance, or performance.",
+   "examples": [
+    "The assessment of students' progress takes place at the end of each semester.",
+    "The government conducted an assessment of the environmental impact of the project."
+   ],
+   "forms": [
+    {
+     "w": "assessment",
+     "pos": "noun",
+     "ru": "оценка; оценивание"
+    },
+    {
+     "w": "assess",
+     "pos": "verb",
+     "ru": "оценивать"
+    },
+    {
+     "w": "assessable",
+     "pos": "adjective",
+     "ru": "поддающийся оценке"
+    },
+    {
+     "w": "unassessed",
+     "pos": "adjective",
+     "ru": "неоценённый"
+    },
+    {
+     "w": "reassess",
+     "pos": "verb",
+     "ru": "переоценивать"
+    },
+    {
+     "w": "reassessment",
+     "pos": "noun",
+     "ru": "повторная оценка"
+    }
+   ]
+  },
+  {
+   "id": "assume",
+   "sublist": 1,
+   "word": "assume",
+   "pos": "verb",
+   "ru": "предполагать; допускать",
+   "def": "To accept something as true without having definite proof.",
+   "examples": [
+    "Researchers should not assume that all participants will respond in the same way.",
+    "We assumed the experiment would be successful, but the results were different."
+   ],
+   "forms": [
+    {
+     "w": "assume",
+     "pos": "verb",
+     "ru": "предполагать"
+    },
+    {
+     "w": "assumption",
+     "pos": "noun",
+     "ru": "предположение"
+    }
+   ]
+  },
+  {
+   "id": "authority",
+   "sublist": 1,
+   "word": "authority",
+   "pos": "noun",
+   "ru": "власть; полномочия; авторитет",
+   "def": "The power or right to make decisions, or a person or organisation with recognised knowledge or power in a particular field.",
+   "examples": [
+    "Local authorities introduced new regulations to reduce air pollution.",
+    "The professor is considered an authority on modern European history."
+   ],
+   "forms": [
+    {
+     "w": "authority",
+     "pos": "noun",
+     "ru": "власть, полномочия, авторитет"
+    },
+    {
+     "w": "authorities",
+     "pos": "plural noun",
+     "ru": "власти, официальные органы"
+    },
+    {
+     "w": "authoritative",
+     "pos": "adjective",
+     "ru": "авторитетный; достоверный"
+    }
+   ]
+  },
+  {
+   "id": "available",
+   "sublist": 1,
+   "word": "available",
+   "pos": "adjective",
+   "ru": "доступный; имеющийся в наличии",
+   "def": "Able to be used, obtained, or accessed; free to do something.",
+   "examples": [
+    "The data available to researchers was insufficient to support their conclusions.",
+    "Several scholarships are available to international students."
+   ],
+   "forms": [
+    {
+     "w": "available",
+     "pos": "adjective",
+     "ru": "доступный; имеющийся"
+    },
+    {
+     "w": "availability",
+     "pos": "noun",
+     "ru": "доступность; наличие"
+    },
+    {
+     "w": "unavailable",
+     "pos": "adjective",
+     "ru": "недоступный; отсутствующий"
+    }
+   ]
+  },
+  {
+   "id": "benefit",
+   "sublist": 1,
+   "word": "benefit",
+   "pos": "noun / verb",
+   "ru": "польза; выгода; приносить пользу",
+   "def": "An advantage or positive result; to receive an advantage or help from something.",
+   "examples": [
+    "Regular physical activity has significant benefits for mental health.",
+    "Students can benefit from receiving feedback on their academic writing."
+   ],
+   "forms": [
+    {
+     "w": "benefit",
+     "pos": "noun / verb",
+     "ru": "польза; приносить пользу"
+    },
+    {
+     "w": "beneficiary",
+     "pos": "noun",
+     "ru": "получатель выгоды или помощи"
+    },
+    {
+     "w": "beneficial",
+     "pos": "adjective",
+     "ru": "полезный, благоприятный"
+    }
+   ]
+  },
+  {
+   "id": "concept",
+   "sublist": 1,
+   "word": "concept",
+   "pos": "noun",
+   "ru": "понятие; концепция",
+   "def": "An abstract idea or general understanding of something.",
+   "examples": [
+    "The concept of social responsibility has become increasingly important in modern business.",
+    "Students often find the concept of supply and demand difficult to understand."
+   ],
+   "forms": [
+    {
+     "w": "concept",
+     "pos": "noun",
+     "ru": "понятие, концепция"
+    },
+    {
+     "w": "conception",
+     "pos": "noun",
+     "ru": "представление; понимание; замысел"
+    },
+    {
+     "w": "conceptualisation",
+     "pos": "noun",
+     "ru": "концептуализация"
+    },
+    {
+     "w": "conceptualise",
+     "pos": "verb",
+     "ru": "концептуализировать; формировать представление"
+    },
+    {
+     "w": "conceptually",
+     "pos": "adverb",
+     "ru": "концептуально"
+    },
+    {
+     "w": "conceptual",
+     "pos": "adjective",
+     "ru": "концептуальный"
+    }
+   ]
+  },
+  {
+   "id": "consistent",
+   "sublist": 1,
+   "word": "consistent",
+   "pos": "adjective",
+   "ru": "последовательный; согласованный; постоянный",
+   "def": "Always behaving or happening in a similar way; not containing contradictions or differences.",
+   "examples": [
+    "The researchers obtained consistent results across several experiments.",
+    "To improve your English, you need to study consistently rather than only before exams."
+   ],
+   "forms": [
+    {
+     "w": "consistent",
+     "pos": "adjective",
+     "ru": "последовательный; согласованный; постоянный"
+    },
+    {
+     "w": "consistency",
+     "pos": "noun",
+     "ru": "последовательность; согласованность"
+    },
+    {
+     "w": "consist",
+     "pos": "verb",
+     "ru": "состоять из"
+    },
+    {
+     "w": "consistently",
+     "pos": "adverb",
+     "ru": "последовательно; постоянно"
+    },
+    {
+     "w": "inconsistency / inconsistencies",
+     "pos": "noun",
+     "ru": "несоответствие / несоответствия"
+    },
+    {
+     "w": "inconsistent",
+     "pos": "adjective",
+     "ru": "непоследовательный; противоречивый"
+    }
+   ]
+  }
+ ]
+}
