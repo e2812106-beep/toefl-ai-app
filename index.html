@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TOEFL Reading Practice 2026</title>
 <style>
-:root{--bg:#f4f6f9;--surface:#fff;--ink:#14284b;--muted:#5b6b86;--teal:#1f8a8a;--gold:#c9a227;--line:#d5dbe6;--bad:#b3402f;
+:root{--bg:#f4f6f9;--surface:#fff;--ink:#14284b;--muted:#5b6b86;--teal:#1f8a8a;--gold:#c9a227;--line:#d5dbe6;--bad:#b3402f;--dg:#0f5c5c;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e}}
-:root[data-theme="dark"]{--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e;--dg:#7fd6d6}}
+:root[data-theme="dark"]{--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e;--dg:#7fd6d6}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Calibri,"Segoe UI",system-ui,sans-serif}
 main{max-width:720px;margin:0 auto;padding:16px}
@@ -45,9 +45,39 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .sn.good{background:color-mix(in srgb,#2e9e5b 35%,transparent)}.sn.bad{background:color-mix(in srgb,var(--bad) 30%,transparent)}.blank.ok{border-bottom-color:#2e9e5b}.blank.bad{border-bottom-color:var(--bad)}
 .opt.good{border-color:#2e9e5b;background:color-mix(in srgb,#2e9e5b 24%,var(--surface))}.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,var(--surface))}
 .hl{background:color-mix(in srgb,var(--gold) 40%,transparent);border-radius:3px}
+.mc{display:flex;align-items:center;gap:12px;width:100%;margin:0 0 10px;padding:13px 12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;font:inherit;text-align:left;cursor:pointer}
+.mc:hover{border-color:var(--teal)}.mc:focus-visible{outline:3px solid var(--gold);outline-offset:2px}.mc.dim{opacity:.6}
+.mb{flex:none;width:44px;height:44px;border-radius:11px;background:color-mix(in srgb,var(--teal) 14%,var(--surface));color:var(--dg);display:flex;align-items:center;justify-content:center}
+.mi,.ma{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.mi{width:24px;height:24px;stroke:currentColor;stroke-width:1.8}
+.ma{flex:none;width:20px;height:20px;stroke:var(--teal);stroke-width:2}
+.mn{font:700 26px/1 Cambria,Georgia,serif}
+.mt{flex:1;min-width:0}
+.mh{display:block;font-weight:700;font-size:18px;line-height:1.2;color:var(--dg)}
+.md{display:block;font-size:14px;line-height:1.3;color:var(--muted);margin-top:2px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-exam" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16"/></symbol>
+<symbol id="i-ai" viewBox="0 0 24 24"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15l4-5 3 3 5-6"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M4 7h3l10 10h3"/><path d="M4 17h3l3-3"/><path d="M14 10l3-3h3"/><path d="M18 5l2 2-2 2"/><path d="M18 15l2 2-2 2"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+<symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 4h10a1 1 0 0 1 1 1v15l-6-4-6 4V5a1 1 0 0 1 1-1z"/></symbol>
+<symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="14" height="12" rx="2"/><path d="M7 4h12a2 2 0 0 1 2 2v10"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="i-lang" viewBox="0 0 24 24"><path d="M4 5h8M8 3v2M6 5c0 4 2 7 5 8M10 5c0 3-2 6-5 8M13 20l4-9 4 9M14.5 17h5"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="i-go" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+</svg>
 <main id="app" aria-live="polite"></main>
 <script>
 // ===== SETTINGS =====
@@ -202,6 +232,8 @@ function score(){let r=0,t=0;S.items.forEach((it,i)=>{const a=S.ans[i];
  else it.bl.forEach((b,k)=>{t++;if(a&&(a[k]||"").trim().toLowerCase()==b.ans.toLowerCase())r++})});return{r,t}}
 const done=i=>{const a=S.ans[i],it=S.items[i];return it.k=="mc"?a!=null:!!a&&it.bl.every((b,k)=>(a[k]||"").length==b.ans.length)};
 
+// Menu card: ic is an icon name, or a number (shown big and bold instead of an icon)
+const mcard=(attrs,ic,title,desc,cls)=>`<button class="mc${cls||""}" ${attrs}><span class="mb">${/^\d+$/.test(ic)?`<b class="mn">${ic}</b>`:`<svg class="mi" aria-hidden="true"><use href="#i-${ic}"/></svg>`}</span><span class="mt"><span class="mh">${esc(title)}</span>${desc?`<span class="md">${esc(desc)}</span>`:""}</span><svg class="ma" aria-hidden="true"><use href="#i-go"/></svg></button>`;
 // ===== NAVIGATION (browser back button) =====
 let R=[],idx=0,guard=false,ign=0,GEN=0;
 const goBack=()=>history.back();
@@ -225,16 +257,21 @@ window.addEventListener("popstate",e=>{
  (R[i]||(R[i]=home))();
 });
 function home(){
- app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p><button class="btn tbtn" id="st">SAVED TESTS</button><button class="btn tbtn" id="rx">RANDOM EXAM</button><button class="btn alt tb2" id="vb">VOCABULARY ALPHA</button><button class="btn alt tb2" id="pr">AI PRACTICE</button><button class="btn alt tb2" id="pg">MY PROGRESS</button><p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
- document.getElementById("st").onclick=()=>go(savedTests);
- document.getElementById("rx").onclick=randomExam;
+ app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
+ document.getElementById("ex").onclick=()=>go(examMenu);
  document.getElementById("vb").onclick=()=>go(vocab);
  document.getElementById("pr").onclick=()=>go(practice);
  document.getElementById("pg").onclick=()=>go(progress);
 }
+function examMenu(){
+ app.innerHTML=`<h1>Exam practice</h1>${mcard('id="st"',"folder","Saved tests","Real timed practice")}${mcard('id="rx"',"shuffle","Random exam","A new mix of tasks every time")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ document.getElementById("st").onclick=()=>go(savedTests);
+ document.getElementById("rx").onclick=randomExam;
+ document.getElementById("hm").onclick=goBack;
+}
 function savedTests(){
  const names=[...new Set(ALL.tasks.map(t=>t.test).filter(Boolean))];
- app.innerHTML=`<h1>Saved tests</h1>${D.error?`<div class="card warn">${esc(D.error)}</div>`:""}${names.length?names.map((n,i)=>`<button class="btn tbtn" data-i="${i}">${esc(n)}</button>`).join(""):'<div class="card">No tests yet.</div>'}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.innerHTML=`<h1>Saved tests</h1>${D.error?`<div class="card warn">${esc(D.error)}</div>`:""}${names.length?names.map((n,i)=>{const m=n.match(/\d+/);return mcard(`data-i="${i}"`,m&&m[0].length<3?m[0]:"folder",n,"")}).join(""):'<div class="card">No tests yet.</div>'}<div class="row"><button class="btn alt" id="hm">Back</button></div>`;
  app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const nm=names[+b.dataset.i];go(()=>intro(nm))});
  document.getElementById("hm").onclick=goBack;
 }
@@ -326,7 +363,7 @@ function failed(){
  document.getElementById("bk").onclick=goBack;
 }
 function practice(){
- app.innerHTML=`<h1>AI PRACTICE</h1><button class="btn tbtn" id="pv">Train vocabulary</button><button class="btn tbtn" id="pt">Train text</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.innerHTML=`<h1>AI practice</h1>${mcard('id="pv"',"cards","Train vocabulary","Exercises from your saved words")}${mcard('id="pt"',"doc","Train text","New reading tasks in the exam format")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("pv").onclick=()=>V.length<3?go(vocabMenu):go(()=>confirmScreen("Train vocabulary",()=>swap(vocabMenu)));
  document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));
  document.getElementById("hm").onclick=goBack;
@@ -342,8 +379,9 @@ function quiz(head,top,items,again,back){
  document.getElementById("rs").onclick=again;document.getElementById("bk").onclick=goBack;
 }
 const RT={ctw:["Complete the words","ctw"],short:["Read in daily life (short)","daily_short"],long:["Read in daily life (long)","daily_long"],academic:["Academic reading","academic"]};
+const RD={ctw:["pencil","Fill in the missing letters"],short:["mail","Short messages and notices"],long:["doc","Longer emails and letters"],academic:["book","A passage with five questions"]};
 function textMenu(){
- app.innerHTML=`<h1>Train text</h1><p class="muted">Choose a TOEFL reading task. The AI writes a new one in the real exam format.</p>${Object.keys(RT).map(t=>`<button class="btn tbtn" data-t="${t}">${RT[t][0]}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
+ app.innerHTML=`<h1>Train text</h1><p class="muted">Choose a TOEFL reading task. The AI writes a new one in the real exam format.</p>${Object.keys(RT).map(t=>mcard(`data-t="${t}"`,RD[t][0],RT[t][0],RD[t][1])).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
  app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{const t=b.dataset.t;go(()=>readRun(t))});
  document.getElementById("bk").onclick=goBack;
 }
@@ -393,12 +431,13 @@ function readQuiz(head,task,qs,again){
  };
  draw();
 }
+const VD={fill:["pencil","Choose the word that fits the gap"],translate:["lang","Pick the English word for a Russian one"],match:["link","Match each word to its definition"]};
 function vocabMenu(){
  if(V.length<3){
   app.innerHTML=`<h1>Train vocabulary</h1><div class="card">Save at least 3 words first. Look words up in the Dictionary, or click words in the AI text practice, and press "Save to vocabulary". You have ${V.length} saved.</div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
   document.getElementById("bk").onclick=goBack;return;
  }
- app.innerHTML=`<h1>Train vocabulary</h1><p class="muted">${V.length} saved words. Choose an exercise.</p>${Object.keys(VT).map(t=>`<button class="btn tbtn" data-t="${t}">${VT[t]}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
+ app.innerHTML=`<h1>Train vocabulary</h1><p class="muted">${V.length} saved words. Choose an exercise.</p>${Object.keys(VT).map(t=>mcard(`data-t="${t}"`,VD[t][0],VT[t],VD[t][1])).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
  app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{const t=b.dataset.t;go(()=>vocabRun(t))});
  document.getElementById("bk").onclick=goBack;
 }
@@ -414,7 +453,7 @@ async function vocabRun(t){
 }
 function vocab(){
  closePop();
- app.innerHTML=`<h1>VOCABULARY ALPHA</h1><button class="btn tbtn" id="mv">My vocabulary (${V.length})</button><button class="btn tbtn" id="dc">Dictionary</button><button class="btn tbtn" id="av">Academic vocabulary</button><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.innerHTML=`<h1>Vocabulary</h1>${mcard('id="dc"',"search","Dictionary","Look up any English word")}${mcard('id="mv"',"bookmark","My vocabulary",`Your saved words (${V.length})`)}${mcard('id="av"',"grad","Academic list","Word families common in academic texts")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("mv").onclick=()=>go(myVocab);document.getElementById("dc").onclick=()=>go(dict);document.getElementById("av").onclick=()=>go(acad);document.getElementById("hm").onclick=goBack;
 }
 function dict(){
@@ -454,14 +493,14 @@ function comingSoon(b){
  setTimeout(()=>{b.innerHTML=t;delete b.dataset.cs},1500);
 }
 function acad(){
- app.innerHTML=`<h1>Academic vocabulary</h1><p class="muted">Study the academic word list for the TOEFL.</p><button class="btn tbtn" id="ap">Start practice</button><button class="btn tbtn" id="ae">Explore the word list</button><div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ app.innerHTML=`<h1>Academic list</h1><p class="muted">Study the academic word list for the TOEFL.</p>${mcard('id="ap"',"play","Start practice","Test yourself on the words")}${mcard('id="ae"',"list","Explore the word list","Browse word families by sublist")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
  document.getElementById("ap").onclick=e=>comingSoon(e.currentTarget);
  document.getElementById("ae").onclick=()=>go(acadLists);
  document.getElementById("bk").onclick=goBack;
 }
 function acadLists(){
  const tok=GEN;
- app.innerHTML=`<h1>Word list</h1><div style="margin:0 0 16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b>Your progress</b><span class="muted" id="apt">\u2026</span></div><div role="progressbar" aria-label="Academic vocabulary progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="apb" style="height:12px;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden"><div id="apf" style="width:0;height:100%;background:var(--teal);transition:width .6s ease"></div></div></div><p class="muted">Choose a sublist. Sublist 1 has the most frequent words.</p>${[1,2,3,4,5,6,7,8,9,10].map(n=>n==1?`<button class="btn tbtn" data-n="1">Sublist 1</button>`:`<button class="btn alt tb2" data-n="${n}" style="opacity:.6">Sublist ${n}</button>`).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ app.innerHTML=`<h1>Word list</h1><div class="card" style="font-size:15px">Below are the words in the Academic Word List. The list contains 570 word families which frequently appear in academic texts. The 570 word families of the AWL are divided into 10 lists (called sublists) according to how frequent they are. Sublist 1 has the most frequent word families, sublist 2 the next most frequent word families, up to sublist 10, which has the least frequent. Each sublist contains 60 word families, except for sublist 10, which only has 30.</div><div style="margin:0 0 16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b>Your progress</b><span class="muted" id="apt">\u2026</span></div><div role="progressbar" aria-label="Academic vocabulary progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="apb" style="height:12px;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden"><div id="apf" style="width:0;height:100%;background:var(--teal);transition:width .6s ease"></div></div></div>${[1,2,3,4,5,6,7,8,9,10].map(n=>mcard(`data-n="${n}"`,String(n),"Sublist "+n,"",n==1?"":" dim")).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
  app.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>+b.dataset.n==1?go(()=>acadList(1)):comingSoon(b));
  document.getElementById("bk").onclick=goBack;
  loadAcad().then(()=>{
