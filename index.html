@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TOEFL Reading Practice 2026</title>
+<title>Your English Studio</title>
 <style>
 :root{--bg:#f4f6f9;--surface:#fff;--ink:#14284b;--muted:#5b6b86;--teal:#1f8a8a;--gold:#c9a227;--line:#d5dbe6;--bad:#b3402f;--dg:#0f5c5c;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -53,6 +53,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .ma{flex:none;width:20px;height:20px;stroke:var(--teal);stroke-width:2}
 .mn{font:700 26px/1 Cambria,Georgia,serif}
 .mt{flex:1;min-width:0}
+.hd{display:flex;align-items:center;gap:12px;margin:8px 0 16px}.hd h1{margin:0}
 .mh{display:block;font-weight:700;font-size:18px;line-height:1.2;color:var(--dg)}
 .md{display:block;font-size:14px;line-height:1.3;color:var(--muted);margin-top:2px}
 </style>
@@ -118,7 +119,7 @@ const SAMPLE_Q=[
 {task:"d3",q:"Why did Professor Ruiz write to the students?",opts:["To cancel the lab","To announce a change of location","To extend a deadline","To ask for new goggles"],correct:"B"},
 {task:"d3",q:"What are students asked to bring?",opts:["A new handout","Safety goggles","Lab reports","A room key"],correct:"B"},
 {task:"d4",q:"What is required to rent a bike?",opts:["A deposit","A valid student ID","A helmet","A weekly pass"],correct:"B"},
-{task:"d4",q:"What happens if a bike is returned late?",opts:["The rental is cancelled","The helmet is kept","The ID is returned","An extra charge is added"],correct:"D"},
+{task:"d4",q:"What happens if a bike is returned late?",opts:["The rental is canceled","The helmet is kept","The ID is returned","An extra charge is added"],correct:"D"},
 {task:"l1",q:"Why did Mr. Ortiz write to Ms. Okafor?",opts:["To request more documents","To announce that her application was accepted","To offer a different apartment","To explain parking rules"],correct:"B"},
 {task:"l1",q:"What must Ms. Okafor do within five days?",opts:["Sign the lease","Collect the keys","Pay a deposit","Reserve a parking space"],correct:"C"},
 {task:"l1",q:"Which of the following is NOT mentioned in the email?",opts:["Online payment is possible","The office has weekday hours","Parking costs extra","Pets are allowed"],correct:"D"},
@@ -144,7 +145,7 @@ function parseCSV(t){const rows=[];let r=[],c="",q=false;for(let i=0;i<t.length;
 const T2_TASKS=[
 {id:"t2c1",module:"1",level:"all",type:"ctw",title:"Complete the words",text:"Community gardens are shared spaces where residents grow flowers, fruit, and vegetables. Beyond producing food, these gardens can str[engthen] local relationships and offer opportuni[ties] for learning. Participants often exch[ange] adv[ice] about soil, water, and seasonal planting, while exper[ienced] gardeners may demon[strate] useful techniques. This cooperation can incre[ase] confidence among beginners and encour[age] people to take greater responsibility for a shared space. Researchers also exa[mine] whether gardens influence well-being in nearby neighborhoods. Although results vary, many studies sug[gest] that regular contact with green spaces can reduce stress. For this reason, some city planners include community gardens in broader neighborhood projects."},
 {id:"t2s1",module:"1",level:"all",type:"daily",title:"Message",text:"From Mina:\n\nThe study room we booked is closed for repairs today. The library desk says Room 3B is free until noon, but we need to collect the key from reception. I can get it when I arrive at 9:15. Please bring the printed charts; I have the laptop and adapter."},
-{id:"t2s2",module:"1",level:"all",type:"daily",title:"Notice from Campus Transport",text:"Starting Monday, the Route 6 shuttle will leave the science building every 20 minutes instead of every 15 minutes between 2:00 and 5:00 p.m. Morning service is unchanged. Students travelling to the sports center after afternoon classes should allow extra time. The updated timetable is posted beside the main entrance."},
+{id:"t2s2",module:"1",level:"all",type:"daily",title:"Notice from Campus Transport",text:"Starting Monday, the Route 6 shuttle will leave the science building every 20 minutes instead of every 15 minutes between 2:00 and 5:00 p.m. Morning service is unchanged. Students traveling to the sports center after afternoon classes should allow extra time. The updated timetable is posted beside the main entrance."},
 {id:"t2l1",module:"1",level:"all",type:"daily",title:"Email: Equipment Loan Update",text:"From: Campus Media Desk\nTo: Student Project Teams\nSubject: New procedure for borrowing recording equipment\n\nBeginning 4 November, teams that need cameras, microphones, or portable lights must submit a loan request at least two working days before collection. Requests can be made through the Media Desk website; submitting a form does not guarantee every item will be available. A confirmation email will list the equipment reserved and the collection window. One team member must show a student ID when collecting items, and all equipment must be returned by 4:30 p.m. on the agreed return date. Late returns may affect the team’s ability to borrow equipment for future projects. If your schedule changes, contact the desk rather than submitting a second request."},
 {id:"t2l2",module:"1",level:"all",type:"daily",title:"Campus Notice: Quiet Study Zone",text:"The second floor of the West Learning Center will become a quiet study zone from 18 November. Group discussions and online meetings should take place on the first floor, where small rooms can be booked in 30-minute blocks. The new zone will still allow laptop use and headphones, but phone calls are not permitted. During the first two weeks, library staff will be available near the stairs to help visitors find suitable spaces. Students who need accessible seating can ask at the information desk, which can arrange a desk near the elevator."},
 {id:"t2a1",module:"1",level:"all",type:"academic",title:"Repair Cafés",text:"Repair cafés are community events where people bring broken household objects and work with volunteers to repair them. A visitor might arrive with a lamp that no longer switches on, a jacket with a torn seam, or a toaster that has stopped heating. Rather than simply handing the item to a professional, visitors are encouraged to observe the process and, when possible, take part. The aim is not only to prevent usable materials from becoming waste but also to share practical skills that many people have had fewer opportunities to learn.\n\nThese events can also change how participants think about the products they own. When people discover that a loose wire or a missing button is responsible for a problem, they may become less likely to discard similar items in the future. Some organizers record the number and types of objects repaired, using the information to identify common product failures. However, repair cafés cannot solve every problem. Some devices are designed in ways that make them difficult to open, and replacement parts may be unavailable or cost more than a new product. Organizers therefore often combine hands-on repair with discussions about product design and the benefits of making goods easier to maintain."},
@@ -257,7 +258,7 @@ window.addEventListener("popstate",e=>{
  (R[i]||(R[i]=home))();
 });
 function home(){
- app.innerHTML=`<h1>TOEFL Reading Practice 2026</h1><p>Choose how to practice.</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
+ app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><p>What would you like to practice today?</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
  document.getElementById("ex").onclick=()=>go(examMenu);
  document.getElementById("vb").onclick=()=>go(vocab);
  document.getElementById("pr").onclick=()=>go(practice);
