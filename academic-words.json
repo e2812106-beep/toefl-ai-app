@@ -24,7 +24,7 @@
      "ru": "аналитик"
     },
     {
-     "w": "analyse",
+     "w": "analyze",
      "pos": "verb",
      "ru": "анализировать"
     },
@@ -162,7 +162,7 @@
    "word": "authority",
    "pos": "noun",
    "ru": "власть; полномочия; авторитет",
-   "def": "The power or right to make decisions, or a person or organisation with recognised knowledge or power in a particular field.",
+   "def": "The power or right to make decisions, or a person or organization with recognized knowledge or power in a particular field.",
    "examples": [
     "Local authorities introduced new regulations to reduce air pollution.",
     "The professor is considered an authority on modern European history."
@@ -266,12 +266,12 @@
      "ru": "представление; понимание; замысел"
     },
     {
-     "w": "conceptualisation",
+     "w": "conceptualization",
      "pos": "noun",
      "ru": "концептуализация"
     },
     {
-     "w": "conceptualise",
+     "w": "conceptualize",
      "pos": "verb",
      "ru": "концептуализировать; формировать представление"
     },
@@ -398,7 +398,7 @@
      "ru": "контекст"
     },
     {
-     "w": "contextualise",
+     "w": "contextualize",
      "pos": "verb",
      "ru": "рассматривать в контексте"
     },
@@ -408,7 +408,7 @@
      "ru": "контекстуальный"
     },
     {
-     "w": "uncontextualised",
+     "w": "uncontextualized",
      "pos": "adjective",
      "ru": "представленный без контекста"
     }
@@ -683,7 +683,7 @@
    "word": "environment",
    "pos": "noun",
    "ru": "окружающая среда; условия",
-   "def": "The natural world, or the conditions and surroundings in which people, animals, or organisations exist and operate.",
+   "def": "The natural world, or the conditions and surroundings in which people, animals, or organizations exist and operate.",
    "examples": [
     "Industrial activity can have a negative impact on the environment.",
     "A supportive learning environment helps students develop their academic skills."
@@ -717,10 +717,10 @@
    "word": "establish",
    "pos": "verb",
    "ru": "устанавливать; основывать; учреждать",
-   "def": "To create or start something; to set up an organisation or system; or to determine something with confidence based on evidence.",
+   "def": "To create or start something; to set up an organization or system; or to determine something with confidence based on evidence.",
    "examples": [
     "The researchers conducted several experiments to establish a clear link between sleep quality and academic performance.",
-    "The university plans to establish a new research centre focused on environmental sustainability."
+    "The university plans to establish a new research center focused on environmental sustainability."
    ],
    "forms": [
     {
@@ -877,7 +877,7 @@
    "word": "finance",
    "pos": "noun / verb",
    "ru": "финансировать; финансы",
-   "def": "The management of money, investments, and other financial resources; to provide money for a project, activity, or organisation.",
+   "def": "The management of money, investments, and other financial resources; to provide money for a project, activity, or organization.",
    "examples": [
     "The government plans to finance the construction of new hospitals.",
     "Students often need to learn how to manage their personal finances effectively."
@@ -1004,10 +1004,10 @@
    "word": "identify",
    "pos": "verb",
    "ru": "определять; выявлять; идентифицировать",
-   "def": "To recognise, name, or establish what something or someone is; to discover and describe a particular problem, factor, or characteristic.",
+   "def": "To recognize, name, or establish what something or someone is; to discover and describe a particular problem, factor, or characteristic.",
    "examples": [
     "The researchers identified three major factors contributing to climate change.",
-    "The purpose of the experiment was to identify the causes of the observed behaviour."
+    "The purpose of the experiment was to identify the causes of the observed behavior."
    ],
    "forms": [
     {
@@ -1109,7 +1109,7 @@
    "def": "A single person or thing considered separately from others; relating to one particular person or thing.",
    "examples": [
     "Each individual has different learning needs and preferences.",
-    "The researchers analysed the individual responses before comparing the results."
+    "The researchers analyzed the individual responses before comparing the results."
    ],
    "forms": [
     {
@@ -1138,7 +1138,7 @@
      "ru": "индивидуально; по отдельности"
     },
     {
-     "w": "individualised",
+     "w": "individualized",
      "pos": "adjective",
      "ru": "индивидуализированный"
     },
@@ -1279,32 +1279,32 @@
   {
    "id": "labour",
    "sublist": 1,
-   "word": "labour",
+   "word": "labor",
    "pos": "noun / verb",
    "ru": "труд; рабочая сила; работать",
    "def": "Physical or mental work, especially work done to produce goods or provide services; to work hard at a task.",
    "examples": [
-    "The cost of labour has increased significantly in recent years.",
-    "The construction project requires a large labour force."
+    "The cost of labor has increased significantly in recent years.",
+    "The construction project requires a large labor force."
    ],
    "forms": [
     {
-     "w": "labour",
+     "w": "labor",
      "pos": "noun",
      "ru": "труд; рабочая сила"
     },
     {
-     "w": "labour",
+     "w": "labor",
      "pos": "verb",
      "ru": "трудиться"
     },
     {
-     "w": "laboured",
+     "w": "labored",
      "pos": "adjective / verb form",
      "ru": "напряжённый; выполненный с усилием"
     },
     {
-     "w": "labouring",
+     "w": "laboring",
      "pos": "adjective / verb form",
      "ru": "трудящийся; работающий"
     }
@@ -1333,7 +1333,7 @@
      "ru": "законность"
     },
     {
-     "w": "legalise",
+     "w": "legalize",
      "pos": "verb",
      "ru": "легализовать"
     },
@@ -1407,7 +1407,7 @@
    "def": "Important, serious, or large in size or effect. As a noun, it can refer to the main field of study at a university.",
    "examples": [
     "Lack of funding is a major obstacle to scientific research.",
-    "The majority of participants reported positive results after the programme."
+    "The majority of participants reported positive results after the program."
    ],
    "forms": [
     {
@@ -1436,7 +1436,7 @@
    "def": "A particular way of doing something, especially a planned or systematic way of studying or solving a problem.",
    "examples": [
     "The researchers used a new method to measure air quality.",
-    "The methodology section explains how the data were collected and analysed."
+    "The methodology section explains how the data were collected and analyzed."
    ],
    "forms": [
     {
