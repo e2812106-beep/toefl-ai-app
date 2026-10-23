@@ -56,6 +56,7 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .hd{display:flex;align-items:center;gap:12px;margin:8px 0 16px}.hd h1{margin:0}
 .mh{display:block;font-weight:700;font-size:18px;line-height:1.2;color:var(--dg)}
 .md{display:block;font-size:14px;line-height:1.3;color:var(--muted);margin-top:2px}
+.code{width:100%;padding:13px 16px;font:700 24px Calibri,system-ui,sans-serif;letter-spacing:6px;text-align:center;text-transform:uppercase;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px}.code:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -251,6 +252,7 @@ function leaveDialog(target){
 }
 window.addEventListener("popstate",e=>{
  if(ign){ign--;return}
+ if(!ACC){login();return}
  const i=(e.state&&e.state.i)||0;
  if(guard&&i!==idx){ign=1;history.go(idx-i);leaveDialog(i);return}
  idx=i;guard=false;GEN++;closePop();
@@ -258,7 +260,9 @@ window.addEventListener("popstate",e=>{
  (R[i]||(R[i]=home))();
 });
 function home(){
- app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><p>What would you like to practice today?</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p>`;
+ if(!ACC){login();return}
+ app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><p>What would you like to practice today?</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p><div class="row" style="margin-top:0"><span class="muted">Signed in as ${esc(ACC.label)}</span><button class="btn alt" id="so" style="padding:6px 12px;font-size:14px">Sign out</button></div>`;
+ document.getElementById("so").onclick=signOut;
  document.getElementById("ex").onclick=()=>go(examMenu);
  document.getElementById("vb").onclick=()=>go(vocab);
  document.getElementById("pr").onclick=()=>go(practice);
@@ -295,16 +299,18 @@ function randomSet(){
 function randomExam(){const fixed=randomSet();go(()=>{D.tasks=fixed;intro("Random exam",true)})}
 // ===== CLICKABLE WORDS + VOCABULARY =====
 let V=[];try{V=JSON.parse(localStorage.getItem("toefl_vocab")||"[]")}catch(e){}
-const saveV=()=>{try{localStorage.setItem("toefl_vocab",JSON.stringify(V))}catch(e){}};
+if(!Array.isArray(V))V=[];V.forEach((x,i)=>{if(x&&x.t==null)x.t=i+1});
+const saveV=()=>{V.forEach(x=>{if(x&&x.t==null)x.t=Date.now()});try{localStorage.setItem("toefl_vocab",JSON.stringify(V))}catch(e){}changed()};
 let P=[];try{const p=JSON.parse(localStorage.getItem("toefl_progress")||"[]");if(Array.isArray(p))P=p.filter(x=>x&&Array.isArray(x.s)&&x.s.length==2&&x.s.every(y=>y&&y.t>0))}catch(e){}
-const saveP=()=>{try{localStorage.setItem("toefl_progress",JSON.stringify(P))}catch(e){}};
+const saveP=()=>{try{localStorage.setItem("toefl_progress",JSON.stringify(P))}catch(e){}changed()};
 const hasV=w=>V.some(x=>x.word.toLowerCase()==w.toLowerCase());
 const CACHE={};
 const wrap=s=>{let o="",l=0;for(const m of s.matchAll(/[A-Za-z]+(?:['’][A-Za-z]+)*/g)){o+=esc(s.slice(l,m.index))+`<span class="w">${m[0]}</span>`;l=m.index+m[0].length}return o+esc(s.slice(l))};
 const AI_URL="https://toefl-ai.e2812106.workers.dev/"; // the address of your Cloudflare Worker
 async function callAI(payload){
  if(!AI_URL||AI_URL.startsWith("PASTE"))throw new Error("na");
- const r=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+ const r=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(ACC&&!payload.code?{...payload,code:ACC.code}:payload)});
+ if(r.status===401&&ACC&&payload.task!=="login"){endSession("Your code is no longer valid. Please sign in again.");throw new Error("auth")}
  if(!r.ok)throw new Error("http "+r.status);
  return r.json();
 }
@@ -346,7 +352,7 @@ async function lookup(sp){
 function myVocab(){
  closePop();
  app.innerHTML=`<h1>My vocabulary</h1>${V.length?V.map((x,i)=>`<div class="card"><b>${esc(x.word)}</b> <span class="muted">${esc(x.pos||"")}</span><div class="big" style="font-size:24px">${esc(x.translation)}</div><p style="margin:8px 0 10px">${wrap(x.example)}<br><span class="muted">${esc(x.example_ru||"")}</span></p><button class="btn alt" data-i="${i}">Remove</button></div>`).join(""):'<div class="card">No saved words yet. Look words up in the Dictionary, or click words in the AI text practice, and press "Save to vocabulary".</div>'}<div class="row"><button class="btn alt" id="hm">Back</button></div>`;
- app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{V.splice(+b.dataset.i,1);saveV();myVocab()});
+ app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const x=V.splice(+b.dataset.i,1)[0];if(x)SY.vd[x.word.toLowerCase()]=Date.now();saveV();myVocab()});
  document.getElementById("hm").onclick=goBack;
 }
 // ===== AI PRACTICE =====
@@ -477,7 +483,7 @@ function dict(){
 // ===== ACADEMIC VOCABULARY =====
 let AW=null;
 let AL={};try{const a=JSON.parse(localStorage.getItem("toefl_academic")||"{}");if(a&&a.learned&&typeof a.learned=="object"&&!Array.isArray(a.learned))AL=a.learned}catch(e){}
-const saveAL=()=>{try{localStorage.setItem("toefl_academic",JSON.stringify({learned:AL}))}catch(e){}};
+const saveAL=()=>{try{localStorage.setItem("toefl_academic",JSON.stringify({learned:AL}))}catch(e){}changed()};
 const isL=id=>Object.prototype.hasOwnProperty.call(AL,id);
 async function loadAcad(){
  if(AW)return AW;
@@ -544,7 +550,7 @@ function acadWord(n,k){
  document.getElementById("bk").onclick=goBack;
  const st=document.getElementById("als"),ml=document.getElementById("ml");
  const paint=()=>{const L=isL(w.id);st.textContent=L?"Learned \u2713":"Not learned";st.className=L?"ok":"muted";ml.textContent=L?"Learned \u2713":"Mark as learned";ml.style.borderColor=L?"var(--teal)":"";ml.style.color=L?"var(--teal)":"";ml.setAttribute("aria-pressed",L)};
- ml.onclick=()=>{if(isL(w.id))delete AL[w.id];else AL[w.id]=Date.now();saveAL();paint()};
+ ml.onclick=()=>{if(isL(w.id)){delete AL[w.id];SY.ad[w.id]=Date.now()}else AL[w.id]=Date.now();saveAL();paint()};
  paint();
 }
 function soon(){app.innerHTML=`<h1>Test 3</h1><div class="card">Coming later.</div><button class="btn" id="hm">Back to main screen</button>`;document.getElementById("hm").onclick=home}
@@ -601,7 +607,7 @@ function progress(){
   const a=x.s[0],b=x.s[1],tr=a.r+b.r,tt=a.t+b.t,p=pc(tr,tt);
   const when=new Date(x.d).toLocaleString(undefined,{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
   return `<div class="card"><b>${esc(x.name)}</b> <span class="muted">${esc(when)}</span><div class="big" style="font-size:28px;margin:6px 0">${tr}/${tt} <span class="muted" style="font:600 16px Calibri,system-ui,sans-serif">(${p}%)</span></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="width:${p}%;height:100%;background:var(--teal)"></div></div><p style="margin:8px 0 0">Module 1: ${a.r}/${a.t} (${pc(a.r,a.t)}%)<br>Module 2${x.level?" ("+esc(x.level)+" version)":""}: ${b.r}/${b.t} (${pc(b.r,b.t)}%)</p></div>`}).join("");
- app.innerHTML=`<h1>My progress</h1><div class="card"><div class="big">${P.length}</div><p class="muted" style="margin:6px 0 0">tests finished</p></div><div class="card"><div class="big">${V.length}</div><p class="muted" style="margin:6px 0 0">words saved</p></div><div class="card"><div class="big" id="apn">${Object.keys(AL).length}</div><p class="muted" style="margin:6px 0 0">academic words learned</p></div><h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Score history</h2>${rows||'<div class="card">No finished tests yet. Finish a Saved test or a Random exam and your results will appear here.</div>'}<p class="muted">Your progress is saved in this browser on this device only.</p><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.innerHTML=`<h1>My progress</h1><div class="card"><div class="big">${P.length}</div><p class="muted" style="margin:6px 0 0">tests finished</p></div><div class="card"><div class="big">${V.length}</div><p class="muted" style="margin:6px 0 0">words saved</p></div><div class="card"><div class="big" id="apn">${Object.keys(AL).length}</div><p class="muted" style="margin:6px 0 0">academic words learned</p></div><h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Score history</h2>${rows||'<div class="card">No finished tests yet. Finish a Saved test or a Random exam and your results will appear here.</div>'}<p class="muted">Your progress is saved to your account.</p><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("hm").onclick=goBack;
  loadAcad().then(()=>{const e=document.getElementById("apn");if(tok===GEN&&e)e.textContent=AW.filter(w=>isL(w.id)).length}).catch(()=>{});
 }
@@ -682,8 +688,92 @@ function results(){
  app.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>explain(+b.dataset.ex,b));
  document.getElementById("again").onclick=toHome;
 }
+// ===== ACCOUNTS + SYNC =====
+// Students sign in with a 5-character code. Progress (saved words, finished tests, learned academic words)
+// is also kept in the cloud under their account, and merged between devices.
+let ACC=null;
+try{const s=JSON.parse(localStorage.getItem("toefl_session")||"null");if(s&&/^[A-Z2-9]{5}$/.test(s.code))ACC={code:s.code,label:String(s.label||"Student"),admin:!!s.admin}}catch(e){}
+let SY={vd:{},ad:{},dirty:false};
+try{const s=JSON.parse(localStorage.getItem("toefl_sync")||"{}");if(s&&typeof s=="object"){if(s.vd&&typeof s.vd=="object")SY.vd=s.vd;if(s.ad&&typeof s.ad=="object")SY.ad=s.ad;SY.dirty=!!s.dirty}}catch(e){}
+const saveSY=()=>{try{localStorage.setItem("toefl_sync",JSON.stringify(SY))}catch(e){}};
+let ST=null,SYNCING=false,PEND=false,CHG=0,LS=0;
+function changed(){CHG++;SY.dirty=true;saveSY();if(!ACC)return;clearTimeout(ST);ST=setTimeout(syncNow,2000)}
+const EMPTYD={v:[],vd:{},p:[],la:{},ad:{}};
+const st=o=>JSON.stringify(o,(k,v)=>v&&typeof v=="object"&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort()):v);
+// Combines two copies of a student's data. Words and learned marks are merged one by one
+// (the newest change wins, and removals are remembered); finished tests are joined together.
+function mergeDoc(a,b){
+ const obj=o=>o&&typeof o=="object"&&!Array.isArray(o)?o:{},arr=o=>Array.isArray(o)?o:[];
+ const mx=(x,y)=>{const o={...obj(x)};for(const k in obj(y))o[k]=Math.max(o[k]||0,y[k]||0);return o};
+ const vd=mx(a.vd,b.vd),ad=mx(a.ad,b.ad),m={};
+ [...arr(a.v),...arr(b.v)].forEach(x=>{if(!x||typeof x.word!="string"||typeof x.translation!="string")return;const k=x.word.toLowerCase();if(!m[k]||(x.t||0)>(m[k].t||0))m[k]=x});
+ const v=Object.keys(m).filter(k=>vd[k]===undefined||(m[k].t||0)>vd[k]).map(k=>m[k]).sort((x,y)=>(x.t||0)-(y.t||0)||x.word.localeCompare(y.word));
+ const l0=mx(a.la,b.la),la={};
+ for(const k in l0)if(ad[k]===undefined||l0[k]>ad[k])la[k]=l0[k];
+ const pm={};
+ [...arr(a.p),...arr(b.p)].forEach(x=>{if(x&&Array.isArray(x.s)&&x.s.length==2&&x.s.every(y=>y&&y.t>0))pm[x.d]=x});
+ const p=Object.keys(pm).map(k=>pm[k]).sort((x,y)=>x.d-y.d).slice(-200);
+ return {v,vd,p,la,ad};
+}
+function applyDoc(d){
+ V=d.v;P=d.p;AL=d.la;SY.vd=d.vd;SY.ad=d.ad;
+ try{localStorage.setItem("toefl_vocab",JSON.stringify(V));localStorage.setItem("toefl_progress",JSON.stringify(P));localStorage.setItem("toefl_academic",JSON.stringify({learned:AL}))}catch(e){}
+ saveSY();
+}
+// Loads the cloud copy, merges it with this device, and saves the result back if it has anything new.
+async function syncNow(){
+ if(!ACC)return;
+ if(SYNCING){PEND=true;return}
+ SYNCING=true;const acc=ACC,c0=CHG;
+ try{
+  for(let n=0;n<3;n++){
+   const r=await callAI({task:"load"});
+   if(ACC!==acc)return;
+   const cloud=r&&r.data&&typeof r.data=="object"?r.data:EMPTYD;
+   const merged=mergeDoc({v:V,vd:SY.vd,p:P,la:AL,ad:SY.ad},cloud);
+   applyDoc(merged);
+   if(st(merged)===st(mergeDoc(cloud,EMPTYD))){if(CHG===c0)SY.dirty=false;saveSY();break}
+   const s=await callAI({task:"save",data:merged,base:(r&&r.ver)||0});
+   if(ACC!==acc)return;
+   if(s&&s.ok){if(CHG===c0)SY.dirty=false;saveSY();break}
+  }
+ }catch(e){}
+ finally{SYNCING=false;if(PEND){PEND=false;syncNow()}}
+}
+function wipe(){
+ ["toefl_vocab","toefl_progress","toefl_academic","toefl_sync","toefl_session"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
+ V=[];P=[];AL={};SY={vd:{},ad:{},dirty:false};ACC=null;clearTimeout(ST);clearInterval(S.tick);
+}
+function endSession(msg){wipe();R.length=1;R[0]=home;idx=0;guard=false;login(msg)}
+async function signOut(){
+ if(SY.dirty){await syncNow();if(SY.dirty&&!confirm("Your latest changes could not be saved. Sign out anyway?"))return}
+ endSession("");
+}
+function login(msg){
+ closePop();GEN++;guard=false;
+ app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><div class="card"><b>Sign in</b><p class="muted" style="margin:6px 0 12px">Enter the 5-character code from your teacher.</p><form id="lf"><input class="code" id="lc" maxlength="5" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Your 5-character code"><p class="warn" id="lm" style="margin:10px 0 0"${msg?"":" hidden"}>${esc(msg||"")}</p><div class="row"><button class="btn" id="lb" type="submit" style="width:100%">Sign in</button></div></form></div>`;
+ const inp=document.getElementById("lc"),m=document.getElementById("lm"),b=document.getElementById("lb");
+ const say=t=>{m.textContent=t;m.hidden=!t};
+ document.getElementById("lf").onsubmit=async e=>{
+  e.preventDefault();
+  const code=inp.value.trim().toUpperCase();
+  if(!/^[A-Z2-9]{5}$/.test(code)){say("Enter the 5-character code.");return}
+  b.disabled=true;b.textContent="Signing in\u2026";say("");
+  let r;
+  try{r=await callAI({task:"login",code})}
+  catch(err){b.disabled=false;b.textContent="Sign in";say(err&&err.message=="http 401"?"That code isn't right. Check it and try again.":err&&err.message=="http 429"?"Too many wrong attempts. Please try again in an hour.":"Couldn't sign in. Check your connection and try again.");return}
+  ACC={code,label:String(r.label||"Student"),admin:!!r.admin};
+  try{localStorage.setItem("toefl_session",JSON.stringify(ACC))}catch(e){}
+  b.textContent="Loading your progress\u2026";
+  await syncNow();
+  home();
+ };
+ inp.focus();
+}
+function start(){if(ACC){LS=Date.now();home();syncNow()}else login()}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&ACC&&Date.now()-LS>30000){LS=Date.now();syncNow()}});
 history.replaceState({i:0},"");R[0]=home;
-load().then(home);
+load().then(start);
 </script>
 </body>
 </html>
