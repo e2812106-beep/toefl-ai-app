@@ -261,8 +261,8 @@ window.addEventListener("popstate",e=>{
 });
 function home(){
  if(!ACC){login();return}
- app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><p>What would you like to practice today?</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p><div class="row" style="margin-top:0"><span class="muted">Signed in as ${esc(ACC.label)}</span><button class="btn alt" id="so" style="padding:6px 12px;font-size:14px">Sign out</button></div>`;
- document.getElementById("so").onclick=signOut;
+ app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><p>What would you like to practice today?</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}${quotaHTML()}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p><div class="row" style="margin-top:0"><span class="muted">Signed in as ${esc(ACC.label)}</span><button class="btn alt" id="so" style="padding:6px 12px;font-size:14px">Sign out</button></div>`;
+ document.getElementById("so").onclick=signOut;paintQuota();
  document.getElementById("ex").onclick=()=>go(examMenu);
  document.getElementById("vb").onclick=()=>go(vocab);
  document.getElementById("pr").onclick=()=>go(practice);
@@ -311,8 +311,11 @@ async function callAI(payload){
  if(!AI_URL||AI_URL.startsWith("PASTE"))throw new Error("na");
  const r=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(ACC&&!payload.code?{...payload,code:ACC.code}:payload)});
  if(r.status===401&&ACC&&payload.task!=="login"){endSession("Your code is no longer valid. Please sign in again.");throw new Error("auth")}
- if(!r.ok)throw new Error("http "+r.status);
- return r.json();
+ if(!r.ok){
+  if(r.status===429){let j=null;try{j=await r.json()}catch(e){}if(j&&j.error==="daily limit"){noteQuota(j);limitDialog();throw new Error("limit")}}
+  throw new Error("http "+r.status);
+ }
+ const j=await r.json();noteQuota(j);return j;
 }
 const askAI=(word,ctx)=>callAI({task:"lookup",word,context:ctx});
 function closePop(){const p=document.getElementById("pop");if(p)p.remove();document.querySelectorAll(".w.on").forEach(x=>x.classList.remove("on"))}
@@ -370,9 +373,9 @@ function failed(){
  document.getElementById("bk").onclick=goBack;
 }
 function practice(){
- app.innerHTML=`<h1>AI practice</h1>${mcard('id="pv"',"cards","Train vocabulary","Exercises from your saved words")}${mcard('id="pt"',"doc","Train text","New reading tasks in the exam format")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.innerHTML=`<h1>AI practice</h1>${mcard('id="pv"',"cards","Train vocabulary","Exercises from your saved words")}${mcard('id="pt"',"doc","Train text","New reading tasks in the exam format")}${quotaHTML()}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("pv").onclick=()=>V.length<3?go(vocabMenu):go(()=>confirmScreen("Train vocabulary",()=>swap(vocabMenu)));
- document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));
+ document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));paintQuota();
  document.getElementById("hm").onclick=goBack;
 }
 function quiz(head,top,items,again,back){
@@ -740,9 +743,27 @@ async function syncNow(){
  }catch(e){}
  finally{SYNCING=false;if(PEND){PEND=false;syncNow()}}
 }
+// ----- daily AI allowance -----
+let QT=null;
+function noteQuota(j){if(j&&j.quota&&typeof j.quota.limit=="number"&&typeof j.quota.used=="number"){QT=j.quota;paintQuota()}}
+function paintQuota(){
+ const w=document.getElementById("qw");if(!w||!QT)return;
+ const p=QT.limit>0?Math.max(0,Math.min(100,Math.round(100*(QT.limit-QT.used)/QT.limit))):0;
+ w.hidden=false;
+ document.getElementById("qt").textContent=p+"% left";
+ document.getElementById("qf").style.width=p?"max(6px,"+p+"%)":"0";
+ document.getElementById("qb").setAttribute("aria-valuenow",p);
+}
+const quotaHTML=()=>`<div id="qw" hidden style="margin:0 0 12px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b style="font-size:14px">AI left today</b><span class="muted" id="qt" style="font-size:14px"></span></div><div role="progressbar" id="qb" aria-label="AI left today" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="height:8px;margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden"><div id="qf" style="height:100%;background:var(--teal);width:0;transition:width .6s ease"></div></div></div>`;
+function limitDialog(){
+ if(document.getElementById("lim"))return;
+ const o=document.createElement("div");o.id="lim";o.className="ov";
+ o.innerHTML=`<div class="card"><b>Today's AI allowance is used up</b><p style="margin:6px 0 12px">It resets tomorrow. Everything else still works, including saved tests and your saved words.</p><div class="row" style="margin:0;justify-content:flex-end"><button class="btn" id="limok">OK</button></div></div>`;
+ document.body.appendChild(o);document.getElementById("limok").onclick=()=>o.remove();
+}
 function wipe(){
  ["toefl_vocab","toefl_progress","toefl_academic","toefl_sync","toefl_session"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
- V=[];P=[];AL={};SY={vd:{},ad:{},dirty:false};ACC=null;clearTimeout(ST);clearInterval(S.tick);
+ V=[];P=[];AL={};SY={vd:{},ad:{},dirty:false};ACC=null;QT=null;clearTimeout(ST);clearInterval(S.tick);
 }
 function endSession(msg){wipe();R.length=1;R[0]=home;idx=0;guard=false;login(msg)}
 async function signOut(){
