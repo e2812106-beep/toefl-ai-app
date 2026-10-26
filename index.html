@@ -312,8 +312,9 @@ async function callAI(payload){
  const r=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(ACC&&!payload.code?{...payload,code:ACC.code}:payload)});
  if(r.status===401&&ACC&&payload.task!=="login"){endSession("Your code is no longer valid. Please sign in again.");throw new Error("auth")}
  if(!r.ok){
-  if(r.status===429){let j=null;try{j=await r.json()}catch(e){}if(j&&j.error==="daily limit"){noteQuota(j);limitDialog();throw new Error("limit")}}
-  throw new Error("http "+r.status);
+  let j=null;try{j=await r.json()}catch(e){}
+  if(r.status===429&&j&&j.error==="daily limit"){noteQuota(j);limitDialog();throw new Error("limit")}
+  const er=new Error("http "+r.status);er.detail=j&&(j.detail||j.error)?String(j.detail||j.error):"";throw er;
  }
  const j=await r.json();noteQuota(j);return j;
 }
@@ -367,9 +368,10 @@ function confirmScreen(title,onOk){
  document.getElementById("ok").onclick=onOk;document.getElementById("no").onclick=goBack;
 }
 function loading(m){app.innerHTML=`<h1>Please wait</h1><div class="card"><span class="muted">${m} This can take up to 30 seconds.</span></div>`}
-function failed(){
+function failed(e){
  guard=false;
- app.innerHTML=`<h1>Something went wrong</h1><div class="card"><p class="warn" style="margin:0">The AI could not create the exercise. Try again in a moment. If this keeps happening, the free daily limit may be used up.</p></div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
+ const dg=ACC&&ACC.admin&&e?`<div class="card"><b>For the teacher only</b><p class="muted" style="margin:6px 0 0;word-break:break-word">${esc((e.message||"")+(e.detail?": "+e.detail:""))}</p></div>`:"";
+ app.innerHTML=`<h1>Something went wrong</h1><div class="card"><p class="warn" style="margin:0">The AI could not create the exercise. Try again in a moment. If this keeps happening, the free daily limit may be used up.</p></div>${dg}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
  document.getElementById("bk").onclick=goBack;
 }
 function practice(){
@@ -403,7 +405,7 @@ async function readRun(t){
   if(tok!==GEN)return;
   const again=()=>swap(()=>confirmScreen(name,()=>readRun(t)));
   if(t=="ctw")ctwQuiz(r.text,again);else readQuiz(name,{title:r.title,text:r.text},r.questions,again);
- }catch(e){if(tok===GEN)failed()}
+ }catch(e){if(tok===GEN)failed(e)}
 }
 function ctwQuiz(text,again){
  guard="exercise";const full=[],hid=[];
@@ -459,7 +461,7 @@ async function vocabRun(t){
   const r=await callAI({task:"vocab",type:t,words});
   if(tok!==GEN)return;
   quiz(VT[t],`<p class="muted">${VH[t]}</p>`,r.items,()=>swap(()=>confirmScreen(VT[t],()=>vocabRun(t))));
- }catch(e){if(tok===GEN)failed()}
+ }catch(e){if(tok===GEN)failed(e)}
 }
 function vocab(){
  closePop();
