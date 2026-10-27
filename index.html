@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Your English Studio</title>
 <style>
-:root{--bg:#f4f6f9;--surface:#fff;--ink:#14284b;--muted:#5b6b86;--teal:#1f8a8a;--gold:#c9a227;--line:#d5dbe6;--bad:#b3402f;--dg:#0f5c5c;
+:root{color-scheme:light;--bg:#f4f6f9;--surface:#fff;--ink:#14284b;--muted:#5b6b86;--teal:#1f8a8a;--gold:#c9a227;--line:#d5dbe6;--bad:#b3402f;--dg:#0f5c5c;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e;--dg:#7fd6d6}}
+@media not all{:root:not([data-theme="light"]){--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e;--dg:#7fd6d6}}
 :root[data-theme="dark"]{--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e;--dg:#7fd6d6}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Calibri,"Segoe UI",system-ui,sans-serif}
