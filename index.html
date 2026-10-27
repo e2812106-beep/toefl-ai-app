@@ -259,7 +259,7 @@ window.addEventListener("popstate",e=>{
  const ov=document.getElementById("ov");if(ov)ov.remove();
  (R[i]||(R[i]=home))();
 });
-function home(){
+function home(){rs("home");
  if(!ACC){login();return}
  app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><p>What would you like to practice today?</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}${quotaHTML()}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p><div class="row" style="margin-top:0"><span class="muted">Signed in as ${esc(ACC.label)}</span><button class="btn alt" id="so" style="padding:6px 12px;font-size:14px">Sign out</button></div>`;
  document.getElementById("so").onclick=signOut;paintQuota();
@@ -268,13 +268,13 @@ function home(){
  document.getElementById("pr").onclick=()=>go(practice);
  document.getElementById("pg").onclick=()=>go(progress);
 }
-function examMenu(){
+function examMenu(){rs("examMenu");
  app.innerHTML=`<h1>Exam practice</h1>${mcard('id="st"',"folder","Saved tests","Real timed practice")}${mcard('id="rx"',"shuffle","Random exam","A new mix of tasks every time")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("st").onclick=()=>go(savedTests);
  document.getElementById("rx").onclick=randomExam;
  document.getElementById("hm").onclick=goBack;
 }
-function savedTests(){
+function savedTests(){rs("savedTests");
  const names=[...new Set(ALL.tasks.map(t=>t.test).filter(Boolean))];
  app.innerHTML=`<h1>Saved tests</h1>${D.error?`<div class="card warn">${esc(D.error)}</div>`:""}${names.length?names.map((n,i)=>{const m=n.match(/\d+/);return mcard(`data-i="${i}"`,m&&m[0].length<3?m[0]:"folder",n,"")}).join(""):'<div class="card">No tests yet.</div>'}<div class="row"><button class="btn alt" id="hm">Back</button></div>`;
  app.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{const nm=names[+b.dataset.i];go(()=>intro(nm))});
@@ -374,7 +374,7 @@ function failed(e){
  app.innerHTML=`<h1>Something went wrong</h1><div class="card"><p class="warn" style="margin:0">The AI could not create the exercise. Try again in a moment. If this keeps happening, the free daily limit may be used up.</p></div>${dg}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
  document.getElementById("bk").onclick=goBack;
 }
-function practice(){
+function practice(){rs("practice");
  app.innerHTML=`<h1>AI practice</h1>${mcard('id="pv"',"cards","Train vocabulary","Exercises from your saved words")}${mcard('id="pt"',"doc","Train text","New reading tasks in the exam format")}${quotaHTML()}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("pv").onclick=()=>V.length<3?go(vocabMenu):go(()=>confirmScreen("Train vocabulary",()=>swap(vocabMenu)));
  document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));paintQuota();
@@ -392,7 +392,7 @@ function quiz(head,top,items,again,back){
 }
 const RT={ctw:["Complete the words","ctw"],short:["Read in daily life (short)","daily_short"],long:["Read in daily life (long)","daily_long"],academic:["Academic reading","academic"]};
 const RD={ctw:["pencil","Fill in the missing letters"],short:["mail","Short messages and notices"],long:["doc","Longer emails and letters"],academic:["book","A passage with five questions"]};
-function textMenu(){
+function textMenu(){rs("textMenu");
  app.innerHTML=`<h1>Train text</h1><p class="muted">Choose a TOEFL reading task. The AI writes a new one in the real exam format.</p>${Object.keys(RT).map(t=>mcard(`data-t="${t}"`,RD[t][0],RT[t][0],RD[t][1])).join("")}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
  app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{const t=b.dataset.t;go(()=>readRun(t))});
  document.getElementById("bk").onclick=goBack;
@@ -444,7 +444,7 @@ function readQuiz(head,task,qs,again){
  draw();
 }
 const VD={fill:["pencil","Choose the word that fits the gap"],translate:["lang","Pick the English word for a Russian one"],match:["link","Match each word to its definition"]};
-function vocabMenu(){
+function vocabMenu(){rs("vocabMenu");
  if(V.length<3){
   app.innerHTML=`<h1>Train vocabulary</h1><div class="card">Save at least 3 words first. Look words up in the Dictionary, or click words in the AI text practice, and press "Save to vocabulary". You have ${V.length} saved.</div><div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
   document.getElementById("bk").onclick=goBack;return;
@@ -463,7 +463,7 @@ async function vocabRun(t){
   quiz(VT[t],`<p class="muted">${VH[t]}</p>`,r.items,()=>swap(()=>confirmScreen(VT[t],()=>vocabRun(t))));
  }catch(e){if(tok===GEN)failed(e)}
 }
-function vocab(){
+function vocab(){rs("vocab");
  closePop();
  app.innerHTML=`<h1>Vocabulary</h1>${mcard('id="dc"',"search","Dictionary","Look up any English word")}${mcard('id="mv"',"bookmark","My vocabulary",`Your saved words (${V.length})`)}${mcard('id="av"',"grad","Academic list","Word families common in academic texts")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("mv").onclick=()=>go(myVocab);document.getElementById("dc").onclick=()=>go(dict);document.getElementById("av").onclick=()=>go(acad);document.getElementById("hm").onclick=goBack;
@@ -504,13 +504,13 @@ function comingSoon(b){
  const t=b.innerHTML;b.dataset.cs="1";b.textContent="Coming soon";
  setTimeout(()=>{b.innerHTML=t;delete b.dataset.cs},1500);
 }
-function acad(){
+function acad(){rs("acad");
  app.innerHTML=`<h1>Academic list</h1><p class="muted">Study the academic word list for the TOEFL.</p>${mcard('id="ap"',"play","Start practice","Test yourself on the words")}${mcard('id="ae"',"list","Explore the word list","Browse word families by sublist")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
  document.getElementById("ap").onclick=e=>comingSoon(e.currentTarget);
  document.getElementById("ae").onclick=()=>go(acadLists);
  document.getElementById("bk").onclick=goBack;
 }
-function acadLists(){
+function acadLists(){rs("acadLists");
  const tok=GEN;
  app.innerHTML=`<h1>Word list</h1><div class="card" style="font-size:15px">Below are the words in the Academic Word List. The list contains 570 word families which frequently appear in academic texts. The 570 word families of the AWL are divided into 10 lists (called sublists) according to how frequent they are. Sublist 1 has the most frequent word families, sublist 2 the next most frequent word families, up to sublist 10, which has the least frequent. Each sublist contains 60 word families, except for sublist 10, which only has 30.</div><div style="margin:0 0 16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b>Your progress</b><span class="muted" id="apt">\u2026</span></div><div role="progressbar" aria-label="Academic vocabulary progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="apb" style="height:12px;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden"><div id="apf" style="width:0;height:100%;background:var(--teal);transition:width .6s ease"></div></div></div>${[1,2,3,4,5,6,7,8,9,10].map(n=>mcard(`data-n="${n}"`,String(n),"Sublist "+n,"",n==1?"":" dim")).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
  app.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>+b.dataset.n==1?go(()=>acadList(1)):comingSoon(b));
@@ -606,7 +606,7 @@ function saveRun(){
  P.push({d:Date.now(),name:S.name||"Test",s:S.scores.map(x=>({r:x.r,t:x.t})),level:S.level});
  P=P.slice(-200);saveP();
 }
-function progress(){
+function progress(){rs("progress");
  const tok=GEN,pc=(r,t)=>t?Math.round(100*r/t):0;
  const rows=[...P].reverse().map(x=>{
   const a=x.s[0],b=x.s[1],tr=a.r+b.r,tt=a.t+b.t,p=pc(tr,tt);
@@ -793,7 +793,29 @@ function login(msg){
  };
  inp.focus();
 }
-function start(){if(ACC){LS=Date.now();home();syncNow()}else login()}
+function rs(k){try{sessionStorage.setItem("toefl_where",k)}catch(e){}}
+const CH={
+ examMenu:[home,examMenu],
+ savedTests:[home,examMenu,savedTests],
+ practice:[home,practice],
+ textMenu:[home,practice,textMenu],
+ vocabMenu:[home,practice,vocabMenu],
+ vocab:[home,vocab],
+ acad:[home,vocab,acad],
+ acadLists:[home,vocab,acad,acadLists],
+ progress:[home,progress]
+};
+function resume(){
+ let k="";try{k=sessionStorage.getItem("toefl_where")||""}catch(e){}
+ const c=CH[k];
+ if(!c){home();return}
+ R=c.slice();
+ for(let i=1;i<c.length;i++)history.pushState({i},"");
+ idx=c.length-1;guard=false;GEN++;
+ c[idx]();
+}
+window.addEventListener("beforeunload",e=>{if(guard){e.preventDefault();e.returnValue=""}});
+function start(){if(ACC){LS=Date.now();resume();syncNow()}else login()}
 document.addEventListener("visibilitychange",()=>{if(!document.hidden&&ACC&&Date.now()-LS>30000){LS=Date.now();syncNow()}});
 history.replaceState({i:0},"");R[0]=home;
 load().then(start);
