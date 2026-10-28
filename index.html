@@ -4,31 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Your English Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#f4f6f9;--surface:#fff;--ink:#14284b;--muted:#5b6b86;--teal:#1f8a8a;--gold:#c9a227;--line:#d5dbe6;--bad:#b3402f;--dg:#0f5c5c;
+:root{color-scheme:light;--bg:#eaf4ee;--surface:#fff;--ink:#173a2e;--muted:#4a6658;--teal:#328568;--gold:#c9a227;--line:#c3d8cc;--bad:#b3402f;--dg:#1a5a43;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media not all{:root:not([data-theme="light"]){--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e;--dg:#7fd6d6}}
 :root[data-theme="dark"]{--bg:#0e1a30;--surface:#16264a;--ink:#eef2f8;--muted:#9fb0cc;--teal:#4fc1c1;--gold:#e0bd4a;--line:#2b3d63;--bad:#e8806e;--dg:#7fd6d6}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Calibri,"Segoe UI",system-ui,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,sans-serif}
 main{max-width:720px;margin:0 auto;padding:16px}
-h1{font:700 28px/1.2 Cambria,Georgia,serif;margin:8px 0 12px}
+h1{font:700 28px/1.2 Inter,system-ui,sans-serif;margin:8px 0 12px}
 p{margin:0 0 12px}.muted{color:var(--muted)}
 .bar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--ink);color:#fff;border-radius:8px;font-weight:600}
 :root[data-theme="dark"] .bar{background:var(--surface)}
 .timer{color:var(--gold);font-variant-numeric:tabular-nums}
-.passage{margin:14px 0;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;font:17px/1.7 Cambria,Georgia,serif;max-height:42vh;overflow-y:auto;white-space:pre-line}
+.passage{margin:14px 0;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;font:17px/1.7 Inter,system-ui,sans-serif;max-height:42vh;overflow-y:auto;white-space:pre-line}
 .passage h2{font-size:18px;margin:0 0 8px}
 .q{font-weight:700;margin:14px 0 10px}
 .opt{display:block;width:100%;text-align:left;margin:0 0 8px;padding:12px 14px;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:8px;font:inherit;cursor:pointer}
 .opt.sel{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 14%,var(--surface))}
-.btn{padding:11px 18px;background:var(--teal);color:#fff;border:0;border-radius:8px;font:700 16px Calibri,system-ui,sans-serif;cursor:pointer}
+.btn{padding:11px 18px;background:var(--teal);color:#fff;border:0;border-radius:8px;font:700 16px Inter,system-ui,sans-serif;cursor:pointer}
 .btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .opt:focus-visible,.btn:focus-visible,.blank:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:14px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:0 0 10px}
-.big{font:700 40px/1 Cambria,Georgia,serif;color:var(--teal)}
+.big{font:700 40px/1 Inter,system-ui,sans-serif;color:var(--teal)}
 .warn{color:var(--bad)}
 .blank{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--teal);padding:0 2px;margin:0 1px;text-align:left;letter-spacing:2px}
 .grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
@@ -36,10 +37,10 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .grid .done{background:color-mix(in srgb,var(--teal) 22%,var(--surface));border-color:var(--teal)}
 .grid .cur{outline:2px solid var(--gold)}
 .sn{cursor:pointer;border-radius:3px}.sn:hover{background:color-mix(in srgb,var(--gold) 25%,transparent)}.sn.sel{background:color-mix(in srgb,var(--gold) 45%,transparent)}.mk{color:var(--teal)}.ok{color:var(--teal)}.tbtn,.tb2{display:block;width:100%;margin:0 0 10px;padding:16px;text-align:left;font-size:18px}
-.art{font:19px/1.9 Cambria,Georgia,serif}.art h1{font-size:26px;line-height:1.3}
+.art{font:19px/1.9 Inter,system-ui,sans-serif}.art h1{font-size:26px;line-height:1.3}
 .w{cursor:pointer;border-radius:3px}.opt:not(.locked) .w{cursor:inherit}.opt:not(.locked) .w:hover{background:none}.w:hover,.w.on{background:color-mix(in srgb,var(--gold) 40%,transparent)}
-.pop{position:absolute;z-index:20;width:270px;background:var(--surface);color:var(--ink);border:1.5px solid var(--teal);border-radius:10px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:15px/1.45 Calibri,system-ui,sans-serif}
-.pop .tr{font:700 20px Cambria,Georgia,serif;color:var(--teal)}
+.pop{position:absolute;z-index:20;width:270px;background:var(--surface);color:var(--ink);border:1.5px solid var(--teal);border-radius:10px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:15px/1.45 Inter,system-ui,sans-serif}
+.pop .tr{font:700 20px Inter,system-ui,sans-serif;color:var(--teal)}
 .sbar{display:flex;margin:6px 0 14px}.sbar input{flex:1;min-width:0;padding:13px 16px;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-right:0;border-radius:999px 0 0 999px}.sbar button{display:flex;align-items:center;padding:0 18px;background:var(--teal);color:#fff;border:0;border-radius:0 999px 999px 0;cursor:pointer}.sbar input:focus-visible,.sbar button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}.ov .card{max-width:360px;width:100%;margin:0}
 .sn.good{background:color-mix(in srgb,#2e9e5b 35%,transparent)}.sn.bad{background:color-mix(in srgb,var(--bad) 30%,transparent)}.blank.ok{border-bottom-color:#2e9e5b}.blank.bad{border-bottom-color:var(--bad)}
@@ -51,12 +52,34 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .mi,.ma{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .mi{width:24px;height:24px;stroke:currentColor;stroke-width:1.8}
 .ma{flex:none;width:20px;height:20px;stroke:var(--teal);stroke-width:2}
-.mn{font:700 26px/1 Cambria,Georgia,serif}
+.mn{font:700 26px/1 Inter,system-ui,sans-serif}
 .mt{flex:1;min-width:0}
 .hd{display:flex;align-items:center;gap:12px;margin:8px 0 16px}.hd h1{margin:0}
 .mh{display:block;font-weight:700;font-size:18px;line-height:1.2;color:var(--dg)}
 .md{display:block;font-size:14px;line-height:1.3;color:var(--muted);margin-top:2px}
-.code{width:100%;padding:13px 16px;font:700 24px Calibri,system-ui,sans-serif;letter-spacing:6px;text-align:center;text-transform:uppercase;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px}.code:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.code{width:100%;padding:13px 16px;font:700 24px Inter,system-ui,sans-serif;letter-spacing:6px;text-align:center;text-transform:uppercase;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px}.code:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line)}
+#top b{font-size:20px;color:var(--dg)}
+.lg{width:36px;height:36px;border-radius:10px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center}
+#top[hidden],#tabs[hidden]{display:none}
+#tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px 12px;background:none;border:0;color:var(--muted);font:500 13px Inter,system-ui,sans-serif;cursor:pointer}
+.tab.on{background:var(--teal);color:#fff}
+.tab:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+body.sh main{padding-bottom:110px}
+.eyebrow{margin:8px 0 2px;font:600 12px Inter,system-ui,sans-serif;letter-spacing:.06em;color:var(--dg)}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}.hrow h1{margin:0}
+.streak{display:flex;align-items:center;gap:6px;padding:8px 14px;border:0;border-radius:999px;background:rgba(50,133,104,.18);color:var(--dg);font:700 14px Inter,system-ui,sans-serif;cursor:pointer}
+.streak .mi{width:18px;height:18px}
+.mc.ac,.wd{background:var(--teal);border-color:var(--teal);color:#fff;width:100%;border-radius:14px}
+.ac .mb{background:#fff;color:var(--dg)}.ac .mh,.ac .md{color:#fff}.ac .ma{stroke:#fff}.cnt{font:700 22px Inter,system-ui,sans-serif}
+.wd{padding:14px 16px;margin:0 0 10px}.wdh{display:flex;justify-content:space-between;align-items:center}
+.wdh b{font:700 12px Inter,system-ui,sans-serif;letter-spacing:.06em}
+.snd{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--dg);display:flex;align-items:center;justify-content:center}
+.wd hr{border:0;border-top:1px solid rgba(255,255,255,.7);margin:8px 0}.wdt{margin:6px 0}
+.row2{display:flex;gap:10px;margin:16px 0 0}
+.sm{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border:0;border-radius:14px;background:rgba(50,133,104,.45);color:#0f3d2e;font:700 16px Inter,system-ui,sans-serif;cursor:pointer}
+.sm .mi{width:20px;height:20px}
 </style>
 </head>
 <body>
@@ -79,8 +102,15 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 <symbol id="i-lang" viewBox="0 0 24 24"><path d="M4 5h8M8 3v2M6 5c0 4 2 7 5 8M10 5c0 3-2 6-5 8M13 20l4-9 4 9M14.5 17h5"/></symbol>
 <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
 <symbol id="i-go" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h10a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-3 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M19 9a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-3-3h-5a2 2 0 0 1-2-2"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/></symbol>
+<symbol id="i-bug" viewBox="0 0 24 24"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"/><path d="M12 8v5M12 16h.01"/></symbol>
+<symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6"/></symbol>
 </svg>
+<header id="top" hidden><span class="lg"><svg class="mi" aria-hidden="true"><use href="#i-chat"/></svg></span><b>Your English Studio</b></header>
 <main id="app" aria-live="polite"></main>
+<nav id="tabs" hidden aria-label="Main menu"><button class="tab" data-tab="toefl"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg>TOEFL</button><button class="tab" data-tab="grammar"><svg class="mi" aria-hidden="true"><use href="#i-pencil"/></svg>Grammar</button><button class="tab" data-tab="vocab"><svg class="mi" aria-hidden="true"><use href="#i-book"/></svg>Vocabulary</button><button class="tab" data-tab="account"><svg class="mi" aria-hidden="true"><use href="#i-user"/></svg>Account</button></nav>
 <script>
 // ===== SETTINGS =====
 // Hosted on your own site, paste the "Publish to web" CSV links of your two Google Sheet tabs.
@@ -259,20 +289,22 @@ window.addEventListener("popstate",e=>{
  const ov=document.getElementById("ov");if(ov)ov.remove();
  (R[i]||(R[i]=home))();
 });
+const acard=(id,ic,t,d,n)=>`<button class="mc ac" id="${id}"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-${ic}"/></svg></span><span class="mt"><span class="mh">${t}</span><span class="md">${d}</span></span><b class="cnt">${n}</b><svg class="ma" aria-hidden="true"><use href="#i-go"/></svg></button>`;
+function soonPage(){app.innerHTML=`<h1>Coming soon</h1><div class="card">This part of the app is coming soon.</div><div class="row"><button class="btn alt" id="bk">Back</button></div>`;document.getElementById("bk").onclick=goBack}
+function grammar(){rs("grammar");app.innerHTML=`<h1>Grammar</h1><div class="card"><b>Coming soon</b><p class="muted" style="margin:6px 0 0">Grammar practice is coming later.</p></div>`}
 function home(){rs("home");
  if(!ACC){login();return}
- app.innerHTML=`<div class="hd"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg></span><div><h1>Your English Studio</h1><p class="muted" style="margin:0">Your personal learning space</p></div></div><p>What would you like to practice today?</p>${mcard('id="ex"',"exam","Exam practice","Take a test and check your answers")}${mcard('id="vb"',"book","Vocabulary","Save words and study the academic list")}${mcard('id="pr"',"ai","AI practice","New texts and exercises, made for you")}${mcard('id="pg"',"chart","My progress","Your scores and learned words")}${quotaHTML()}<p class="muted">Unofficial practice based on the 2026 format. This is not an ETS test or a score predictor.</p><div class="row" style="margin-top:0"><span class="muted">Signed in as ${esc(ACC.label)}</span><button class="btn alt" id="so" style="padding:6px 12px;font-size:14px">Sign out</button></div>`;
- document.getElementById("so").onclick=signOut;paintQuota();
- document.getElementById("ex").onclick=()=>go(examMenu);
- document.getElementById("vb").onclick=()=>go(vocab);
- document.getElementById("pr").onclick=()=>go(practice);
- document.getElementById("pg").onclick=()=>go(progress);
+ app.innerHTML=`<p class="eyebrow">YOUR DAILY DOSE OF ENGLISH</p><div class="hrow"><h1>My Account</h1><button class="streak" id="sk"><svg class="mi" aria-hidden="true"><use href="#i-flame"/></svg>5-day streak</button></div><p class="muted">Welcome back, ${esc(ACC.label)}.</p>${quotaHTML()}${acard("tc","exam","Tests","TOEFL exams completed",P.length)}${acard("wc","pencil","Word count","Your personal vocabulary",V.length)}<div class="wd"><div class="wdh"><b>WORD OF THE DAY</b><span class="snd" aria-hidden="true"><svg class="mi"><use href="#i-sound"/></svg></span></div><p class="wdt">Coming soon</p><hr><p class="wdt">Coming soon</p></div><div class="row2"><button class="sm" id="bg"><svg class="mi" aria-hidden="true"><use href="#i-bug"/></svg>Bug</button><button class="sm" id="so">Sign out</button></div><p class="muted" style="text-align:center;margin-top:18px">Unofficial practice, not an ETS test.</p>`;
+ paintQuota();
+ document.getElementById("so").onclick=signOut;
+ document.getElementById("sk").onclick=()=>go(soonPage);document.getElementById("bg").onclick=()=>go(soonPage);
+ document.getElementById("tc").onclick=()=>go(progress);document.getElementById("wc").onclick=()=>go(myVocab);
 }
 function examMenu(){rs("examMenu");
- app.innerHTML=`<h1>Exam practice</h1>${mcard('id="st"',"folder","Saved tests","Real timed practice")}${mcard('id="rx"',"shuffle","Random exam","A new mix of tasks every time")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+ app.innerHTML=`<h1>TOEFL</h1>${mcard('id="st"',"folder","Saved tests","Real timed practice")}${mcard('id="rx"',"shuffle","Random exam","A new mix of tasks every time")}${mcard('id="tt"',"doc","Train text","AI reading tasks in the exam format")}`;
  document.getElementById("st").onclick=()=>go(savedTests);
  document.getElementById("rx").onclick=randomExam;
- document.getElementById("hm").onclick=goBack;
+ document.getElementById("tt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));
 }
 function savedTests(){rs("savedTests");
  const names=[...new Set(ALL.tasks.map(t=>t.test).filter(Boolean))];
@@ -465,8 +497,8 @@ async function vocabRun(t){
 }
 function vocab(){rs("vocab");
  closePop();
- app.innerHTML=`<h1>Vocabulary</h1>${mcard('id="dc"',"search","Dictionary","Look up any English word")}${mcard('id="mv"',"bookmark","My vocabulary",`Your saved words (${V.length})`)}${mcard('id="av"',"grad","Academic list","Word families common in academic texts")}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
- document.getElementById("mv").onclick=()=>go(myVocab);document.getElementById("dc").onclick=()=>go(dict);document.getElementById("av").onclick=()=>go(acad);document.getElementById("hm").onclick=goBack;
+ app.innerHTML=`<h1>Vocabulary</h1>${mcard('id="dc"',"search","Dictionary","Look up any English word")}${mcard('id="mv"',"bookmark","My vocabulary",`Your saved words (${V.length})`)}${mcard('id="av"',"grad","Academic list","Word families common in academic texts")}${mcard('id="tv"',"cards","Train vocabulary","AI exercises from your saved words")}`;
+ document.getElementById("mv").onclick=()=>go(myVocab);document.getElementById("dc").onclick=()=>go(dict);document.getElementById("av").onclick=()=>go(acad);document.getElementById("tv").onclick=()=>V.length<3?go(vocabMenu):go(()=>confirmScreen("Train vocabulary",()=>swap(vocabMenu)));
 }
 function dict(){
  app.innerHTML=`<h1>Dictionary</h1><form class="sbar" id="sf"><input id="sq" type="search" placeholder="Type an English word" maxlength="40" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="English word"><button type="submit" aria-label="Search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button></form><div id="res"></div><div class="row"><button class="btn alt" id="bk">Back</button></div>`;
@@ -545,7 +577,7 @@ function acadWord(n,k){
  scrollTo(0,0);
  const fam=w.forms.map(f=>`<div style="padding:8px 0;border-top:1px solid var(--line)"><b>${esc(f.w)}</b> <span class="muted">${esc(f.pos)}</span>${f.w.toLowerCase()==w.word.toLowerCase()?' <span class="ok">\u00B7 main word</span>':""}${f.ru?`<div>${esc(f.ru)}</div>`:""}</div>`).join("");
  app.innerHTML=`<h1 style="margin-bottom:4px">${esc(w.word)}</h1><p style="margin:0 0 12px"><span class="muted">Sublist ${n} \u00B7 ${esc(cap(w.pos))}</span><br><span id="als" class="muted">Not learned</span></p>
- <div class="card"><div class="muted">Meaning</div><div class="tr" style="font:700 20px Cambria,Georgia,serif;color:var(--teal)">${esc(w.ru)}</div></div>
+ <div class="card"><div class="muted">Meaning</div><div class="tr" style="font:700 20px Inter,system-ui,sans-serif;color:var(--teal)">${esc(w.ru)}</div></div>
  <div class="card"><div class="muted">Definition</div><p style="margin:4px 0 0">${esc(w.def)}</p></div>
  <div class="card"><div class="muted">${w.examples.length>1?"Examples":"Example"}</div>${w.examples.map(x=>`<p style="margin:8px 0 0">${wrap(x)}</p>`).join("")}</div>
  <div class="card"><div class="muted" style="margin-bottom:4px">Word family</div>${fam}</div>
@@ -611,8 +643,8 @@ function progress(){rs("progress");
  const rows=[...P].reverse().map(x=>{
   const a=x.s[0],b=x.s[1],tr=a.r+b.r,tt=a.t+b.t,p=pc(tr,tt);
   const when=new Date(x.d).toLocaleString(undefined,{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
-  return `<div class="card"><b>${esc(x.name)}</b> <span class="muted">${esc(when)}</span><div class="big" style="font-size:28px;margin:6px 0">${tr}/${tt} <span class="muted" style="font:600 16px Calibri,system-ui,sans-serif">(${p}%)</span></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="width:${p}%;height:100%;background:var(--teal)"></div></div><p style="margin:8px 0 0">Module 1: ${a.r}/${a.t} (${pc(a.r,a.t)}%)<br>Module 2${x.level?" ("+esc(x.level)+" version)":""}: ${b.r}/${b.t} (${pc(b.r,b.t)}%)</p></div>`}).join("");
- app.innerHTML=`<h1>My progress</h1><div class="card"><div class="big">${P.length}</div><p class="muted" style="margin:6px 0 0">tests finished</p></div><div class="card"><div class="big">${V.length}</div><p class="muted" style="margin:6px 0 0">words saved</p></div><div class="card"><div class="big" id="apn">${Object.keys(AL).length}</div><p class="muted" style="margin:6px 0 0">academic words learned</p></div><h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Score history</h2>${rows||'<div class="card">No finished tests yet. Finish a Saved test or a Random exam and your results will appear here.</div>'}<p class="muted">Your progress is saved to your account.</p><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
+  return `<div class="card"><b>${esc(x.name)}</b> <span class="muted">${esc(when)}</span><div class="big" style="font-size:28px;margin:6px 0">${tr}/${tt} <span class="muted" style="font:600 16px Inter,system-ui,sans-serif">(${p}%)</span></div><div style="height:8px;background:var(--line);border-radius:4px;overflow:hidden"><div style="width:${p}%;height:100%;background:var(--teal)"></div></div><p style="margin:8px 0 0">Module 1: ${a.r}/${a.t} (${pc(a.r,a.t)}%)<br>Module 2${x.level?" ("+esc(x.level)+" version)":""}: ${b.r}/${b.t} (${pc(b.r,b.t)}%)</p></div>`}).join("");
+ app.innerHTML=`<h1>My progress</h1><div class="card"><div class="big">${P.length}</div><p class="muted" style="margin:6px 0 0">tests finished</p></div><div class="card"><div class="big">${V.length}</div><p class="muted" style="margin:6px 0 0">words saved</p></div><div class="card"><div class="big" id="apn">${Object.keys(AL).length}</div><p class="muted" style="margin:6px 0 0">academic words learned</p></div><h2 style="font:700 22px Inter,system-ui,sans-serif;margin:22px 0 10px">Score history</h2>${rows||'<div class="card">No finished tests yet. Finish a Saved test or a Random exam and your results will appear here.</div>'}<p class="muted">Your progress is saved to your account.</p><div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
  document.getElementById("hm").onclick=goBack;
  loadAcad().then(()=>{const e=document.getElementById("apn");if(tok===GEN&&e)e.textContent=AW.filter(w=>isL(w.id)).length}).catch(()=>{});
 }
@@ -687,7 +719,7 @@ function results(){
  <div class="card"><b>Module 2, ${S.level} version:</b> ${b.r} of ${b.t} correct<br>
  <span class="muted">${hard?"You reached the hard version, so the top reading scores were open to you.":"Module 1 routed you to the easy version, which caps the maximum reading score at about 3.0–3.5."}</span></div>
  <p class="muted">The 0–6 scaled score isn't calculated: ETS publishes no official conversion chart.</p>
- <h2 style="font:700 22px Cambria,Georgia,serif;margin:22px 0 10px">Review your mistakes (${mk.length})</h2>
+ <h2 style="font:700 22px Inter,system-ui,sans-serif;margin:22px 0 10px">Review your mistakes (${mk.length})</h2>
  ${mk.length?mk.join(""):'<div class="card">No mistakes. Every answer was correct.</div>'}
  <button class="btn" id="again">Practice again</button>`;
  app.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>explain(+b.dataset.ex,b));
@@ -793,7 +825,13 @@ function login(msg){
  };
  inp.focus();
 }
-function rs(k){try{sessionStorage.setItem("toefl_where",k)}catch(e){}}
+let TAB="account";
+const TM={home:"account",progress:"account",examMenu:"toefl",savedTests:"toefl",textMenu:"toefl",grammar:"grammar",vocab:"vocab",vocabMenu:"vocab",acad:"vocab",acadLists:"vocab"};
+function shell(){const on=!!ACC&&!guard;document.body.classList.toggle("sh",on);document.getElementById("top").hidden=!on;document.getElementById("tabs").hidden=!on;
+ document.querySelectorAll(".tab").forEach(b=>{const a=b.dataset.tab==TAB;b.classList.toggle("on",a);b.setAttribute("aria-current",a?"page":"false")})}
+new MutationObserver(shell).observe(app,{childList:true});
+document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;const f={toefl:examMenu,grammar:grammar,vocab:vocab,account:home}[b.dataset.tab];if(R[idx]!==f)go(f)});
+function rs(k){TAB=TM[k]||TAB;try{sessionStorage.setItem("toefl_where",k)}catch(e){}}
 const CH={
  examMenu:[home,examMenu],
  savedTests:[home,examMenu,savedTests],
@@ -803,6 +841,7 @@ const CH={
  vocab:[home,vocab],
  acad:[home,vocab,acad],
  acadLists:[home,vocab,acad,acadLists],
+ grammar:[home,grammar],
  progress:[home,progress]
 };
 function resume(){
