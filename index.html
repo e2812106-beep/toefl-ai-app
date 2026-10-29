@@ -271,7 +271,7 @@ let R=[],idx=0,guard=false,ign=0,GEN=0;
 const goBack=()=>history.back();
 function go(fn){R.length=idx+1;R.push(fn);idx++;history.pushState({i:idx},"");guard=false;GEN++;closePop();fn()}
 function swap(fn){R[idx]=fn;guard=false;GEN++;closePop();fn()}
-function toHome(){idx?history.go(-idx):home()}
+function toHome(){idx?history.go(-idx):home()} function toExams(){let k=-1;for(let i=idx-1;i>=0;i--)if(R[i]===examMenu){k=i;break}k>=0?history.go(k-idx):go(examMenu)}
 function leaveDialog(target){
  const old=document.getElementById("ov");if(old)old.remove();
  const label=guard||"exercise",o=document.createElement("div");o.id="ov";o.className="ov";
@@ -723,7 +723,7 @@ function results(){
  ${mk.length?mk.join(""):'<div class="card">No mistakes. Every answer was correct.</div>'}
  <button class="btn" id="again">Practice again</button>`;
  app.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>explain(+b.dataset.ex,b));
- document.getElementById("again").onclick=toHome;
+ document.getElementById("again").onclick=toExams;
 }
 // ===== ACCOUNTS + SYNC =====
 // Students sign in with a 5-character code. Progress (saved words, finished tests, learned academic words)
