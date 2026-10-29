@@ -36,8 +36,8 @@ p{margin:0 0 12px}.muted{color:var(--muted)}
 .grid button{width:40px;height:40px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
 .grid .done{background:color-mix(in srgb,var(--teal) 22%,var(--surface));border-color:var(--teal)}
 .grid .cur{outline:2px solid var(--gold)}
-.sn{cursor:pointer;border-radius:3px}.sn:hover{background:color-mix(in srgb,var(--gold) 25%,transparent)}.sn.sel{background:color-mix(in srgb,var(--gold) 45%,transparent)}.mk{color:var(--teal)}.ok{color:var(--teal)}.tbtn,.tb2{display:block;width:100%;margin:0 0 10px;padding:16px;text-align:left;font-size:18px}
-.art{font:19px/1.9 Inter,system-ui,sans-serif}.art h1{font-size:26px;line-height:1.3}
+.sn{cursor:pointer;border-radius:3px}.sn:hover{background:color-mix(in srgb,var(--gold) 25%,transparent)}.sn.sel{background:color-mix(in srgb,var(--gold) 45%,transparent)}.mk{color:var(--teal)}.ok{color:var(--teal)}
+
 .w{cursor:pointer;border-radius:3px}.opt:not(.locked) .w{cursor:inherit}.opt:not(.locked) .w:hover{background:none}.w:hover,.w.on{background:color-mix(in srgb,var(--gold) 40%,transparent)}
 .pop{position:absolute;z-index:20;width:270px;background:var(--surface);color:var(--ink);border:1.5px solid var(--teal);border-radius:10px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font:15px/1.45 Inter,system-ui,sans-serif}
 .pop .tr{font:700 20px Inter,system-ui,sans-serif;color:var(--teal)}
@@ -271,7 +271,7 @@ let R=[],idx=0,guard=false,ign=0,GEN=0;
 const goBack=()=>history.back();
 function go(fn){R.length=idx+1;R.push(fn);idx++;history.pushState({i:idx},"");guard=false;GEN++;closePop();fn()}
 function swap(fn){R[idx]=fn;guard=false;GEN++;closePop();fn()}
-function toHome(){idx?history.go(-idx):home()} function toExams(){let k=-1;for(let i=idx-1;i>=0;i--)if(R[i]===examMenu){k=i;break}k>=0?history.go(k-idx):go(examMenu)}
+ function toExams(){let k=-1;for(let i=idx-1;i>=0;i--)if(R[i]===examMenu){k=i;break}k>=0?history.go(k-idx):go(examMenu)}
 function leaveDialog(target){
  const old=document.getElementById("ov");if(old)old.remove();
  const label=guard||"exercise",o=document.createElement("div");o.id="ov";o.className="ov";
@@ -381,7 +381,7 @@ async function lookup(sp){
   place(p,sp);
  }catch(e){
   if(document.getElementById("pop")!==p)return;
-  const m=e&&e.message=="na"?"The AI isn't connected yet. Ask your teacher to finish the setup.":e&&e.code=="not_granted"?"Translation needs your permission to use Claude.":"Couldn't get a translation. Try again.";
+  const m=e&&e.message=="na"?"The AI isn't connected yet. Ask your teacher to finish the setup.":"Couldn't get a translation. Try again.";
   p.innerHTML=`<b>${esc(word)}</b><p class="warn" style="margin:6px 0 0">${m}</p>`;place(p,sp);
  }
 }
@@ -590,7 +590,7 @@ function acadWord(n,k){
  ml.onclick=()=>{if(isL(w.id)){delete AL[w.id];SY.ad[w.id]=Date.now()}else AL[w.id]=Date.now();saveAL();paint()};
  paint();
 }
-function soon(){app.innerHTML=`<h1>Test 3</h1><div class="card">Coming later.</div><button class="btn" id="hm">Back to main screen</button>`;document.getElementById("hm").onclick=home}
+
 function intro(name,rnd){
  if(!rnd)D.tasks=ALL.tasks.filter(t=>t.test==name);
  D.q=ALL.q;const n=D.tasks.length;
