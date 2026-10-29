@@ -406,12 +406,6 @@ function failed(e){
  app.innerHTML=`<h1>Something went wrong</h1><div class="card"><p class="warn" style="margin:0">The AI could not create the exercise. Try again in a moment. If this keeps happening, the free daily limit may be used up.</p></div>${dg}<div class="row"><button class="btn alt" id="bk">Back to menu</button></div>`;
  document.getElementById("bk").onclick=goBack;
 }
-function practice(){rs("practice");
- app.innerHTML=`<h1>AI practice</h1>${mcard('id="pv"',"cards","Train vocabulary","Exercises from your saved words")}${mcard('id="pt"',"doc","Train text","New reading tasks in the exam format")}${quotaHTML()}<div class="row"><button class="btn alt" id="hm">Back to main screen</button></div>`;
- document.getElementById("pv").onclick=()=>V.length<3?go(vocabMenu):go(()=>confirmScreen("Train vocabulary",()=>swap(vocabMenu)));
- document.getElementById("pt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));paintQuota();
- document.getElementById("hm").onclick=goBack;
-}
 function quiz(head,top,items,again,back){
  const got=[];guard="exercise";
  app.innerHTML=`<h1>${esc(head)}</h1>${top}${items.map((it,i)=>`<div class="q">${i+1}. ${wrap(it.prompt)}</div>${it.options.map((o,k)=>`<button class="opt" data-i="${i}" data-k="${k}"><b>${"ABCD"[k]}.</b> ${wrap(o)}</button>`).join("")}`).join("")}<div class="card" id="sc" hidden></div><div class="row"><button class="btn alt" id="rs">Reset</button><button class="btn" id="bk">Back to menu</button></div>`;
@@ -835,9 +829,9 @@ function rs(k){TAB=TM[k]||TAB;try{sessionStorage.setItem("toefl_where",k)}catch(
 const CH={
  examMenu:[home,examMenu],
  savedTests:[home,examMenu,savedTests],
- practice:[home,practice],
- textMenu:[home,practice,textMenu],
- vocabMenu:[home,practice,vocabMenu],
+ 
+ textMenu:[home,examMenu,textMenu],
+ vocabMenu:[home,vocab,vocabMenu],
  vocab:[home,vocab],
  acad:[home,vocab,acad],
  acadLists:[home,vocab,acad,acadLists],
