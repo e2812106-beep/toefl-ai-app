@@ -297,7 +297,7 @@ async function fillWord(){  const tok=GEN,box=document.getElementById("wdb");  t
  app.innerHTML=`<p class="eyebrow">YOUR DAILY DOSE OF ENGLISH</p><div class="hrow"><h1>My Account</h1><button class="streak" id="sk"><svg class="mi" aria-hidden="true"><use href="#i-flame"/></svg>5-day streak</button></div><p class="muted">Welcome back, ${esc(ACC.label)}.</p>${quotaHTML()}${acard("tc","exam","Tests","TOEFL exams completed",P.length)}${acard("wc","pencil","Word count","Your personal vocabulary",V.length)}<div class="wd"><div class="wdh"><b>WORD OF THE DAY</b><span class="snd" aria-hidden="true"><svg class="mi"><use href="#i-sound"/></svg></span></div><div id="wdb"><p class="wdt">Loading\u2026</p></div></div><div class="row2"><button class="sm" id="bg"><svg class="mi" aria-hidden="true"><use href="#i-bug"/></svg>Bug</button><button class="sm" id="so">Sign out</button></div><p class="muted" style="text-align:center;margin-top:18px">Unofficial practice, not an ETS test.</p>`;
  paintQuota();
  document.getElementById("so").onclick=signOut;fillWord();
- document.getElementById("sk").onclick=()=>go(soonPage);document.getElementById("bg").onclick=()=>go(soonPage);
+ document.getElementById("sk").onclick=()=>go(soonPage);document.getElementById("bg").onclick=()=>window.open("https://forms.yandex.ru/u/6ae48c1ac45c07ddb60f479b","_blank","noopener");
  document.getElementById("tc").onclick=()=>go(progress);document.getElementById("wc").onclick=()=>go(myVocab);
 }
 function examMenu(){rs("examMenu");
