@@ -583,7 +583,7 @@ const saveAL=()=>{try{localStorage.setItem("toefl_academic",JSON.stringify({lear
 const isL=id=>Object.prototype.hasOwnProperty.call(AL,id);
 async function loadAcad(){
  if(AW)return AW;
- const r=await fetch("academic-words.json?v=1");
+ const r=await fetch("academic-words.json?v=2");
  if(!r.ok)throw new Error("http "+r.status);
  const j=await r.json();
  if(!j||!Array.isArray(j.words))throw new Error("bad data");
@@ -603,8 +603,8 @@ function acad(){rs("acad");
 }
 function acadLists(){rs("acadLists");
  const tok=GEN;
- app.innerHTML=`<h1>Word list</h1><div class="card" style="font-size:15px">Below are the words in the Academic Word List. The list contains 570 word families which frequently appear in academic texts. The 570 word families of the AWL are divided into 10 lists (called sublists) according to how frequent they are. Sublist 1 has the most frequent word families, sublist 2 the next most frequent word families, up to sublist 10, which has the least frequent. Each sublist contains 60 word families, except for sublist 10, which only has 30.</div><div style="margin:0 0 16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b>Your progress</b><span class="muted" id="apt">\u2026</span></div><div role="progressbar" aria-label="Academic vocabulary progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="apb" style="height:12px;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden"><div id="apf" style="width:0;height:100%;background:var(--teal);transition:width .6s ease"></div></div></div>${[1,2,3,4,5,6,7,8,9,10].map(n=>mcard(`data-n="${n}"`,String(n),"Sublist "+n,"",n==1?"":" dim")).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
- app.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>+b.dataset.n==1?go(()=>acadList(1)):comingSoon(b));
+ app.innerHTML=`<h1>Word list</h1><div class="card" style="font-size:15px">Below are the words in the Academic Word List. The list contains 570 word families which frequently appear in academic texts. The 570 word families of the AWL are divided into 10 lists (called sublists) according to how frequent they are. Sublist 1 has the most frequent word families, sublist 2 the next most frequent word families, up to sublist 10, which has the least frequent. Each sublist contains 60 word families, except for sublist 10, which only has 30.</div><div style="margin:0 0 16px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><b>Your progress</b><span class="muted" id="apt">\u2026</span></div><div role="progressbar" aria-label="Academic vocabulary progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="apb" style="height:12px;margin-top:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;overflow:hidden"><div id="apf" style="width:0;height:100%;background:var(--teal);transition:width .6s ease"></div></div></div>${[1,2,3,4,5,6,7,8,9,10].map(n=>mcard(`data-n="${n}"`,String(n),"Sublist "+n,"",n<=2?"":" dim")).join("")}<div class="row"><button class="btn alt" id="bk">Back</button></div>`;
+ app.querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>+b.dataset.n<=2?go(()=>acadList(+b.dataset.n)):comingSoon(b));
  document.getElementById("bk").onclick=goBack;
  loadAcad().then(()=>{
   const t=document.getElementById("apt"),f=document.getElementById("apf");
