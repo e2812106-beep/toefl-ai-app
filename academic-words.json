@@ -1,5 +1,5 @@
 {
- "version": 1,
+ "version": 2,
  "words": [
   {
    "id": "analysis",
@@ -2158,6 +2158,2161 @@
      "w": "invariably",
      "pos": "adverb",
      "ru": "неизменно; всегда"
+    }
+   ]
+  },
+  {
+   "id": "achieve",
+   "sublist": 2,
+   "word": "achieve",
+   "pos": "verb",
+   "ru": "достигать; добиваться",
+   "def": "To succeed in doing or obtaining something after effort.",
+   "examples": [
+    "The team achieved a measurable improvement in reading scores.",
+    "With careful planning, the researchers achieved their main objective."
+   ],
+   "forms": [
+    {
+     "w": "achievement",
+     "pos": "noun",
+     "ru": "достижение"
+    },
+    {
+     "w": "achieve",
+     "pos": "verb",
+     "ru": "достигать"
+    },
+    {
+     "w": "achievable",
+     "pos": "adjective",
+     "ru": "достижимый"
+    }
+   ]
+  },
+  {
+   "id": "acquisition",
+   "sublist": 2,
+   "word": "acquisition",
+   "pos": "noun",
+   "ru": "приобретение; усвоение",
+   "def": "The process of obtaining something or learning a skill or language.",
+   "examples": [
+    "The acquisition of a second language takes time and regular practice.",
+    "The company reported the acquisition of a smaller competitor."
+   ],
+   "forms": [
+    {
+     "w": "acquisition",
+     "pos": "noun",
+     "ru": "приобретение"
+    },
+    {
+     "w": "acquire",
+     "pos": "verb",
+     "ru": "приобретать"
+    },
+    {
+     "w": "acquired",
+     "pos": "adjective",
+     "ru": "приобретённый"
+    }
+   ]
+  },
+  {
+   "id": "administration",
+   "sublist": 2,
+   "word": "administration",
+   "pos": "noun",
+   "ru": "администрация; управление",
+   "def": "The organization and management of an institution, or the people who manage it.",
+   "examples": [
+    "The university administration revised its policy on research ethics.",
+    "Efficient administration can reduce delays in public services."
+   ],
+   "forms": [
+    {
+     "w": "administrator",
+     "pos": "noun",
+     "ru": "администратор"
+    },
+    {
+     "w": "administration",
+     "pos": "noun",
+     "ru": "администрация"
+    },
+    {
+     "w": "administrate",
+     "pos": "verb",
+     "ru": "управлять"
+    },
+    {
+     "w": "administratively",
+     "pos": "adverb",
+     "ru": "с административной точки зрения"
+    },
+    {
+     "w": "administrative",
+     "pos": "adjective",
+     "ru": "административный"
+    }
+   ]
+  },
+  {
+   "id": "affect",
+   "sublist": 2,
+   "word": "affect",
+   "pos": "verb",
+   "ru": "влиять; воздействовать",
+   "def": "To produce a change in or influence someone or something.",
+   "examples": [
+    "Temperature can affect the accuracy of the measurements.",
+    "The policy affected students from several departments."
+   ],
+   "forms": [
+    {
+     "w": "affect",
+     "pos": "verb",
+     "ru": "влиять"
+    },
+    {
+     "w": "affectively",
+     "pos": "adverb",
+     "ru": "эмоционально"
+    },
+    {
+     "w": "affected",
+     "pos": "adjective",
+     "ru": "затронутый"
+    },
+    {
+     "w": "affective",
+     "pos": "adjective",
+     "ru": "эмоциональный"
+    },
+    {
+     "w": "unaffected",
+     "pos": "adjective",
+     "ru": "не затронутый"
+    }
+   ]
+  },
+  {
+   "id": "appropriate",
+   "sublist": 2,
+   "word": "appropriate",
+   "pos": "adjective",
+   "ru": "подходящий; уместный",
+   "def": "Suitable or right for a particular purpose, person, or situation.",
+   "examples": [
+    "The authors used an appropriate method for comparing the groups.",
+    "Please select an appropriate heading for each section."
+   ],
+   "forms": [
+    {
+     "w": "appropriacy",
+     "pos": "noun",
+     "ru": "уместность"
+    },
+    {
+     "w": "appropriateness",
+     "pos": "noun",
+     "ru": "подходящий характер"
+    },
+    {
+     "w": "appropriate",
+     "pos": "adjective",
+     "ru": "подходящий"
+    },
+    {
+     "w": "appropriately",
+     "pos": "adverb",
+     "ru": "уместно"
+    },
+    {
+     "w": "inappropriate",
+     "pos": "adjective",
+     "ru": "неподходящий"
+    },
+    {
+     "w": "inappropriacy",
+     "pos": "noun",
+     "ru": "неуместность"
+    },
+    {
+     "w": "inappropriately",
+     "pos": "adverb",
+     "ru": "неуместно"
+    }
+   ]
+  },
+  {
+   "id": "aspect",
+   "sublist": 2,
+   "word": "aspect",
+   "pos": "noun",
+   "ru": "аспект; сторона",
+   "def": "One part or feature of a situation, idea, or subject.",
+   "examples": [
+    "The study examines the social aspect of language learning.",
+    "Cost is only one aspect of the decision."
+   ],
+   "forms": [
+    {
+     "w": "aspect",
+     "pos": "noun",
+     "ru": "аспект"
+    },
+    {
+     "w": "aspects",
+     "pos": "noun",
+     "ru": "аспекты"
+    }
+   ]
+  },
+  {
+   "id": "assist",
+   "sublist": 2,
+   "word": "assist",
+   "pos": "verb",
+   "ru": "помогать; содействовать",
+   "def": "To help someone do something or make a task easier.",
+   "examples": [
+    "A teaching assistant assisted students with the data analysis.",
+    "The new software assists researchers in organizing references."
+   ],
+   "forms": [
+    {
+     "w": "assistant",
+     "pos": "noun",
+     "ru": "помощник"
+    },
+    {
+     "w": "assistance",
+     "pos": "noun",
+     "ru": "помощь"
+    },
+    {
+     "w": "assist",
+     "pos": "verb",
+     "ru": "помогать"
+    },
+    {
+     "w": "assisted",
+     "pos": "adjective",
+     "ru": "с поддержкой"
+    },
+    {
+     "w": "unassisted",
+     "pos": "adjective",
+     "ru": "самостоятельный"
+    }
+   ]
+  },
+  {
+   "id": "category",
+   "sublist": 2,
+   "word": "category",
+   "pos": "noun",
+   "ru": "категория; разряд",
+   "def": "A group of people or things with shared features.",
+   "examples": [
+    "Responses were divided into three categories.",
+    "Each item belongs to a different category of evidence."
+   ],
+   "forms": [
+    {
+     "w": "category",
+     "pos": "noun",
+     "ru": "категория"
+    },
+    {
+     "w": "categories",
+     "pos": "noun",
+     "ru": "категории"
+    },
+    {
+     "w": "categorization",
+     "pos": "noun",
+     "ru": "классификация"
+    },
+    {
+     "w": "categorize",
+     "pos": "verb",
+     "ru": "классифицировать"
+    }
+   ]
+  },
+  {
+   "id": "chapter",
+   "sublist": 2,
+   "word": "chapter",
+   "pos": "noun",
+   "ru": "глава",
+   "def": "One of the main sections of a book.",
+   "examples": [
+    "Chapter four reviews the relevant research.",
+    "The final chapter summarizes the study’s findings."
+   ],
+   "forms": [
+    {
+     "w": "chapter",
+     "pos": "noun",
+     "ru": "глава"
+    }
+   ]
+  },
+  {
+   "id": "commission",
+   "sublist": 2,
+   "word": "commission",
+   "pos": "noun",
+   "ru": "комиссия; поручение",
+   "def": "A group officially appointed to investigate or manage something; also, a formal task or order.",
+   "examples": [
+    "The commission published its recommendations in June.",
+    "The agency commissioned an independent review of the program."
+   ],
+   "forms": [
+    {
+     "w": "commissioner",
+     "pos": "noun",
+     "ru": "член комиссии"
+    },
+    {
+     "w": "commission",
+     "pos": "noun",
+     "ru": "комиссия"
+    },
+    {
+     "w": "commission",
+     "pos": "verb",
+     "ru": "поручать"
+    },
+    {
+     "w": "commissioned",
+     "pos": "adjective",
+     "ru": "заказанный"
+    }
+   ]
+  },
+  {
+   "id": "community",
+   "sublist": 2,
+   "word": "community",
+   "pos": "noun",
+   "ru": "сообщество; община",
+   "def": "A group of people who live in the same place or share an interest or identity.",
+   "examples": [
+    "The research team consulted the local community before collecting data.",
+    "An online community can support students studying remotely."
+   ],
+   "forms": [
+    {
+     "w": "community",
+     "pos": "noun",
+     "ru": "сообщество"
+    },
+    {
+     "w": "communities",
+     "pos": "noun",
+     "ru": "сообщества"
+    }
+   ]
+  },
+  {
+   "id": "complex",
+   "sublist": 2,
+   "word": "complex",
+   "pos": "adjective",
+   "ru": "сложный; комплексный",
+   "def": "Made up of many connected parts and therefore difficult to understand or deal with.",
+   "examples": [
+    "The model describes a complex relationship between income and health.",
+    "Students were asked to solve a complex problem in groups."
+   ],
+   "forms": [
+    {
+     "w": "complex",
+     "pos": "adjective",
+     "ru": "сложный"
+    },
+    {
+     "w": "complexity",
+     "pos": "noun",
+     "ru": "сложность"
+    }
+   ]
+  },
+  {
+   "id": "compute",
+   "sublist": 2,
+   "word": "compute",
+   "pos": "verb",
+   "ru": "вычислять; рассчитывать",
+   "def": "To calculate an amount or result using mathematical or computer methods.",
+   "examples": [
+    "The program computes the average for each group.",
+    "Researchers used a computer to compute the probability of error."
+   ],
+   "forms": [
+    {
+     "w": "computation",
+     "pos": "noun",
+     "ru": "вычисление"
+    },
+    {
+     "w": "computer",
+     "pos": "noun",
+     "ru": "компьютер"
+    },
+    {
+     "w": "compute",
+     "pos": "verb",
+     "ru": "вычислять"
+    },
+    {
+     "w": "computational",
+     "pos": "adjective",
+     "ru": "вычислительный"
+    },
+    {
+     "w": "computerized",
+     "pos": "adjective",
+     "ru": "компьютеризированный"
+    },
+    {
+     "w": "computing",
+     "pos": "noun",
+     "ru": "вычислительная техника"
+    }
+   ]
+  },
+  {
+   "id": "conclude",
+   "sublist": 2,
+   "word": "conclude",
+   "pos": "verb",
+   "ru": "делать вывод; завершать",
+   "def": "To reach a decision or opinion after considering information; to bring something to an end.",
+   "examples": [
+    "The authors conclude that further research is needed.",
+    "The lecture concluded with a discussion of practical applications."
+   ],
+   "forms": [
+    {
+     "w": "conclusion",
+     "pos": "noun",
+     "ru": "вывод; заключение"
+    },
+    {
+     "w": "conclude",
+     "pos": "verb",
+     "ru": "делать вывод"
+    },
+    {
+     "w": "conclusions",
+     "pos": "noun",
+     "ru": "выводы"
+    },
+    {
+     "w": "conclusively",
+     "pos": "adverb",
+     "ru": "убедительно"
+    },
+    {
+     "w": "concluding",
+     "pos": "adjective",
+     "ru": "заключительный"
+    },
+    {
+     "w": "conclusive",
+     "pos": "adjective",
+     "ru": "убедительный"
+    },
+    {
+     "w": "inconclusive",
+     "pos": "adjective",
+     "ru": "неубедительный"
+    },
+    {
+     "w": "inconclusively",
+     "pos": "adverb",
+     "ru": "без определённого вывода"
+    }
+   ]
+  },
+  {
+   "id": "conduct",
+   "sublist": 2,
+   "word": "conduct",
+   "pos": "verb",
+   "ru": "проводить; осуществлять",
+   "def": "To organize and carry out an activity, especially research.",
+   "examples": [
+    "The researchers conducted interviews with twelve participants.",
+    "The laboratory conducts regular safety inspections."
+   ],
+   "forms": [
+    {
+     "w": "conductor",
+     "pos": "noun",
+     "ru": "руководитель; проводник"
+    },
+    {
+     "w": "conduct",
+     "pos": "verb",
+     "ru": "проводить"
+    },
+    {
+     "w": "conducted",
+     "pos": "adjective",
+     "ru": "проведённый"
+    },
+    {
+     "w": "conducting",
+     "pos": "noun",
+     "ru": "проведение"
+    }
+   ]
+  },
+  {
+   "id": "consequence",
+   "sublist": 2,
+   "word": "consequence",
+   "pos": "noun",
+   "ru": "последствие",
+   "def": "A result or effect of an action, decision, or event.",
+   "examples": [
+    "One consequence of the change was a shorter waiting time.",
+    "The policy has serious consequences for small schools."
+   ],
+   "forms": [
+    {
+     "w": "consequence",
+     "pos": "noun",
+     "ru": "последствие"
+    },
+    {
+     "w": "consequences",
+     "pos": "noun",
+     "ru": "последствия"
+    },
+    {
+     "w": "consequently",
+     "pos": "adverb",
+     "ru": "следовательно"
+    },
+    {
+     "w": "consequent",
+     "pos": "adjective",
+     "ru": "вытекающий"
+    }
+   ]
+  },
+  {
+   "id": "construct",
+   "sublist": 2,
+   "word": "construct",
+   "pos": "verb",
+   "ru": "строить; формулировать",
+   "def": "To build something, or to create an idea, argument, or system by combining parts.",
+   "examples": [
+    "The team constructed a model to explain the observed pattern.",
+    "Students constructed an argument using evidence from both sources."
+   ],
+   "forms": [
+    {
+     "w": "construction",
+     "pos": "noun",
+     "ru": "строительство; конструкция"
+    },
+    {
+     "w": "construct",
+     "pos": "verb",
+     "ru": "строить; формулировать"
+    },
+    {
+     "w": "constructive",
+     "pos": "adjective",
+     "ru": "конструктивный"
+    },
+    {
+     "w": "constructed",
+     "pos": "adjective",
+     "ru": "построенный"
+    },
+    {
+     "w": "reconstruct",
+     "pos": "verb",
+     "ru": "восстанавливать"
+    },
+    {
+     "w": "reconstruction",
+     "pos": "noun",
+     "ru": "восстановление"
+    }
+   ]
+  },
+  {
+   "id": "consume",
+   "sublist": 2,
+   "word": "consume",
+   "pos": "verb",
+   "ru": "потреблять; расходовать",
+   "def": "To use food, energy, time, or another resource.",
+   "examples": [
+    "The machine consumes less energy than the previous model.",
+    "On average, participants consumed more water during the warmer months."
+   ],
+   "forms": [
+    {
+     "w": "consumer",
+     "pos": "noun",
+     "ru": "потребитель"
+    },
+    {
+     "w": "consumption",
+     "pos": "noun",
+     "ru": "потребление"
+    },
+    {
+     "w": "consume",
+     "pos": "verb",
+     "ru": "потреблять"
+    },
+    {
+     "w": "consumed",
+     "pos": "adjective",
+     "ru": "потреблённый"
+    }
+   ]
+  },
+  {
+   "id": "credit",
+   "sublist": 2,
+   "word": "credit",
+   "pos": "noun",
+   "ru": "заслуга; кредит",
+   "def": "Recognition for an achievement or contribution; also, money borrowed or made available.",
+   "examples": [
+    "The article gives credit to the original research team.",
+    "Students receive credit for completing the required assignments."
+   ],
+   "forms": [
+    {
+     "w": "creditor",
+     "pos": "noun",
+     "ru": "кредитор"
+    },
+    {
+     "w": "credit",
+     "pos": "noun",
+     "ru": "заслуга; кредит"
+    },
+    {
+     "w": "credit",
+     "pos": "verb",
+     "ru": "зачислять"
+    },
+    {
+     "w": "credited",
+     "pos": "adjective",
+     "ru": "зачисленный; признанный"
+    }
+   ]
+  },
+  {
+   "id": "culture",
+   "sublist": 2,
+   "word": "culture",
+   "pos": "noun",
+   "ru": "культура",
+   "def": "The shared beliefs, customs, and practices of a group or society.",
+   "examples": [
+    "The course compares political culture across several countries.",
+    "Organizational culture can influence how employees communicate."
+   ],
+   "forms": [
+    {
+     "w": "culture",
+     "pos": "noun",
+     "ru": "культура"
+    },
+    {
+     "w": "culturally",
+     "pos": "adverb",
+     "ru": "в культурном отношении"
+    },
+    {
+     "w": "cultural",
+     "pos": "adjective",
+     "ru": "культурный"
+    },
+    {
+     "w": "cultured",
+     "pos": "adjective",
+     "ru": "образованный"
+    },
+    {
+     "w": "uncultured",
+     "pos": "adjective",
+     "ru": "невоспитанный"
+    }
+   ]
+  },
+  {
+   "id": "design",
+   "sublist": 2,
+   "word": "design",
+   "pos": "noun",
+   "ru": "дизайн; проект; замысел",
+   "def": "A plan or arrangement showing how something is made or organized.",
+   "examples": [
+    "The study uses a longitudinal design.",
+    "The design of the survey allowed participants to answer anonymously."
+   ],
+   "forms": [
+    {
+     "w": "designer",
+     "pos": "noun",
+     "ru": "дизайнер"
+    },
+    {
+     "w": "design",
+     "pos": "noun",
+     "ru": "проект"
+    },
+    {
+     "w": "design",
+     "pos": "verb",
+     "ru": "проектировать"
+    },
+    {
+     "w": "designed",
+     "pos": "adjective",
+     "ru": "предназначенный; спроектированный"
+    }
+   ]
+  },
+  {
+   "id": "distinct",
+   "sublist": 2,
+   "word": "distinct",
+   "pos": "adjective",
+   "ru": "отличающийся; отчётливый",
+   "def": "Clearly different or separate from something else.",
+   "examples": [
+    "The two measures represent distinct aspects of performance.",
+    "Researchers identified a distinct change after the intervention."
+   ],
+   "forms": [
+    {
+     "w": "distinction",
+     "pos": "noun",
+     "ru": "различие"
+    },
+    {
+     "w": "distinctively",
+     "pos": "adverb",
+     "ru": "характерным образом"
+    },
+    {
+     "w": "distinctly",
+     "pos": "adverb",
+     "ru": "отчётливо"
+    },
+    {
+     "w": "distinct",
+     "pos": "adjective",
+     "ru": "отличающийся"
+    },
+    {
+     "w": "distinctive",
+     "pos": "adjective",
+     "ru": "характерный"
+    },
+    {
+     "w": "indistinct",
+     "pos": "adjective",
+     "ru": "неясный"
+    },
+    {
+     "w": "indistinctly",
+     "pos": "adverb",
+     "ru": "неясно"
+    }
+   ]
+  },
+  {
+   "id": "element",
+   "sublist": 2,
+   "word": "element",
+   "pos": "noun",
+   "ru": "элемент; составляющая",
+   "def": "A necessary or important part of a whole.",
+   "examples": [
+    "Trust is an important element of effective teamwork.",
+    "The analysis focuses on the visual elements of the design."
+   ],
+   "forms": [
+    {
+     "w": "element",
+     "pos": "noun",
+     "ru": "элемент"
+    },
+    {
+     "w": "elements",
+     "pos": "noun",
+     "ru": "элементы"
+    }
+   ]
+  },
+  {
+   "id": "equate",
+   "sublist": 2,
+   "word": "equate",
+   "pos": "verb",
+   "ru": "приравнивать; отождествлять",
+   "def": "To consider or treat two things as equal or the same.",
+   "examples": [
+    "It is misleading to equate test scores with overall ability.",
+    "The model equates each unit of input with one unit of output."
+   ],
+   "forms": [
+    {
+     "w": "equation",
+     "pos": "noun",
+     "ru": "уравнение; равенство"
+    },
+    {
+     "w": "equate",
+     "pos": "verb",
+     "ru": "приравнивать"
+    },
+    {
+     "w": "equated",
+     "pos": "adjective",
+     "ru": "приравненный"
+    }
+   ]
+  },
+  {
+   "id": "evaluate",
+   "sublist": 2,
+   "word": "evaluate",
+   "pos": "verb",
+   "ru": "оценивать",
+   "def": "To judge the quality, importance, or effectiveness of something.",
+   "examples": [
+    "The researchers evaluated the program after six months.",
+    "This chapter explains how to evaluate the reliability of a source."
+   ],
+   "forms": [
+    {
+     "w": "evaluation",
+     "pos": "noun",
+     "ru": "оценка"
+    },
+    {
+     "w": "evaluate",
+     "pos": "verb",
+     "ru": "оценивать"
+    },
+    {
+     "w": "evaluative",
+     "pos": "adjective",
+     "ru": "оценочный"
+    },
+    {
+     "w": "re-evaluate",
+     "pos": "verb",
+     "ru": "переоценивать"
+    },
+    {
+     "w": "re-evaluation",
+     "pos": "noun",
+     "ru": "повторная оценка"
+    }
+   ]
+  },
+  {
+   "id": "feature",
+   "sublist": 2,
+   "word": "feature",
+   "pos": "noun",
+   "ru": "особенность; характеристика",
+   "def": "A noticeable or important part or quality of something.",
+   "examples": [
+    "Flexibility is a key feature of the new system.",
+    "The report describes the main features of the sample."
+   ],
+   "forms": [
+    {
+     "w": "feature",
+     "pos": "noun",
+     "ru": "особенность"
+    },
+    {
+     "w": "features",
+     "pos": "noun",
+     "ru": "особенности"
+    },
+    {
+     "w": "featured",
+     "pos": "adjective",
+     "ru": "представленный"
+    },
+    {
+     "w": "featuring",
+     "pos": "preposition",
+     "ru": "с участием"
+    }
+   ]
+  },
+  {
+   "id": "final",
+   "sublist": 2,
+   "word": "final",
+   "pos": "adjective",
+   "ru": "последний; окончательный",
+   "def": "Coming at the end of a series or process.",
+   "examples": [
+    "The final section presents the study’s limitations.",
+    "Participants completed a final assessment in May."
+   ],
+   "forms": [
+    {
+     "w": "final",
+     "pos": "adjective",
+     "ru": "окончательный"
+    },
+    {
+     "w": "final",
+     "pos": "noun",
+     "ru": "финал"
+    },
+    {
+     "w": "finals",
+     "pos": "noun",
+     "ru": "финальные экзамены"
+    },
+    {
+     "w": "finality",
+     "pos": "noun",
+     "ru": "окончательность"
+    },
+    {
+     "w": "finalize",
+     "pos": "verb",
+     "ru": "завершать"
+    },
+    {
+     "w": "finally",
+     "pos": "adverb",
+     "ru": "наконец"
+    },
+    {
+     "w": "finalized",
+     "pos": "adjective",
+     "ru": "завершённый"
+    }
+   ]
+  },
+  {
+   "id": "focus",
+   "sublist": 2,
+   "word": "focus",
+   "pos": "noun",
+   "ru": "сосредоточение; фокус",
+   "def": "The main subject or center of attention.",
+   "examples": [
+    "The focus of the article is educational access.",
+    "The researchers shifted their focus to younger participants."
+   ],
+   "forms": [
+    {
+     "w": "focus",
+     "pos": "noun",
+     "ru": "фокус; основное внимание"
+    },
+    {
+     "w": "focus",
+     "pos": "verb",
+     "ru": "сосредоточиться"
+    },
+    {
+     "w": "focused",
+     "pos": "adjective",
+     "ru": "сосредоточенный"
+    },
+    {
+     "w": "refocus",
+     "pos": "verb",
+     "ru": "перенаправить внимание"
+    }
+   ]
+  },
+  {
+   "id": "impact",
+   "sublist": 2,
+   "word": "impact",
+   "pos": "noun",
+   "ru": "влияние; воздействие",
+   "def": "A strong effect that something has on a person, situation, or result.",
+   "examples": [
+    "The report measures the impact of the policy on employment.",
+    "The discovery had a major impact on later research."
+   ],
+   "forms": [
+    {
+     "w": "impact",
+     "pos": "noun",
+     "ru": "влияние"
+    },
+    {
+     "w": "impact",
+     "pos": "verb",
+     "ru": "оказывать влияние"
+    },
+    {
+     "w": "impacted",
+     "pos": "adjective",
+     "ru": "затронутый"
+    },
+    {
+     "w": "impacting",
+     "pos": "adjective",
+     "ru": "оказывающий влияние"
+    }
+   ]
+  },
+  {
+   "id": "injury",
+   "sublist": 2,
+   "word": "injury",
+   "pos": "noun",
+   "ru": "травма; повреждение",
+   "def": "Physical harm to a person or damage to a body part.",
+   "examples": [
+    "Protective equipment reduced the risk of injury.",
+    "The study recorded each injury sustained during training."
+   ],
+   "forms": [
+    {
+     "w": "injury",
+     "pos": "noun",
+     "ru": "травма"
+    },
+    {
+     "w": "injure",
+     "pos": "verb",
+     "ru": "травмировать"
+    },
+    {
+     "w": "injured",
+     "pos": "adjective",
+     "ru": "травмированный"
+    },
+    {
+     "w": "uninjured",
+     "pos": "adjective",
+     "ru": "невредимый"
+    }
+   ]
+  },
+  {
+   "id": "institute",
+   "sublist": 2,
+   "word": "institute",
+   "pos": "noun",
+   "ru": "институт; учреждение",
+   "def": "An organization created for education, research, or a particular public purpose.",
+   "examples": [
+    "The institute conducts research on urban development.",
+    "A national institute supported the project."
+   ],
+   "forms": [
+    {
+     "w": "institute",
+     "pos": "noun",
+     "ru": "институт"
+    },
+    {
+     "w": "institution",
+     "pos": "noun",
+     "ru": "учреждение"
+    },
+    {
+     "w": "institute",
+     "pos": "verb",
+     "ru": "учреждать"
+    },
+    {
+     "w": "institutionalize",
+     "pos": "verb",
+     "ru": "институционализировать"
+    },
+    {
+     "w": "institutionally",
+     "pos": "adverb",
+     "ru": "на институциональном уровне"
+    },
+    {
+     "w": "institutional",
+     "pos": "adjective",
+     "ru": "институциональный"
+    },
+    {
+     "w": "institutionalized",
+     "pos": "adjective",
+     "ru": "институционализированный"
+    }
+   ]
+  },
+  {
+   "id": "invest",
+   "sublist": 2,
+   "word": "invest",
+   "pos": "verb",
+   "ru": "инвестировать; вкладывать",
+   "def": "To put money, time, or effort into something in order to gain a benefit.",
+   "examples": [
+    "The government invested in public transport infrastructure.",
+    "Researchers invested considerable time in validating the instrument."
+   ],
+   "forms": [
+    {
+     "w": "investor",
+     "pos": "noun",
+     "ru": "инвестор"
+    },
+    {
+     "w": "investing",
+     "pos": "noun",
+     "ru": "инвестирование"
+    },
+    {
+     "w": "investment",
+     "pos": "noun",
+     "ru": "инвестиция"
+    },
+    {
+     "w": "invest",
+     "pos": "verb",
+     "ru": "инвестировать"
+    },
+    {
+     "w": "invested",
+     "pos": "adjective",
+     "ru": "вложенный"
+    },
+    {
+     "w": "reinvest",
+     "pos": "verb",
+     "ru": "реинвестировать"
+    },
+    {
+     "w": "reinvested",
+     "pos": "adjective",
+     "ru": "повторно вложенный"
+    },
+    {
+     "w": "reinvestment",
+     "pos": "noun",
+     "ru": "реинвестирование"
+    }
+   ]
+  },
+  {
+   "id": "item",
+   "sublist": 2,
+   "word": "item",
+   "pos": "noun",
+   "ru": "пункт; элемент; предмет",
+   "def": "A single thing in a group, list, or set.",
+   "examples": [
+    "Each questionnaire item measured a different attitude.",
+    "The table lists every item included in the final scale."
+   ],
+   "forms": [
+    {
+     "w": "item",
+     "pos": "noun",
+     "ru": "пункт; предмет"
+    },
+    {
+     "w": "itemization",
+     "pos": "noun",
+     "ru": "перечисление по пунктам"
+    },
+    {
+     "w": "items",
+     "pos": "noun",
+     "ru": "пункты"
+    },
+    {
+     "w": "itemize",
+     "pos": "verb",
+     "ru": "перечислять по пунктам"
+    },
+    {
+     "w": "itemized",
+     "pos": "adjective",
+     "ru": "перечисленный по пунктам"
+    }
+   ]
+  },
+  {
+   "id": "journal",
+   "sublist": 2,
+   "word": "journal",
+   "pos": "noun",
+   "ru": "журнал; научный журнал",
+   "def": "A publication that contains articles, especially scholarly research.",
+   "examples": [
+    "The findings appeared in an international journal.",
+    "She keeps a journal of observations during fieldwork."
+   ],
+   "forms": [
+    {
+     "w": "journal",
+     "pos": "noun",
+     "ru": "журнал"
+    }
+   ]
+  },
+  {
+   "id": "maintain",
+   "sublist": 2,
+   "word": "maintain",
+   "pos": "verb",
+   "ru": "поддерживать; сохранять",
+   "def": "To keep something at the same level or in good condition; to continue to claim something.",
+   "examples": [
+    "Regular maintenance helps maintain the equipment’s accuracy.",
+    "The authors maintain that the evidence supports their conclusion."
+   ],
+   "forms": [
+    {
+     "w": "maintenance",
+     "pos": "noun",
+     "ru": "обслуживание; поддержание"
+    },
+    {
+     "w": "maintain",
+     "pos": "verb",
+     "ru": "поддерживать"
+    },
+    {
+     "w": "maintained",
+     "pos": "adjective",
+     "ru": "поддерживаемый"
+    },
+    {
+     "w": "maintaining",
+     "pos": "verb",
+     "ru": "поддерживая"
+    }
+   ]
+  },
+  {
+   "id": "normal",
+   "sublist": 2,
+   "word": "normal",
+   "pos": "adjective",
+   "ru": "обычный; нормальный",
+   "def": "Usual or expected in a particular situation.",
+   "examples": [
+    "The results returned to normal after the equipment was repaired.",
+    "It is normal for response times to vary slightly."
+   ],
+   "forms": [
+    {
+     "w": "normality",
+     "pos": "noun",
+     "ru": "нормальность"
+    },
+    {
+     "w": "normalization",
+     "pos": "noun",
+     "ru": "нормализация"
+    },
+    {
+     "w": "normally",
+     "pos": "adverb",
+     "ru": "обычно"
+    },
+    {
+     "w": "normal",
+     "pos": "adjective",
+     "ru": "нормальный"
+    },
+    {
+     "w": "normalize",
+     "pos": "verb",
+     "ru": "нормализовать"
+    },
+    {
+     "w": "abnormal",
+     "pos": "adjective",
+     "ru": "ненормальный"
+    },
+    {
+     "w": "abnormally",
+     "pos": "adverb",
+     "ru": "ненормально"
+    }
+   ]
+  },
+  {
+   "id": "obtain",
+   "sublist": 2,
+   "word": "obtain",
+   "pos": "verb",
+   "ru": "получать; приобретать",
+   "def": "To get something, especially through effort or a formal process.",
+   "examples": [
+    "Participants gave consent before researchers obtained their data.",
+    "The laboratory obtained consistent results in both trials."
+   ],
+   "forms": [
+    {
+     "w": "obtain",
+     "pos": "verb",
+     "ru": "получать"
+    },
+    {
+     "w": "obtainable",
+     "pos": "adjective",
+     "ru": "доступный для получения"
+    },
+    {
+     "w": "obtained",
+     "pos": "adjective",
+     "ru": "полученный"
+    },
+    {
+     "w": "unobtainable",
+     "pos": "adjective",
+     "ru": "недоступный"
+    }
+   ]
+  },
+  {
+   "id": "participate",
+   "sublist": 2,
+   "word": "participate",
+   "pos": "verb",
+   "ru": "участвовать",
+   "def": "To take part in an activity or event.",
+   "examples": [
+    "More than two hundred students participated in the survey.",
+    "All participants were invited to participate in a follow-up interview."
+   ],
+   "forms": [
+    {
+     "w": "participant",
+     "pos": "noun",
+     "ru": "участник"
+    },
+    {
+     "w": "participation",
+     "pos": "noun",
+     "ru": "участие"
+    },
+    {
+     "w": "participate",
+     "pos": "verb",
+     "ru": "участвовать"
+    },
+    {
+     "w": "participatory",
+     "pos": "adjective",
+     "ru": "основанный на участии"
+    }
+   ]
+  },
+  {
+   "id": "perceive",
+   "sublist": 2,
+   "word": "perceive",
+   "pos": "verb",
+   "ru": "воспринимать; считать",
+   "def": "To notice or understand something in a particular way.",
+   "examples": [
+    "Students perceived the feedback as useful.",
+    "People may perceive the same risk differently."
+   ],
+   "forms": [
+    {
+     "w": "perception",
+     "pos": "noun",
+     "ru": "восприятие"
+    },
+    {
+     "w": "perceive",
+     "pos": "verb",
+     "ru": "воспринимать"
+    },
+    {
+     "w": "perceived",
+     "pos": "adjective",
+     "ru": "воспринимаемый; предполагаемый"
+    }
+   ]
+  },
+  {
+   "id": "positive",
+   "sublist": 2,
+   "word": "positive",
+   "pos": "adjective",
+   "ru": "положительный; позитивный",
+   "def": "Showing approval or indicating a good result, effect, or quality.",
+   "examples": [
+    "The intervention had a positive effect on attendance.",
+    "Most participants gave a positive response to the proposal."
+   ],
+   "forms": [
+    {
+     "w": "positive",
+     "pos": "adjective",
+     "ru": "положительный"
+    },
+    {
+     "w": "positively",
+     "pos": "adverb",
+     "ru": "положительно"
+    }
+   ]
+  },
+  {
+   "id": "potential",
+   "sublist": 2,
+   "word": "potential",
+   "pos": "adjective",
+   "ru": "возможный; потенциальный",
+   "def": "Possible or able to develop into something in the future.",
+   "examples": [
+    "The researchers identified several potential sources of bias.",
+    "This method has potential applications in public health."
+   ],
+   "forms": [
+    {
+     "w": "potential",
+     "pos": "adjective",
+     "ru": "потенциальный"
+    },
+    {
+     "w": "potential",
+     "pos": "noun",
+     "ru": "потенциал"
+    },
+    {
+     "w": "potentially",
+     "pos": "adverb",
+     "ru": "потенциально"
+    }
+   ]
+  },
+  {
+   "id": "previous",
+   "sublist": 2,
+   "word": "previous",
+   "pos": "adjective",
+   "ru": "предыдущий; прежний",
+   "def": "Happening or existing before the time being discussed.",
+   "examples": [
+    "Previous studies reported similar results.",
+    "The current sample was larger than in the previous analysis."
+   ],
+   "forms": [
+    {
+     "w": "previous",
+     "pos": "adjective",
+     "ru": "предыдущий"
+    },
+    {
+     "w": "previously",
+     "pos": "adverb",
+     "ru": "ранее"
+    }
+   ]
+  },
+  {
+   "id": "primary",
+   "sublist": 2,
+   "word": "primary",
+   "pos": "adjective",
+   "ru": "основной; первичный",
+   "def": "Most important, or relating to the first stage or source.",
+   "examples": [
+    "The primary aim was to assess reading comprehension.",
+    "Researchers collected primary data through interviews."
+   ],
+   "forms": [
+    {
+     "w": "primary",
+     "pos": "adjective",
+     "ru": "основной; первичный"
+    },
+    {
+     "w": "primarily",
+     "pos": "adverb",
+     "ru": "главным образом; в первую очередь"
+    }
+   ]
+  },
+  {
+   "id": "purchase",
+   "sublist": 2,
+   "word": "purchase",
+   "pos": "verb",
+   "ru": "покупать; приобретать",
+   "def": "To buy something.",
+   "examples": [
+    "The department purchased new equipment for the laboratory.",
+    "Participants could purchase the book through the university store."
+   ],
+   "forms": [
+    {
+     "w": "purchaser",
+     "pos": "noun",
+     "ru": "покупатель"
+    },
+    {
+     "w": "purchase",
+     "pos": "noun",
+     "ru": "покупка"
+    },
+    {
+     "w": "purchase",
+     "pos": "verb",
+     "ru": "покупать"
+    },
+    {
+     "w": "purchasing",
+     "pos": "adjective",
+     "ru": "закупочный"
+    }
+   ]
+  },
+  {
+   "id": "range",
+   "sublist": 2,
+   "word": "range",
+   "pos": "noun",
+   "ru": "диапазон; ряд",
+   "def": "A set of different things of the same general type, or the limits between which something varies.",
+   "examples": [
+    "The survey covered a wide range of topics.",
+    "Scores ranged from 12 to 48 across the sample."
+   ],
+   "forms": [
+    {
+     "w": "range",
+     "pos": "noun",
+     "ru": "диапазон; ряд"
+    },
+    {
+     "w": "range",
+     "pos": "verb",
+     "ru": "варьироваться"
+    },
+    {
+     "w": "ranged",
+     "pos": "adjective",
+     "ru": "расположенный в диапазоне"
+    },
+    {
+     "w": "ranging",
+     "pos": "preposition",
+     "ru": "от… до…"
+    }
+   ]
+  },
+  {
+   "id": "region",
+   "sublist": 2,
+   "word": "region",
+   "pos": "noun",
+   "ru": "регион; область",
+   "def": "A large area of a country or the world, usually with shared features.",
+   "examples": [
+    "The northern region receives less rainfall.",
+    "Researchers compared employment rates across the region."
+   ],
+   "forms": [
+    {
+     "w": "region",
+     "pos": "noun",
+     "ru": "регион"
+    },
+    {
+     "w": "regionally",
+     "pos": "adverb",
+     "ru": "на региональном уровне"
+    },
+    {
+     "w": "regional",
+     "pos": "adjective",
+     "ru": "региональный"
+    }
+   ]
+  },
+  {
+   "id": "regulate",
+   "sublist": 2,
+   "word": "regulate",
+   "pos": "verb",
+   "ru": "регулировать",
+   "def": "To control an activity or process by using rules or laws.",
+   "examples": [
+    "The agency regulates the use of clinical data.",
+    "New standards regulate how emissions are reported."
+   ],
+   "forms": [
+    {
+     "w": "regulator",
+     "pos": "noun",
+     "ru": "регулятор"
+    },
+    {
+     "w": "regulation",
+     "pos": "noun",
+     "ru": "регулирование"
+    },
+    {
+     "w": "regulations",
+     "pos": "noun",
+     "ru": "правила"
+    },
+    {
+     "w": "regulate",
+     "pos": "verb",
+     "ru": "регулировать"
+    },
+    {
+     "w": "regulates",
+     "pos": "verb",
+     "ru": "регулирует"
+    },
+    {
+     "w": "regulated",
+     "pos": "adjective",
+     "ru": "регулируемый"
+    },
+    {
+     "w": "regulating",
+     "pos": "verb",
+     "ru": "регулируя"
+    },
+    {
+     "w": "regulatory",
+     "pos": "adjective",
+     "ru": "регулирующий"
+    },
+    {
+     "w": "deregulated",
+     "pos": "adjective",
+     "ru": "дерегулированный"
+    },
+    {
+     "w": "deregulation",
+     "pos": "noun",
+     "ru": "дерегулирование"
+    },
+    {
+     "w": "unregulated",
+     "pos": "adjective",
+     "ru": "нерегулируемый"
+    }
+   ]
+  },
+  {
+   "id": "relevant",
+   "sublist": 2,
+   "word": "relevant",
+   "pos": "adjective",
+   "ru": "относящийся к делу; релевантный",
+   "def": "Closely connected with the subject or useful for the purpose.",
+   "examples": [
+    "The review includes only studies relevant to the research question.",
+    "Please provide any relevant information about the procedure."
+   ],
+   "forms": [
+    {
+     "w": "relevance",
+     "pos": "noun",
+     "ru": "актуальность; значимость"
+    },
+    {
+     "w": "relevant",
+     "pos": "adjective",
+     "ru": "относящийся к делу"
+    },
+    {
+     "w": "irrelevance",
+     "pos": "noun",
+     "ru": "неуместность"
+    },
+    {
+     "w": "irrelevant",
+     "pos": "adjective",
+     "ru": "не относящийся к делу"
+    }
+   ]
+  },
+  {
+   "id": "reside",
+   "sublist": 2,
+   "word": "reside",
+   "pos": "verb",
+   "ru": "проживать; находиться",
+   "def": "To live in a particular place; (of a quality or responsibility) to exist in someone or something.",
+   "examples": [
+    "Most survey respondents reside in urban areas.",
+    "The final decision resides with the review committee."
+   ],
+   "forms": [
+    {
+     "w": "resident",
+     "pos": "noun",
+     "ru": "житель"
+    },
+    {
+     "w": "residence",
+     "pos": "noun",
+     "ru": "место жительства"
+    },
+    {
+     "w": "reside",
+     "pos": "verb",
+     "ru": "проживать"
+    },
+    {
+     "w": "residential",
+     "pos": "adjective",
+     "ru": "жилой"
+    },
+    {
+     "w": "residing",
+     "pos": "verb",
+     "ru": "проживающий"
+    }
+   ]
+  },
+  {
+   "id": "resource",
+   "sublist": 2,
+   "word": "resource",
+   "pos": "noun",
+   "ru": "ресурс; средство",
+   "def": "A supply, material, or source of help that can be used when needed.",
+   "examples": [
+    "The library provides online resources for students.",
+    "Time is a limited resource in most research projects."
+   ],
+   "forms": [
+    {
+     "w": "resource",
+     "pos": "noun",
+     "ru": "ресурс"
+    },
+    {
+     "w": "resources",
+     "pos": "noun",
+     "ru": "ресурсы"
+    },
+    {
+     "w": "resourceful",
+     "pos": "adjective",
+     "ru": "находчивый"
+    },
+    {
+     "w": "unresourceful",
+     "pos": "adjective",
+     "ru": "не находчивый"
+    },
+    {
+     "w": "under-resourced",
+     "pos": "adjective",
+     "ru": "недостаточно обеспеченный ресурсами"
+    }
+   ]
+  },
+  {
+   "id": "restrict",
+   "sublist": 2,
+   "word": "restrict",
+   "pos": "verb",
+   "ru": "ограничивать",
+   "def": "To limit the size, amount, or range of something.",
+   "examples": [
+    "The study restricted participation to adults over eighteen.",
+    "Budget limits may restrict access to specialist equipment."
+   ],
+   "forms": [
+    {
+     "w": "restriction",
+     "pos": "noun",
+     "ru": "ограничение"
+    },
+    {
+     "w": "restrict",
+     "pos": "verb",
+     "ru": "ограничивать"
+    },
+    {
+     "w": "restrictively",
+     "pos": "adverb",
+     "ru": "ограничительно"
+    },
+    {
+     "w": "restricted",
+     "pos": "adjective",
+     "ru": "ограниченный"
+    },
+    {
+     "w": "restricting",
+     "pos": "verb",
+     "ru": "ограничивающий"
+    },
+    {
+     "w": "restrictive",
+     "pos": "adjective",
+     "ru": "ограничительный"
+    },
+    {
+     "w": "unrestricted",
+     "pos": "adjective",
+     "ru": "неограниченный"
+    },
+    {
+     "w": "unrestrictive",
+     "pos": "adjective",
+     "ru": "не накладывающий ограничений"
+    }
+   ]
+  },
+  {
+   "id": "secure",
+   "sublist": 2,
+   "word": "secure",
+   "pos": "adjective",
+   "ru": "безопасный; надёжный",
+   "def": "Protected from danger or unauthorized access; firmly fixed or certain.",
+   "examples": [
+    "The files are stored on a secure server.",
+    "Researchers used a secure method to transfer personal information."
+   ],
+   "forms": [
+    {
+     "w": "security",
+     "pos": "noun",
+     "ru": "безопасность"
+    },
+    {
+     "w": "securities",
+     "pos": "noun",
+     "ru": "ценные бумаги"
+    },
+    {
+     "w": "secure",
+     "pos": "verb",
+     "ru": "обеспечивать"
+    },
+    {
+     "w": "secure",
+     "pos": "adjective",
+     "ru": "безопасный"
+    },
+    {
+     "w": "securely",
+     "pos": "adverb",
+     "ru": "безопасно"
+    },
+    {
+     "w": "secured",
+     "pos": "adjective",
+     "ru": "защищённый"
+    },
+    {
+     "w": "insecure",
+     "pos": "adjective",
+     "ru": "небезопасный"
+    },
+    {
+     "w": "insecurity",
+     "pos": "noun",
+     "ru": "неуверенность; небезопасность"
+    }
+   ]
+  },
+  {
+   "id": "seek",
+   "sublist": 2,
+   "word": "seek",
+   "pos": "verb",
+   "ru": "искать; стремиться",
+   "def": "To try to find, obtain, or achieve something.",
+   "examples": [
+    "The researchers seek to explain the difference between the groups.",
+    "Students may seek advice from an academic adviser."
+   ],
+   "forms": [
+    {
+     "w": "seek",
+     "pos": "verb",
+     "ru": "искать"
+    },
+    {
+     "w": "sought",
+     "pos": "verb",
+     "ru": "искал; искомый"
+    }
+   ]
+  },
+  {
+   "id": "select",
+   "sublist": 2,
+   "word": "select",
+   "pos": "verb",
+   "ru": "выбирать; отбирать",
+   "def": "To choose someone or something from a group.",
+   "examples": [
+    "The committee selected five proposals for further review.",
+    "Participants were selected using a random sampling method."
+   ],
+   "forms": [
+    {
+     "w": "selector",
+     "pos": "noun",
+     "ru": "отборщик"
+    },
+    {
+     "w": "selection",
+     "pos": "noun",
+     "ru": "выбор"
+    },
+    {
+     "w": "select",
+     "pos": "verb",
+     "ru": "выбирать"
+    },
+    {
+     "w": "selectively",
+     "pos": "adverb",
+     "ru": "избирательно"
+    },
+    {
+     "w": "selected",
+     "pos": "adjective",
+     "ru": "отобранный"
+    },
+    {
+     "w": "selective",
+     "pos": "adjective",
+     "ru": "избирательный"
+    }
+   ]
+  },
+  {
+   "id": "site",
+   "sublist": 2,
+   "word": "site",
+   "pos": "noun",
+   "ru": "место; площадка; объект",
+   "def": "A particular place where an activity happens or where something is built or located.",
+   "examples": [
+    "The researchers collected samples at three field sites.",
+    "The proposed site is close to public transport."
+   ],
+   "forms": [
+    {
+     "w": "site",
+     "pos": "noun",
+     "ru": "место; площадка; объект"
+    }
+   ]
+  },
+  {
+   "id": "strategy",
+   "sublist": 2,
+   "word": "strategy",
+   "pos": "noun",
+   "ru": "стратегия; план действий",
+   "def": "A planned way of achieving a particular goal.",
+   "examples": [
+    "The paper outlines a strategy for reducing energy use.",
+    "Students used different strategies to remember new terms."
+   ],
+   "forms": [
+    {
+     "w": "strategist",
+     "pos": "noun",
+     "ru": "стратег"
+    },
+    {
+     "w": "strategy",
+     "pos": "noun",
+     "ru": "стратегия"
+    },
+    {
+     "w": "strategies",
+     "pos": "noun",
+     "ru": "стратегии"
+    },
+    {
+     "w": "strategically",
+     "pos": "adverb",
+     "ru": "стратегически"
+    },
+    {
+     "w": "strategic",
+     "pos": "adjective",
+     "ru": "стратегический"
+    }
+   ]
+  },
+  {
+   "id": "survey",
+   "sublist": 2,
+   "word": "survey",
+   "pos": "noun",
+   "ru": "опрос; исследование",
+   "def": "A set of questions used to collect information from people; a study of opinions or conditions.",
+   "examples": [
+    "The survey included questions about study habits.",
+    "A national survey found differences between age groups."
+   ],
+   "forms": [
+    {
+     "w": "survey",
+     "pos": "noun",
+     "ru": "опрос"
+    },
+    {
+     "w": "survey",
+     "pos": "verb",
+     "ru": "проводить опрос"
+    },
+    {
+     "w": "surveyed",
+     "pos": "adjective",
+     "ru": "опрошенный"
+    },
+    {
+     "w": "surveying",
+     "pos": "noun",
+     "ru": "съёмка местности"
+    }
+   ]
+  },
+  {
+   "id": "text",
+   "sublist": 2,
+   "word": "text",
+   "pos": "noun",
+   "ru": "текст",
+   "def": "Written material, especially one used for study or analysis.",
+   "examples": [
+    "The textbook includes a short text for each unit.",
+    "The analysis focuses on how the text presents social change."
+   ],
+   "forms": [
+    {
+     "w": "text",
+     "pos": "noun",
+     "ru": "текст"
+    },
+    {
+     "w": "text",
+     "pos": "verb",
+     "ru": "отправлять сообщение"
+    },
+    {
+     "w": "textual",
+     "pos": "adjective",
+     "ru": "текстовый"
+    }
+   ]
+  },
+  {
+   "id": "traditional",
+   "sublist": 2,
+   "word": "traditional",
+   "pos": "adjective",
+   "ru": "традиционный",
+   "def": "Following customs or beliefs that have existed for a long time.",
+   "examples": [
+    "Traditional methods remain common in some classrooms.",
+    "The researchers compared traditional and online instruction."
+   ],
+   "forms": [
+    {
+     "w": "traditionalist",
+     "pos": "noun",
+     "ru": "традиционалист"
+    },
+    {
+     "w": "tradition",
+     "pos": "noun",
+     "ru": "традиция"
+    },
+    {
+     "w": "traditions",
+     "pos": "noun",
+     "ru": "традиции"
+    },
+    {
+     "w": "traditionally",
+     "pos": "adverb",
+     "ru": "традиционно"
+    },
+    {
+     "w": "traditional",
+     "pos": "adjective",
+     "ru": "традиционный"
+    },
+    {
+     "w": "non-traditional",
+     "pos": "adjective",
+     "ru": "нетрадиционный"
+    }
+   ]
+  },
+  {
+   "id": "transfer",
+   "sublist": 2,
+   "word": "transfer",
+   "pos": "verb",
+   "ru": "переносить; передавать",
+   "def": "To move something or someone from one place, person, or situation to another.",
+   "examples": [
+    "The results may not transfer directly to other populations.",
+    "The university transferred the data to a secure archive."
+   ],
+   "forms": [
+    {
+     "w": "transfer",
+     "pos": "noun",
+     "ru": "перенос; передача"
+    },
+    {
+     "w": "transfer",
+     "pos": "verb",
+     "ru": "переносить; передавать"
+    },
+    {
+     "w": "transference",
+     "pos": "noun",
+     "ru": "перенос; передача"
+    },
+    {
+     "w": "transferable",
+     "pos": "adjective",
+     "ru": "переносимый; передаваемый"
     }
    ]
   }
