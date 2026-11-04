@@ -301,7 +301,7 @@ async function fillWord(){  const tok=GEN,box=document.getElementById("wdb");  t
  document.getElementById("tc").onclick=()=>go(progress);document.getElementById("wc").onclick=()=>go(myVocab);
 }
 function examMenu(){rs("examMenu");
- app.innerHTML=`<h1>TOEFL</h1>${mcard('id="st"',"folder","Saved tests","Real timed practice")}${mcard('id="rx"',"shuffle","Random exam","A new mix of tasks every time")}${mcard('id="tt"',"doc","Train text","AI reading tasks in the exam format")}${mcard('id="eg"',"book","Exam guide","How the exam works and how to prepare")}`;
+ app.innerHTML=`<h1>TOEFL</h1>${mcard('id="eg"',"book","Exam guide","How the exam works and how to prepare")}${mcard('id="st"',"folder","Saved tests","Real timed practice")}${mcard('id="rx"',"shuffle","Random exam","A new mix of tasks every time")}${mcard('id="tt"',"doc","Train text","AI reading tasks in the exam format")}`;
  document.getElementById("st").onclick=()=>go(savedTests);
  document.getElementById("rx").onclick=randomExam;  document.getElementById("eg").onclick=()=>go(guide);
  document.getElementById("tt").onclick=()=>go(()=>confirmScreen("Train text",()=>swap(textMenu)));
