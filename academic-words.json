@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "words": [
   {
    "id": "analysis",
@@ -4313,6 +4313,2206 @@
      "w": "transferable",
      "pos": "adjective",
      "ru": "переносимый; передаваемый"
+    }
+   ]
+  },
+  {
+   "id": "alternative",
+   "sublist": 3,
+   "word": "alternative",
+   "pos": "noun",
+   "ru": "альтернатива",
+   "def": "One of two or more possibilities that can be chosen.",
+   "examples": [
+    "Researchers considered an alternative to the standard method.",
+    "The report offers several alternatives for reducing costs."
+   ],
+   "forms": [
+    {
+     "w": "alternative",
+     "pos": "noun",
+     "ru": "альтернатива"
+    },
+    {
+     "w": "alternatively",
+     "pos": "adverb",
+     "ru": "альтернативно"
+    },
+    {
+     "w": "alternatives",
+     "pos": "noun",
+     "ru": "альтернатива"
+    }
+   ]
+  },
+  {
+   "id": "circumstance",
+   "sublist": 3,
+   "word": "circumstance",
+   "pos": "noun",
+   "ru": "обстоятельство",
+   "def": "A fact or condition that affects a situation.",
+   "examples": [
+    "Under these circumstances, the trial was postponed.",
+    "The decision depends on the circumstances of each case."
+   ],
+   "forms": [
+    {
+     "w": "circumstance",
+     "pos": "noun",
+     "ru": "обстоятельство"
+    },
+    {
+     "w": "circumstances",
+     "pos": "noun",
+     "ru": "обстоятельства"
+    }
+   ]
+  },
+  {
+   "id": "comment",
+   "sublist": 3,
+   "word": "comment",
+   "pos": "verb",
+   "ru": "комментировать",
+   "def": "To express an opinion or explanation about something.",
+   "examples": [
+    "Several participants commented on the clarity of the survey.",
+    "The article includes commentary from a leading commentator."
+   ],
+   "forms": [
+    {
+     "w": "comment",
+     "pos": "verb",
+     "ru": "комментировать"
+    },
+    {
+     "w": "commentary",
+     "pos": "noun",
+     "ru": "комментарий"
+    },
+    {
+     "w": "commentator",
+     "pos": "noun",
+     "ru": "комментатор"
+    },
+    {
+     "w": "commented",
+     "pos": "verb",
+     "ru": "комментировал(а)"
+    },
+    {
+     "w": "commenting",
+     "pos": "verb",
+     "ru": "комментируя"
+    },
+    {
+     "w": "comments",
+     "pos": "noun",
+     "ru": "комментарии"
+    }
+   ]
+  },
+  {
+   "id": "compensate",
+   "sublist": 3,
+   "word": "compensate",
+   "pos": "verb",
+   "ru": "компенсировать",
+   "def": "To make up for a loss, disadvantage, or lack.",
+   "examples": [
+    "The grant helps compensate for the cost of fieldwork.",
+    "Compensation may be provided for documented expenses."
+   ],
+   "forms": [
+    {
+     "w": "compensate",
+     "pos": "verb",
+     "ru": "компенсировать"
+    },
+    {
+     "w": "compensated",
+     "pos": "verb",
+     "ru": "компенсировал(а)"
+    },
+    {
+     "w": "compensating",
+     "pos": "verb",
+     "ru": "компенсируя"
+    },
+    {
+     "w": "compensation",
+     "pos": "noun",
+     "ru": "компенсация"
+    },
+    {
+     "w": "compensatory",
+     "pos": "adjective",
+     "ru": "компенсаторный"
+    }
+   ]
+  },
+  {
+   "id": "component",
+   "sublist": 3,
+   "word": "component",
+   "pos": "noun",
+   "ru": "компонент; составная часть",
+   "def": "One of the parts that make up a whole.",
+   "examples": [
+    "Each component of the model was tested separately.",
+    "The system contains several essential components."
+   ],
+   "forms": [
+    {
+     "w": "component",
+     "pos": "noun",
+     "ru": "компонент; составная часть"
+    },
+    {
+     "w": "components",
+     "pos": "noun",
+     "ru": "компоненты"
+    }
+   ]
+  },
+  {
+   "id": "consent",
+   "sublist": 3,
+   "word": "consent",
+   "pos": "noun",
+   "ru": "согласие",
+   "def": "Permission or agreement to do something.",
+   "examples": [
+    "All participants gave informed consent before the study.",
+    "A broad consensus emerged after further discussion."
+   ],
+   "forms": [
+    {
+     "w": "consent",
+     "pos": "noun",
+     "ru": "согласие"
+    },
+    {
+     "w": "consensus",
+     "pos": "noun",
+     "ru": "консенсус"
+    },
+    {
+     "w": "consented",
+     "pos": "verb",
+     "ru": "дал(а) согласие"
+    },
+    {
+     "w": "consenting",
+     "pos": "adjective",
+     "ru": "дающий согласие"
+    }
+   ]
+  },
+  {
+   "id": "considerable",
+   "sublist": 3,
+   "word": "considerable",
+   "pos": "adjective",
+   "ru": "значительный",
+   "def": "Large in amount, size, or importance.",
+   "examples": [
+    "The revised method requires considerable time.",
+    "Costs increased considerably during the final phase."
+   ],
+   "forms": [
+    {
+     "w": "considerable",
+     "pos": "adjective",
+     "ru": "значительный"
+    },
+    {
+     "w": "considerably",
+     "pos": "adverb",
+     "ru": "значительно"
+    }
+   ]
+  },
+  {
+   "id": "constant",
+   "sublist": 3,
+   "word": "constant",
+   "pos": "adjective",
+   "ru": "постоянный",
+   "def": "Happening continuously or staying the same.",
+   "examples": [
+    "The sample was kept at a constant temperature.",
+    "The value remains constant across both trials."
+   ],
+   "forms": [
+    {
+     "w": "constant",
+     "pos": "adjective",
+     "ru": "постоянный"
+    },
+    {
+     "w": "constancy",
+     "pos": "noun",
+     "ru": "постоянство"
+    },
+    {
+     "w": "constantly",
+     "pos": "adverb",
+     "ru": "постоянно"
+    },
+    {
+     "w": "constants",
+     "pos": "noun",
+     "ru": "постоянные величины"
+    },
+    {
+     "w": "inconstancy",
+     "pos": "noun",
+     "ru": "непостоянство"
+    },
+    {
+     "w": "inconstantly",
+     "pos": "adverb",
+     "ru": "непостоянно"
+    }
+   ]
+  },
+  {
+   "id": "constrain",
+   "sublist": 3,
+   "word": "constrain",
+   "pos": "verb",
+   "ru": "ограничивать",
+   "def": "To limit what someone or something can do.",
+   "examples": [
+    "A small sample can constrain the conclusions.",
+    "The constraints were stated clearly in the report."
+   ],
+   "forms": [
+    {
+     "w": "constrain",
+     "pos": "verb",
+     "ru": "ограничивать"
+    },
+    {
+     "w": "constrained",
+     "pos": "adjective",
+     "ru": "ограниченный"
+    },
+    {
+     "w": "constraining",
+     "pos": "adjective",
+     "ru": "ограничивающий"
+    },
+    {
+     "w": "constraint",
+     "pos": "noun",
+     "ru": "ограничение"
+    },
+    {
+     "w": "constraints",
+     "pos": "noun",
+     "ru": "ограничения"
+    },
+    {
+     "w": "unconstrained",
+     "pos": "adjective",
+     "ru": "неограниченный"
+    }
+   ]
+  },
+  {
+   "id": "contribute",
+   "sublist": 3,
+   "word": "contribute",
+   "pos": "verb",
+   "ru": "способствовать; вносить вклад",
+   "def": "To help cause or achieve something.",
+   "examples": [
+    "Several factors contribute to the observed change.",
+    "Each contributor made a contribution to the project."
+   ],
+   "forms": [
+    {
+     "w": "contribute",
+     "pos": "verb",
+     "ru": "способствовать; вносить вклад"
+    },
+    {
+     "w": "contributed",
+     "pos": "verb",
+     "ru": "внёс(ла) вклад"
+    },
+    {
+     "w": "contributes",
+     "pos": "verb",
+     "ru": "способствует"
+    },
+    {
+     "w": "contributing",
+     "pos": "verb",
+     "ru": "способствуя"
+    },
+    {
+     "w": "contribution",
+     "pos": "noun",
+     "ru": "вклад"
+    },
+    {
+     "w": "contributor",
+     "pos": "noun",
+     "ru": "участник; автор вклада"
+    }
+   ]
+  },
+  {
+   "id": "convene",
+   "sublist": 3,
+   "word": "convene",
+   "pos": "verb",
+   "ru": "созывать; собираться",
+   "def": "To arrange for people to meet, or to meet formally.",
+   "examples": [
+    "The committee will convene next week.",
+    "The convention brought together researchers from across Europe."
+   ],
+   "forms": [
+    {
+     "w": "convene",
+     "pos": "verb",
+     "ru": "созывать; собираться"
+    },
+    {
+     "w": "convention",
+     "pos": "noun",
+     "ru": "соглашение; обычай"
+    },
+    {
+     "w": "convenes",
+     "pos": "verb",
+     "ru": "созывает"
+    },
+    {
+     "w": "conventional",
+     "pos": "adjective",
+     "ru": "традиционный"
+    },
+    {
+     "w": "conventionally",
+     "pos": "adverb",
+     "ru": "традиционно"
+    },
+    {
+     "w": "unconventional",
+     "pos": "adjective",
+     "ru": "нетрадиционный"
+    }
+   ]
+  },
+  {
+   "id": "coordinate",
+   "sublist": 3,
+   "word": "coordinate",
+   "pos": "verb",
+   "ru": "координировать",
+   "def": "To organize people or activities so they work together.",
+   "examples": [
+    "A central team coordinates the data collection.",
+    "Coordination between the groups improved over time."
+   ],
+   "forms": [
+    {
+     "w": "coordinate",
+     "pos": "verb",
+     "ru": "координировать"
+    },
+    {
+     "w": "coordinated",
+     "pos": "adjective",
+     "ru": "согласованный"
+    },
+    {
+     "w": "coordinates",
+     "pos": "verb",
+     "ru": "координирует"
+    },
+    {
+     "w": "coordinating",
+     "pos": "verb",
+     "ru": "координируя"
+    },
+    {
+     "w": "coordination",
+     "pos": "noun",
+     "ru": "координация"
+    },
+    {
+     "w": "coordinator",
+     "pos": "noun",
+     "ru": "координатор"
+    }
+   ]
+  },
+  {
+   "id": "core",
+   "sublist": 3,
+   "word": "core",
+   "pos": "noun",
+   "ru": "ядро; основа",
+   "def": "The central or most important part of something.",
+   "examples": [
+    "Trust is at the core of the partnership.",
+    "The course covers the core concepts of the subject."
+   ],
+   "forms": [
+    {
+     "w": "core",
+     "pos": "noun",
+     "ru": "ядро; основа"
+    },
+    {
+     "w": "cores",
+     "pos": "noun",
+     "ru": "ядра"
+    },
+    {
+     "w": "cored",
+     "pos": "adjective",
+     "ru": "с сердцевиной"
+    }
+   ]
+  },
+  {
+   "id": "corporate",
+   "sublist": 3,
+   "word": "corporate",
+   "pos": "adjective",
+   "ru": "корпоративный; относящийся к компании",
+   "def": "Relating to a company or business organization.",
+   "examples": [
+    "Corporate policy requires annual training.",
+    "The corporation published its financial results."
+   ],
+   "forms": [
+    {
+     "w": "corporate",
+     "pos": "adjective",
+     "ru": "корпоративный; относящийся к компании"
+    },
+    {
+     "w": "corporates",
+     "pos": "noun",
+     "ru": "корпорации"
+    },
+    {
+     "w": "corporation",
+     "pos": "noun",
+     "ru": "корпорация"
+    }
+   ]
+  },
+  {
+   "id": "correspond",
+   "sublist": 3,
+   "word": "correspond",
+   "pos": "verb",
+   "ru": "соответствовать; переписываться",
+   "def": "To be similar or equivalent, or to communicate by writing.",
+   "examples": [
+    "The categories correspond to the stages of the process.",
+    "The results correspond closely with earlier findings."
+   ],
+   "forms": [
+    {
+     "w": "correspond",
+     "pos": "verb",
+     "ru": "соответствовать; переписываться"
+    },
+    {
+     "w": "corresponded",
+     "pos": "verb",
+     "ru": "соответствовал(а)"
+    },
+    {
+     "w": "correspondence",
+     "pos": "noun",
+     "ru": "соответствие; переписка"
+    },
+    {
+     "w": "corresponding",
+     "pos": "adjective",
+     "ru": "соответствующий"
+    },
+    {
+     "w": "correspondingly",
+     "pos": "adverb",
+     "ru": "соответственно"
+    },
+    {
+     "w": "corresponds",
+     "pos": "verb",
+     "ru": "соответствует"
+    }
+   ]
+  },
+  {
+   "id": "criterion",
+   "sublist": 3,
+   "word": "criterion",
+   "pos": "noun",
+   "ru": "критерий",
+   "def": "A standard used to judge or decide something.",
+   "examples": [
+    "Accuracy was the main criterion for inclusion.",
+    "The criteria were applied consistently."
+   ],
+   "forms": [
+    {
+     "w": "criteria",
+     "pos": "noun",
+     "ru": "критерии"
+    },
+    {
+     "w": "criterion",
+     "pos": "noun",
+     "ru": "критерий"
+    }
+   ]
+  },
+  {
+   "id": "deduce",
+   "sublist": 3,
+   "word": "deduce",
+   "pos": "verb",
+   "ru": "делать вывод",
+   "def": "To reach a conclusion from evidence or reasoning.",
+   "examples": [
+    "We can deduce the likely cause from the pattern.",
+    "The deduction is supported by the available evidence."
+   ],
+   "forms": [
+    {
+     "w": "deduce",
+     "pos": "verb",
+     "ru": "делать вывод"
+    },
+    {
+     "w": "deduced",
+     "pos": "verb",
+     "ru": "вывел(а)"
+    },
+    {
+     "w": "deduction",
+     "pos": "noun",
+     "ru": "вывод"
+    }
+   ]
+  },
+  {
+   "id": "demonstrate",
+   "sublist": 3,
+   "word": "demonstrate",
+   "pos": "verb",
+   "ru": "демонстрировать; доказывать",
+   "def": "To show clearly that something exists or is true.",
+   "examples": [
+    "The experiment demonstrates how the reaction occurs.",
+    "The demonstration made the principle easier to understand."
+   ],
+   "forms": [
+    {
+     "w": "demonstrate",
+     "pos": "verb",
+     "ru": "демонстрировать; доказывать"
+    },
+    {
+     "w": "demonstrable",
+     "pos": "adjective",
+     "ru": "доказуемый"
+    },
+    {
+     "w": "demonstrably",
+     "pos": "adverb",
+     "ru": "очевидно"
+    },
+    {
+     "w": "demonstrated",
+     "pos": "verb",
+     "ru": "продемонстрировал(а)"
+    },
+    {
+     "w": "demonstrates",
+     "pos": "verb",
+     "ru": "демонстрирует"
+    },
+    {
+     "w": "demonstrating",
+     "pos": "verb",
+     "ru": "демонстрируя"
+    },
+    {
+     "w": "demonstration",
+     "pos": "noun",
+     "ru": "демонстрация"
+    },
+    {
+     "w": "demonstrative",
+     "pos": "adjective",
+     "ru": "показательный"
+    },
+    {
+     "w": "demonstratively",
+     "pos": "adverb",
+     "ru": "показательно"
+    },
+    {
+     "w": "demonstrator",
+     "pos": "noun",
+     "ru": "демонстратор"
+    }
+   ]
+  },
+  {
+   "id": "document",
+   "sublist": 3,
+   "word": "document",
+   "pos": "noun",
+   "ru": "документ",
+   "def": "A written or digital record that provides information.",
+   "examples": [
+    "The document describes the study procedure.",
+    "All documents were stored securely."
+   ],
+   "forms": [
+    {
+     "w": "document",
+     "pos": "noun",
+     "ru": "документ"
+    },
+    {
+     "w": "documentation",
+     "pos": "noun",
+     "ru": "документация"
+    },
+    {
+     "w": "documented",
+     "pos": "adjective",
+     "ru": "задокументированный"
+    },
+    {
+     "w": "documents",
+     "pos": "noun",
+     "ru": "документы"
+    }
+   ]
+  },
+  {
+   "id": "dominate",
+   "sublist": 3,
+   "word": "dominate",
+   "pos": "verb",
+   "ru": "доминировать; преобладать",
+   "def": "To have greater influence, importance, or control.",
+   "examples": [
+    "One explanation dominates the current debate.",
+    "The dominant pattern was visible in every sample."
+   ],
+   "forms": [
+    {
+     "w": "dominate",
+     "pos": "verb",
+     "ru": "доминировать; преобладать"
+    },
+    {
+     "w": "dominance",
+     "pos": "noun",
+     "ru": "доминирование"
+    },
+    {
+     "w": "dominant",
+     "pos": "adjective",
+     "ru": "доминирующий"
+    },
+    {
+     "w": "dominated",
+     "pos": "verb",
+     "ru": "доминировал(а)"
+    },
+    {
+     "w": "domination",
+     "pos": "noun",
+     "ru": "доминирование"
+    }
+   ]
+  },
+  {
+   "id": "emphasize",
+   "sublist": 3,
+   "word": "emphasize",
+   "pos": "verb",
+   "ru": "подчёркивать",
+   "def": "To give special importance or attention to something.",
+   "examples": [
+    "The authors emphasize the limits of the evidence.",
+    "The emphasis is on practical outcomes."
+   ],
+   "forms": [
+    {
+     "w": "emphasis",
+     "pos": "noun",
+     "ru": "акцент; подчёркивание"
+    },
+    {
+     "w": "emphasize",
+     "pos": "verb",
+     "ru": "подчёркивать"
+    },
+    {
+     "w": "emphasized",
+     "pos": "verb",
+     "ru": "подчеркнул(а)"
+    },
+    {
+     "w": "emphatic",
+     "pos": "adjective",
+     "ru": "категоричный; выразительный"
+    },
+    {
+     "w": "emphatically",
+     "pos": "adverb",
+     "ru": "категорично"
+    }
+   ]
+  },
+  {
+   "id": "ensure",
+   "sublist": 3,
+   "word": "ensure",
+   "pos": "verb",
+   "ru": "обеспечивать; гарантировать",
+   "def": "To make certain that something happens.",
+   "examples": [
+    "Researchers used a checklist to ensure consistency.",
+    "The team is ensuring that every record is complete."
+   ],
+   "forms": [
+    {
+     "w": "ensure",
+     "pos": "verb",
+     "ru": "обеспечивать; гарантировать"
+    },
+    {
+     "w": "ensured",
+     "pos": "verb",
+     "ru": "обеспечил(а)"
+    },
+    {
+     "w": "ensuring",
+     "pos": "verb",
+     "ru": "обеспечивая"
+    }
+   ]
+  },
+  {
+   "id": "exclude",
+   "sublist": 3,
+   "word": "exclude",
+   "pos": "verb",
+   "ru": "исключать",
+   "def": "To leave someone or something out.",
+   "examples": [
+    "The analysis excludes incomplete responses.",
+    "Exclusion criteria were set before recruitment."
+   ],
+   "forms": [
+    {
+     "w": "exclude",
+     "pos": "verb",
+     "ru": "исключать"
+    },
+    {
+     "w": "excluded",
+     "pos": "adjective",
+     "ru": "исключённый"
+    },
+    {
+     "w": "excluding",
+     "pos": "preposition",
+     "ru": "исключая"
+    },
+    {
+     "w": "exclusion",
+     "pos": "noun",
+     "ru": "исключение"
+    },
+    {
+     "w": "exclusionary",
+     "pos": "adjective",
+     "ru": "исключающий"
+    },
+    {
+     "w": "exclusionist",
+     "pos": "noun",
+     "ru": "сторонник исключения"
+    },
+    {
+     "w": "exclusive",
+     "pos": "adjective",
+     "ru": "исключительный"
+    },
+    {
+     "w": "exclusively",
+     "pos": "adverb",
+     "ru": "исключительно"
+    }
+   ]
+  },
+  {
+   "id": "framework",
+   "sublist": 3,
+   "word": "framework",
+   "pos": "noun",
+   "ru": "структура; концептуальная основа",
+   "def": "A set of ideas or rules used to organize or understand something.",
+   "examples": [
+    "The framework links theory to practical decisions.",
+    "Several frameworks were compared in the review."
+   ],
+   "forms": [
+    {
+     "w": "framework",
+     "pos": "noun",
+     "ru": "структура; концептуальная основа"
+    },
+    {
+     "w": "frameworks",
+     "pos": "noun",
+     "ru": "структуры; концептуальные основы"
+    }
+   ]
+  },
+  {
+   "id": "fund",
+   "sublist": 3,
+   "word": "fund",
+   "pos": "verb",
+   "ru": "финансировать",
+   "def": "To provide money for a person, activity, or organization.",
+   "examples": [
+    "The council funds research into public health.",
+    "Funding came from two independent sources."
+   ],
+   "forms": [
+    {
+     "w": "fund",
+     "pos": "verb",
+     "ru": "финансировать"
+    },
+    {
+     "w": "funded",
+     "pos": "verb",
+     "ru": "финансировал(а)"
+    },
+    {
+     "w": "funder",
+     "pos": "noun",
+     "ru": "спонсор"
+    },
+    {
+     "w": "funding",
+     "pos": "noun",
+     "ru": "финансирование"
+    },
+    {
+     "w": "funds",
+     "pos": "noun",
+     "ru": "средства"
+    }
+   ]
+  },
+  {
+   "id": "illustrate",
+   "sublist": 3,
+   "word": "illustrate",
+   "pos": "verb",
+   "ru": "иллюстрировать; пояснять",
+   "def": "To explain or make something clear by giving examples or images.",
+   "examples": [
+    "Figure 2 illustrates the relationship between the variables.",
+    "The illustration highlights the main stages."
+   ],
+   "forms": [
+    {
+     "w": "illustrate",
+     "pos": "verb",
+     "ru": "иллюстрировать; пояснять"
+    },
+    {
+     "w": "illustrated",
+     "pos": "verb",
+     "ru": "проиллюстрировал(а)"
+    },
+    {
+     "w": "illustrates",
+     "pos": "verb",
+     "ru": "иллюстрирует"
+    },
+    {
+     "w": "illustrating",
+     "pos": "verb",
+     "ru": "иллюстрируя"
+    },
+    {
+     "w": "illustration",
+     "pos": "noun",
+     "ru": "иллюстрация"
+    },
+    {
+     "w": "illustrative",
+     "pos": "adjective",
+     "ru": "показательный"
+    }
+   ]
+  },
+  {
+   "id": "immigrate",
+   "sublist": 3,
+   "word": "immigrate",
+   "pos": "verb",
+   "ru": "иммигрировать",
+   "def": "To come to live permanently in a country different from one’s own.",
+   "examples": [
+    "Her grandparents immigrated to Canada in the 1960s.",
+    "Immigration patterns changed after the policy reform."
+   ],
+   "forms": [
+    {
+     "w": "immigrate",
+     "pos": "verb",
+     "ru": "иммигрировать"
+    },
+    {
+     "w": "immigrant",
+     "pos": "noun",
+     "ru": "иммигрант"
+    },
+    {
+     "w": "immigrated",
+     "pos": "verb",
+     "ru": "иммигрировал(а)"
+    },
+    {
+     "w": "immigration",
+     "pos": "noun",
+     "ru": "иммиграция"
+    }
+   ]
+  },
+  {
+   "id": "imply",
+   "sublist": 3,
+   "word": "imply",
+   "pos": "verb",
+   "ru": "подразумевать; означать",
+   "def": "To suggest something without stating it directly.",
+   "examples": [
+    "These results imply that the treatment may be effective.",
+    "The finding has important implications for policy."
+   ],
+   "forms": [
+    {
+     "w": "imply",
+     "pos": "verb",
+     "ru": "подразумевать; означать"
+    },
+    {
+     "w": "implied",
+     "pos": "verb",
+     "ru": "подразумевал(а)"
+    },
+    {
+     "w": "implies",
+     "pos": "verb",
+     "ru": "подразумевает"
+    },
+    {
+     "w": "implying",
+     "pos": "verb",
+     "ru": "подразумевая"
+    }
+   ]
+  },
+  {
+   "id": "initial",
+   "sublist": 3,
+   "word": "initial",
+   "pos": "adjective",
+   "ru": "первоначальный",
+   "def": "Happening at the beginning of a process.",
+   "examples": [
+    "Initial interviews identified three recurring themes.",
+    "Initially, the groups showed similar results."
+   ],
+   "forms": [
+    {
+     "w": "initial",
+     "pos": "adjective",
+     "ru": "первоначальный"
+    },
+    {
+     "w": "initially",
+     "pos": "adverb",
+     "ru": "изначально"
+    }
+   ]
+  },
+  {
+   "id": "instance",
+   "sublist": 3,
+   "word": "instance",
+   "pos": "noun",
+   "ru": "пример; случай",
+   "def": "An example or occurrence of something.",
+   "examples": [
+    "This instance shows why context matters.",
+    "Instances of measurement error were rare."
+   ],
+   "forms": [
+    {
+     "w": "instance",
+     "pos": "noun",
+     "ru": "пример; случай"
+    },
+    {
+     "w": "instances",
+     "pos": "noun",
+     "ru": "случаи; примеры"
+    }
+   ]
+  },
+  {
+   "id": "interact",
+   "sublist": 3,
+   "word": "interact",
+   "pos": "verb",
+   "ru": "взаимодействовать",
+   "def": "To communicate or act on one another.",
+   "examples": [
+    "The two variables interact in complex ways.",
+    "The interaction was strongest in the first group."
+   ],
+   "forms": [
+    {
+     "w": "interact",
+     "pos": "verb",
+     "ru": "взаимодействовать"
+    },
+    {
+     "w": "interaction",
+     "pos": "noun",
+     "ru": "взаимодействие"
+    },
+    {
+     "w": "interactive",
+     "pos": "adjective",
+     "ru": "интерактивный"
+    },
+    {
+     "w": "interactively",
+     "pos": "adverb",
+     "ru": "интерактивно"
+    }
+   ]
+  },
+  {
+   "id": "justify",
+   "sublist": 3,
+   "word": "justify",
+   "pos": "verb",
+   "ru": "обосновывать",
+   "def": "To give a good reason for a decision or action.",
+   "examples": [
+    "The authors justify their choice of method.",
+    "A clear justification is needed for each exclusion."
+   ],
+   "forms": [
+    {
+     "w": "justify",
+     "pos": "verb",
+     "ru": "обосновывать"
+    },
+    {
+     "w": "justifiable",
+     "pos": "adjective",
+     "ru": "обоснованный"
+    },
+    {
+     "w": "justifiably",
+     "pos": "adverb",
+     "ru": "обоснованно"
+    },
+    {
+     "w": "justification",
+     "pos": "noun",
+     "ru": "обоснование"
+    },
+    {
+     "w": "justified",
+     "pos": "verb / adjective",
+     "ru": "обосновал(а); обоснованный"
+    },
+    {
+     "w": "justifying",
+     "pos": "verb",
+     "ru": "обосновывая"
+    },
+    {
+     "w": "unjustified",
+     "pos": "adjective",
+     "ru": "необоснованный"
+    }
+   ]
+  },
+  {
+   "id": "layer",
+   "sublist": 3,
+   "word": "layer",
+   "pos": "noun",
+   "ru": "слой",
+   "def": "A level or sheet of material or information.",
+   "examples": [
+    "A protective layer covered the surface.",
+    "The model contains several interacting layers."
+   ],
+   "forms": [
+    {
+     "w": "layer",
+     "pos": "noun",
+     "ru": "слой"
+    },
+    {
+     "w": "layered",
+     "pos": "adjective",
+     "ru": "многослойный"
+    },
+    {
+     "w": "layering",
+     "pos": "noun",
+     "ru": "наслоение"
+    },
+    {
+     "w": "layers",
+     "pos": "noun",
+     "ru": "слои"
+    }
+   ]
+  },
+  {
+   "id": "link",
+   "sublist": 3,
+   "word": "link",
+   "pos": "verb",
+   "ru": "связывать",
+   "def": "To connect two or more things.",
+   "examples": [
+    "The study links sleep quality with concentration.",
+    "The linkage between the measures was weak."
+   ],
+   "forms": [
+    {
+     "w": "link",
+     "pos": "verb",
+     "ru": "связывать"
+    },
+    {
+     "w": "linkage",
+     "pos": "noun",
+     "ru": "связь"
+    },
+    {
+     "w": "linked",
+     "pos": "adjective",
+     "ru": "связанный"
+    },
+    {
+     "w": "linking",
+     "pos": "noun",
+     "ru": "связывание"
+    },
+    {
+     "w": "links",
+     "pos": "noun",
+     "ru": "связи"
+    }
+   ]
+  },
+  {
+   "id": "locate",
+   "sublist": 3,
+   "word": "locate",
+   "pos": "verb",
+   "ru": "находить; располагать",
+   "def": "To find the position of something or put it in a place.",
+   "examples": [
+    "The team located the archive in the university library.",
+    "The location was recorded for every sample."
+   ],
+   "forms": [
+    {
+     "w": "locate",
+     "pos": "verb",
+     "ru": "находить; располагать"
+    },
+    {
+     "w": "located",
+     "pos": "adjective",
+     "ru": "расположенный"
+    },
+    {
+     "w": "location",
+     "pos": "noun",
+     "ru": "местоположение"
+    },
+    {
+     "w": "relocate",
+     "pos": "verb",
+     "ru": "перемещать"
+    },
+    {
+     "w": "relocated",
+     "pos": "adjective",
+     "ru": "перемещённый"
+    },
+    {
+     "w": "relocation",
+     "pos": "noun",
+     "ru": "перемещение"
+    }
+   ]
+  },
+  {
+   "id": "maximize",
+   "sublist": 3,
+   "word": "maximize",
+   "pos": "verb",
+   "ru": "максимизировать",
+   "def": "To increase something as much as possible.",
+   "examples": [
+    "The design aims to maximize the use of available data.",
+    "The maximum score was set at 100."
+   ],
+   "forms": [
+    {
+     "w": "maximize",
+     "pos": "verb",
+     "ru": "максимизировать"
+    },
+    {
+     "w": "max",
+     "pos": "noun",
+     "ru": "максимум"
+    },
+    {
+     "w": "maximized",
+     "pos": "verb",
+     "ru": "максимизировал(а)"
+    },
+    {
+     "w": "maximization",
+     "pos": "noun",
+     "ru": "максимизация"
+    },
+    {
+     "w": "maximum",
+     "pos": "noun / adjective",
+     "ru": "максимум; максимальный"
+    }
+   ]
+  },
+  {
+   "id": "minor",
+   "sublist": 3,
+   "word": "minor",
+   "pos": "adjective",
+   "ru": "незначительный; несовершеннолетний",
+   "def": "Small or less important in comparison with others.",
+   "examples": [
+    "Only minor changes were made to the procedure.",
+    "The minority of respondents chose this option."
+   ],
+   "forms": [
+    {
+     "w": "minor",
+     "pos": "adjective",
+     "ru": "незначительный; несовершеннолетний"
+    },
+    {
+     "w": "minorities",
+     "pos": "noun",
+     "ru": "меньшинства"
+    },
+    {
+     "w": "minority",
+     "pos": "noun",
+     "ru": "меньшинство"
+    },
+    {
+     "w": "minors",
+     "pos": "noun",
+     "ru": "несовершеннолетние"
+    }
+   ]
+  },
+  {
+   "id": "negate",
+   "sublist": 3,
+   "word": "negate",
+   "pos": "verb",
+   "ru": "отрицать; сводить на нет",
+   "def": "To deny or make something ineffective.",
+   "examples": [
+    "A single error does not negate the overall pattern.",
+    "The negative result was reported transparently."
+   ],
+   "forms": [
+    {
+     "w": "negate",
+     "pos": "verb",
+     "ru": "отрицать; сводить на нет"
+    },
+    {
+     "w": "negative",
+     "pos": "adjective",
+     "ru": "отрицательный"
+    },
+    {
+     "w": "negated",
+     "pos": "verb",
+     "ru": "отрицал(а)"
+    },
+    {
+     "w": "negatively",
+     "pos": "adverb",
+     "ru": "отрицательно"
+    }
+   ]
+  },
+  {
+   "id": "outcome",
+   "sublist": 3,
+   "word": "outcome",
+   "pos": "noun",
+   "ru": "результат; исход",
+   "def": "The result or effect of an action or process.",
+   "examples": [
+    "The primary outcome was measured after six months.",
+    "Outcomes varied across the participating sites."
+   ],
+   "forms": [
+    {
+     "w": "outcome",
+     "pos": "noun",
+     "ru": "результат; исход"
+    },
+    {
+     "w": "outcomes",
+     "pos": "noun",
+     "ru": "результаты; исходы"
+    }
+   ]
+  },
+  {
+   "id": "partner",
+   "sublist": 3,
+   "word": "partner",
+   "pos": "noun",
+   "ru": "партнёр",
+   "def": "A person or organization that works with another.",
+   "examples": [
+    "Each partner contributed specialist knowledge.",
+    "The partnership supported a long-term exchange."
+   ],
+   "forms": [
+    {
+     "w": "partner",
+     "pos": "noun",
+     "ru": "партнёр"
+    },
+    {
+     "w": "partnership",
+     "pos": "noun",
+     "ru": "партнёрство"
+    }
+   ]
+  },
+  {
+   "id": "philosophize",
+   "sublist": 3,
+   "word": "philosophize",
+   "pos": "verb",
+   "ru": "философствовать",
+   "def": "To think or talk about deep questions concerning life or knowledge.",
+   "examples": [
+    "The seminar invites students to philosophize about evidence.",
+    "The philosopher examined the ethical implications."
+   ],
+   "forms": [
+    {
+     "w": "philosophy",
+     "pos": "noun",
+     "ru": "философия"
+    },
+    {
+     "w": "philosopher",
+     "pos": "noun",
+     "ru": "философ"
+    },
+    {
+     "w": "philosophical",
+     "pos": "adjective",
+     "ru": "философский"
+    },
+    {
+     "w": "philosophically",
+     "pos": "adverb",
+     "ru": "философски"
+    },
+    {
+     "w": "philosophies",
+     "pos": "noun",
+     "ru": "философские учения"
+    },
+    {
+     "w": "philosophize",
+     "pos": "verb",
+     "ru": "философствовать"
+    }
+   ]
+  },
+  {
+   "id": "physical",
+   "sublist": 3,
+   "word": "physical",
+   "pos": "adjective",
+   "ru": "физический",
+   "def": "Relating to the body or to matter and energy.",
+   "examples": [
+    "Physical activity was recorded each day.",
+    "The equipment was physically inspected."
+   ],
+   "forms": [
+    {
+     "w": "physical",
+     "pos": "adjective",
+     "ru": "физический"
+    },
+    {
+     "w": "physically",
+     "pos": "adverb",
+     "ru": "физически"
+    }
+   ]
+  },
+  {
+   "id": "proportion",
+   "sublist": 3,
+   "word": "proportion",
+   "pos": "noun",
+   "ru": "доля; пропорция",
+   "def": "A part or share considered in relation to the whole.",
+   "examples": [
+    "A large proportion of the sample completed the survey.",
+    "The parts were mixed in equal proportions."
+   ],
+   "forms": [
+    {
+     "w": "proportion",
+     "pos": "noun",
+     "ru": "доля; пропорция"
+    },
+    {
+     "w": "disproportion",
+     "pos": "noun",
+     "ru": "несоразмерность"
+    },
+    {
+     "w": "disproportionate",
+     "pos": "adjective",
+     "ru": "несоразмерный"
+    },
+    {
+     "w": "disproportionately",
+     "pos": "adverb",
+     "ru": "непропорционально"
+    },
+    {
+     "w": "proportional",
+     "pos": "adjective",
+     "ru": "пропорциональный"
+    },
+    {
+     "w": "proportionally",
+     "pos": "adverb",
+     "ru": "пропорционально"
+    },
+    {
+     "w": "proportionate",
+     "pos": "adjective",
+     "ru": "соразмерный"
+    },
+    {
+     "w": "proportionately",
+     "pos": "adverb",
+     "ru": "соразмерно"
+    },
+    {
+     "w": "proportions",
+     "pos": "noun",
+     "ru": "пропорции"
+    }
+   ]
+  },
+  {
+   "id": "publish",
+   "sublist": 3,
+   "word": "publish",
+   "pos": "verb",
+   "ru": "публиковать",
+   "def": "To prepare and make written or digital material available to the public.",
+   "examples": [
+    "The journal will publish the findings next month.",
+    "The publisher released an updated edition."
+   ],
+   "forms": [
+    {
+     "w": "publish",
+     "pos": "verb",
+     "ru": "публиковать"
+    },
+    {
+     "w": "published",
+     "pos": "adjective",
+     "ru": "опубликованный"
+    },
+    {
+     "w": "publisher",
+     "pos": "noun",
+     "ru": "издатель"
+    },
+    {
+     "w": "publishing",
+     "pos": "noun",
+     "ru": "публикация; издательское дело"
+    },
+    {
+     "w": "unpublished",
+     "pos": "adjective",
+     "ru": "неопубликованный"
+    }
+   ]
+  },
+  {
+   "id": "react",
+   "sublist": 3,
+   "word": "react",
+   "pos": "verb",
+   "ru": "реагировать",
+   "def": "To respond to an event, substance, or action.",
+   "examples": [
+    "Cells react differently to changes in temperature.",
+    "The reaction was measured at regular intervals."
+   ],
+   "forms": [
+    {
+     "w": "react",
+     "pos": "verb",
+     "ru": "реагировать"
+    },
+    {
+     "w": "reacted",
+     "pos": "verb",
+     "ru": "отреагировал(а)"
+    },
+    {
+     "w": "reacting",
+     "pos": "verb",
+     "ru": "реагируя"
+    },
+    {
+     "w": "reaction",
+     "pos": "noun",
+     "ru": "реакция"
+    },
+    {
+     "w": "reactionary",
+     "pos": "adjective",
+     "ru": "реакционный"
+    },
+    {
+     "w": "reactive",
+     "pos": "adjective",
+     "ru": "реактивный"
+    },
+    {
+     "w": "reactivate",
+     "pos": "verb",
+     "ru": "возобновить"
+    },
+    {
+     "w": "reactivation",
+     "pos": "noun",
+     "ru": "возобновление"
+    },
+    {
+     "w": "reactor",
+     "pos": "noun",
+     "ru": "реактор"
+    }
+   ]
+  },
+  {
+   "id": "register",
+   "sublist": 3,
+   "word": "register",
+   "pos": "verb",
+   "ru": "регистрировать; записывать",
+   "def": "To enter information officially or make a formal record.",
+   "examples": [
+    "Participants register online before the workshop.",
+    "Registration closes two weeks before the event."
+   ],
+   "forms": [
+    {
+     "w": "register",
+     "pos": "verb",
+     "ru": "регистрировать; записывать"
+    },
+    {
+     "w": "deregister",
+     "pos": "verb",
+     "ru": "снимать с регистрации"
+    },
+    {
+     "w": "deregistration",
+     "pos": "noun",
+     "ru": "снятие с регистрации"
+    },
+    {
+     "w": "registered",
+     "pos": "adjective",
+     "ru": "зарегистрированный"
+    },
+    {
+     "w": "registering",
+     "pos": "noun",
+     "ru": "регистрация"
+    },
+    {
+     "w": "registration",
+     "pos": "noun",
+     "ru": "регистрация"
+    }
+   ]
+  },
+  {
+   "id": "rely",
+   "sublist": 3,
+   "word": "rely",
+   "pos": "verb",
+   "ru": "полагаться",
+   "def": "To depend on someone or something.",
+   "examples": [
+    "The estimate relies on accurate population data.",
+    "Reliability was checked using repeated measurements."
+   ],
+   "forms": [
+    {
+     "w": "rely",
+     "pos": "verb",
+     "ru": "полагаться"
+    },
+    {
+     "w": "reliability",
+     "pos": "noun",
+     "ru": "надёжность"
+    },
+    {
+     "w": "reliable",
+     "pos": "adjective",
+     "ru": "надёжный"
+    },
+    {
+     "w": "reliably",
+     "pos": "adverb",
+     "ru": "надёжно"
+    },
+    {
+     "w": "reliance",
+     "pos": "noun",
+     "ru": "зависимость"
+    },
+    {
+     "w": "reliant",
+     "pos": "adjective",
+     "ru": "зависимый"
+    },
+    {
+     "w": "relied",
+     "pos": "verb",
+     "ru": "полагался(ась)"
+    },
+    {
+     "w": "relying",
+     "pos": "verb",
+     "ru": "полагаясь"
+    },
+    {
+     "w": "unreliable",
+     "pos": "adjective",
+     "ru": "ненадёжный"
+    }
+   ]
+  },
+  {
+   "id": "remove",
+   "sublist": 3,
+   "word": "remove",
+   "pos": "verb",
+   "ru": "удалять; убирать",
+   "def": "To take something away from a place or situation.",
+   "examples": [
+    "The software removes duplicate entries automatically.",
+    "Removal of the damaged section was necessary."
+   ],
+   "forms": [
+    {
+     "w": "remove",
+     "pos": "verb",
+     "ru": "удалять; убирать"
+    },
+    {
+     "w": "removable",
+     "pos": "adjective",
+     "ru": "съёмный"
+    },
+    {
+     "w": "removal",
+     "pos": "noun",
+     "ru": "удаление"
+    },
+    {
+     "w": "removed",
+     "pos": "adjective",
+     "ru": "удалённый"
+    },
+    {
+     "w": "removing",
+     "pos": "verb",
+     "ru": "удаляя"
+    }
+   ]
+  },
+  {
+   "id": "scheme",
+   "sublist": 3,
+   "word": "scheme",
+   "pos": "noun",
+   "ru": "схема; план",
+   "def": "A plan or system for organizing an activity.",
+   "examples": [
+    "The coding scheme grouped responses by theme.",
+    "The diagram presents a schematic view of the process."
+   ],
+   "forms": [
+    {
+     "w": "scheme",
+     "pos": "noun",
+     "ru": "схема; план"
+    },
+    {
+     "w": "schematic",
+     "pos": "adjective",
+     "ru": "схематический"
+    },
+    {
+     "w": "schematically",
+     "pos": "adverb",
+     "ru": "схематически"
+    },
+    {
+     "w": "scheming",
+     "pos": "noun",
+     "ru": "планирование; интриги"
+    }
+   ]
+  },
+  {
+   "id": "sequence",
+   "sublist": 3,
+   "word": "sequence",
+   "pos": "noun",
+   "ru": "последовательность",
+   "def": "A set of events or items arranged in a particular order.",
+   "examples": [
+    "The sequence of steps is described in the appendix.",
+    "The samples were sequenced in the same order."
+   ],
+   "forms": [
+    {
+     "w": "sequence",
+     "pos": "noun",
+     "ru": "последовательность"
+    },
+    {
+     "w": "sequenced",
+     "pos": "adjective",
+     "ru": "упорядоченный"
+    },
+    {
+     "w": "sequential",
+     "pos": "adjective",
+     "ru": "последовательный"
+    },
+    {
+     "w": "sequentially",
+     "pos": "adverb",
+     "ru": "последовательно"
+    }
+   ]
+  },
+  {
+   "id": "sex",
+   "sublist": 3,
+   "word": "sex",
+   "pos": "noun",
+   "ru": "пол",
+   "def": "The biological classification of an organism as male or female.",
+   "examples": [
+    "The dataset records sex as reported by participants.",
+    "Sexuality was discussed only when relevant to the research question."
+   ],
+   "forms": [
+    {
+     "w": "sex",
+     "pos": "noun",
+     "ru": "пол"
+    },
+    {
+     "w": "sexes",
+     "pos": "noun",
+     "ru": "полы"
+    },
+    {
+     "w": "sexism",
+     "pos": "noun",
+     "ru": "сексизм"
+    },
+    {
+     "w": "sexual",
+     "pos": "adjective",
+     "ru": "половой; сексуальный"
+    },
+    {
+     "w": "sexuality",
+     "pos": "noun",
+     "ru": "сексуальность"
+    },
+    {
+     "w": "sexually",
+     "pos": "adverb",
+     "ru": "сексуально"
+    }
+   ]
+  },
+  {
+   "id": "shift",
+   "sublist": 3,
+   "word": "shift",
+   "pos": "verb",
+   "ru": "сдвигать; менять",
+   "def": "To move or change from one position, direction, or state to another.",
+   "examples": [
+    "Preferences shift as people gain experience.",
+    "The shift in emphasis was clear in later publications."
+   ],
+   "forms": [
+    {
+     "w": "shift",
+     "pos": "verb",
+     "ru": "сдвигать; менять"
+    },
+    {
+     "w": "shifted",
+     "pos": "verb",
+     "ru": "сдвинул(ся/ась)"
+    },
+    {
+     "w": "shifting",
+     "pos": "noun",
+     "ru": "изменение"
+    },
+    {
+     "w": "shifts",
+     "pos": "noun / verb",
+     "ru": "сдвиги; меняет"
+    }
+   ]
+  },
+  {
+   "id": "specify",
+   "sublist": 3,
+   "word": "specify",
+   "pos": "verb",
+   "ru": "уточнять; указывать",
+   "def": "To state something clearly and exactly.",
+   "examples": [
+    "Please specify the date and location of each observation.",
+    "The specified conditions were maintained throughout."
+   ],
+   "forms": [
+    {
+     "w": "specify",
+     "pos": "verb",
+     "ru": "уточнять; указывать"
+    },
+    {
+     "w": "specifiable",
+     "pos": "adjective",
+     "ru": "поддающийся точному описанию"
+    },
+    {
+     "w": "specified",
+     "pos": "adjective",
+     "ru": "указанный"
+    },
+    {
+     "w": "specifying",
+     "pos": "verb",
+     "ru": "указывая"
+    },
+    {
+     "w": "unspecified",
+     "pos": "adjective",
+     "ru": "неуказанный"
+    }
+   ]
+  },
+  {
+   "id": "sufficient",
+   "sublist": 3,
+   "word": "sufficient",
+   "pos": "adjective",
+   "ru": "достаточный",
+   "def": "As much as is needed for a particular purpose.",
+   "examples": [
+    "The evidence is sufficient to support a cautious conclusion.",
+    "The sample was sufficiently large for the comparison."
+   ],
+   "forms": [
+    {
+     "w": "sufficient",
+     "pos": "adjective",
+     "ru": "достаточный"
+    },
+    {
+     "w": "sufficiency",
+     "pos": "noun",
+     "ru": "достаточность"
+    },
+    {
+     "w": "insufficient",
+     "pos": "adjective",
+     "ru": "недостаточный"
+    },
+    {
+     "w": "insufficiently",
+     "pos": "adverb",
+     "ru": "недостаточно"
+    },
+    {
+     "w": "sufficiently",
+     "pos": "adverb",
+     "ru": "достаточно"
+    }
+   ]
+  },
+  {
+   "id": "task",
+   "sublist": 3,
+   "word": "task",
+   "pos": "noun",
+   "ru": "задача",
+   "def": "A piece of work that must be done.",
+   "examples": [
+    "The first task involved classifying the responses.",
+    "Participants completed three tasks."
+   ],
+   "forms": [
+    {
+     "w": "task",
+     "pos": "noun",
+     "ru": "задача"
+    },
+    {
+     "w": "tasks",
+     "pos": "noun",
+     "ru": "задачи"
+    }
+   ]
+  },
+  {
+   "id": "technical",
+   "sublist": 3,
+   "word": "technical",
+   "pos": "adjective",
+   "ru": "технический; специальный",
+   "def": "Relating to a particular subject, skill, or method.",
+   "examples": [
+    "The report includes a technical description of the instrument.",
+    "The issue was resolved with technical support."
+   ],
+   "forms": [
+    {
+     "w": "technical",
+     "pos": "adjective",
+     "ru": "технический; специальный"
+    },
+    {
+     "w": "technically",
+     "pos": "adverb",
+     "ru": "технически"
+    }
+   ]
+  },
+  {
+   "id": "technique",
+   "sublist": 3,
+   "word": "technique",
+   "pos": "noun",
+   "ru": "метод; техника",
+   "def": "A particular way of doing something, especially a skilled method.",
+   "examples": [
+    "The technique reduces noise in the measurements.",
+    "Several techniques were evaluated."
+   ],
+   "forms": [
+    {
+     "w": "technique",
+     "pos": "noun",
+     "ru": "метод; техника"
+    },
+    {
+     "w": "techniques",
+     "pos": "noun",
+     "ru": "методы; техники"
+    }
+   ]
+  },
+  {
+   "id": "technology",
+   "sublist": 3,
+   "word": "technology",
+   "pos": "noun",
+   "ru": "технология",
+   "def": "The use of scientific knowledge and tools for practical purposes.",
+   "examples": [
+    "Digital technology changed how the interviews were conducted.",
+    "The technological requirements were modest."
+   ],
+   "forms": [
+    {
+     "w": "technology",
+     "pos": "noun",
+     "ru": "технология"
+    },
+    {
+     "w": "technological",
+     "pos": "adjective",
+     "ru": "технологический"
+    },
+    {
+     "w": "technologically",
+     "pos": "adverb",
+     "ru": "технологически"
+    }
+   ]
+  },
+  {
+   "id": "validate",
+   "sublist": 3,
+   "word": "validate",
+   "pos": "verb",
+   "ru": "подтверждать достоверность; проверять",
+   "def": "To show that something is accurate, effective, or acceptable.",
+   "examples": [
+    "A second dataset was used to validate the model.",
+    "Validity was assessed before the tool was adopted."
+   ],
+   "forms": [
+    {
+     "w": "valid",
+     "pos": "adjective",
+     "ru": "действительный; обоснованный"
+    },
+    {
+     "w": "invalidate",
+     "pos": "verb",
+     "ru": "делать недействительным"
+    },
+    {
+     "w": "invalidity",
+     "pos": "noun",
+     "ru": "недействительность"
+    },
+    {
+     "w": "validate",
+     "pos": "verb",
+     "ru": "подтверждать достоверность; проверять"
+    },
+    {
+     "w": "validated",
+     "pos": "adjective",
+     "ru": "подтверждённый"
+    },
+    {
+     "w": "validation",
+     "pos": "noun",
+     "ru": "проверка достоверности"
+    },
+    {
+     "w": "validity",
+     "pos": "noun",
+     "ru": "достоверность; обоснованность"
+    },
+    {
+     "w": "validly",
+     "pos": "adverb",
+     "ru": "обоснованно"
+    }
+   ]
+  },
+  {
+   "id": "volume",
+   "sublist": 3,
+   "word": "volume",
+   "pos": "noun",
+   "ru": "объём; том",
+   "def": "The amount of space occupied or the amount of something.",
+   "examples": [
+    "The volume of each solution was measured precisely.",
+    "The series consists of three volumes."
+   ],
+   "forms": [
+    {
+     "w": "volume",
+     "pos": "noun",
+     "ru": "объём; том"
+    },
+    {
+     "w": "volumes",
+     "pos": "noun",
+     "ru": "тома; объёмы"
     }
    ]
   }
