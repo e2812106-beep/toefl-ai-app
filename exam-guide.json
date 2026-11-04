@@ -1,0 +1,227 @@
+{
+"version": 1,
+"intro": {
+"title": "Prepare for TOEFL iBT 2026",
+"text": "The TOEFL iBT exam consists of four sections: Reading, Listening, Writing, and Speaking. Each section tests a different aspect of your English proficiency through a variety of practical and academic tasks. The exam takes approximately two hours to complete, and your performance is evaluated on a scale from 1 to 6 in each section. Reading and Listening are adaptive, meaning the difficulty of the questions changes depending on your performance.",
+"meta": "General overview · 4 sections",
+"glance": [["Reading", "About 30 min · 3 task types"], ["Listening", "About 29 min · 4 task types"], ["Writing", "About 23 min · 3 tasks"], ["Speaking", "About 8 min · 2 tasks"]],
+"glanceNote": "These are approximate base times, in the exam order. Because Reading and Listening are adaptive, the real number of items and the time can vary.",
+"score": "Each section is reported on a scale from 1 to 6, and your overall score is the average of the four section scores. Reading and Listening are adaptive; Writing and Speaking are not. An unofficial score appears at the end of the test, and your official score arrives about three days later. It may differ slightly from the unofficial one.",
+"use": "Open a section, read the quick facts, then open the task you want to learn about. Answers to the examples are hidden, so try each one first. Details can vary slightly from one test to the next, so don’t panic if your exam differs a little from what is described here."
+},
+"sections": [
+{
+"id": "reading",
+"title": "Reading",
+"time": "About 30 minutes",
+"desc": "Task types, adaptive modules, strategies",
+"quick": [["Adaptive", "Yes, two modules"], ["Questions", "About 50 (about 35 + about 15)"], ["Time", "About 30 min (about 20 + about 10)"], ["Task types", "Complete the Words, Read in Daily Life, Academic Reading"], ["Navigation", "Back and forth inside a module; no return to the first module"]],
+"parts": [
+{"h": "Overview", "open": true, "b": [
+{"t": "p", "x": "Reading is adaptive, which means the test adjusts to your performance. It has two modules:"},
+{"t": "ul", "x": ["Routing module: the longer one, about 35 questions in roughly 20 minutes. Everyone gets the same difficulty level here.", "Second module: about 15 questions in roughly 10 minutes. Its difficulty depends on how you did in the routing module."]},
+{"t": "p", "x": "Based on observed test patterns, if you answer about 60% of the routing questions correctly, you will probably get the hard second module. Otherwise you get the easy one, which usually caps your overall reading score at around 3.0 or 3.5."},
+{"t": "note", "x": "ETS publishes the adaptive format, but not an exact routing percentage or score ceiling. Treat these numbers as observed patterns, not official rules."},
+{"t": "h", "x": "Timing and navigation"},
+{"t": "p", "x": "Expect around 50 questions in total. Each module has one timer for the whole module, not one per question, so you can spend your time as you like. Inside a module you can move back and forth with the “Back” and “Next” buttons, or jump to any question with “Review.” Once you finish the routing module, you cannot go back to it."},
+{"t": "h", "x": "Scoring"},
+{"t": "p", "x": "Questions appear to carry equal weight, but your result is reported as a scaled score from 1 to 6, so you cannot work out your score just by counting correct answers. Some questions are unscored trial items, and you won’t know which ones. Treat every question as if it counts."},
+{"t": "h", "x": "Finishing up"},
+{"t": "p", "x": "After the Reading section, you move on to Listening. An unofficial score appears at the end of the whole test, and your official score arrives about three days later. It may differ slightly from the unofficial one."}
+]},
+{"h": "1. Complete the Words", "b": [
+{"t": "p", "x": "You see a short paragraph of about 70 words, in the style of a textbook. Ten words are missing their final letters, and you restore them."},
+{"t": "ul", "x": ["The first and last sentences are complete.", "The damaged words sit in the middle sentences.", "Each word is cut roughly in half, with 1 to 6 letters missing, and you can see how many.", "Each damaged word counts as one question.", "Difficulty is the same in every module."]},
+{"t": "h", "x": "Practice example"},
+{"t": "ex", "x": "Geography is the study of places and how people interact with them. Geographers exam___ landscapes, clim___ and popul_____ to understand how regions dif___. Maps and satel____ images he__ them rec___ changes over time. This knowledge is useful for planning cities and protecting natural resources."},
+{"t": "ans", "x": "examine, climate, population, differ, satellite, help, record.\n(The real task has ten blanks.)"},
+{"t": "tips", "x": ["Skim the whole paragraph first. The topic will wake up the vocabulary you already know.", "Think about word stems. Because words are cut in half, what you see is often the stem of a familiar word.", "Decide whether the missing word is a noun, verb, adjective, or adverb, and use the neighboring words as clues.", "The vocabulary is academic but rarely obscure. Studying the Academic Word List and common academic collocations helps a lot.", "If you’re stuck, guess and move on. This task is a famous time trap.", "Don’t hunt for the missing word elsewhere in the text. It usually isn’t there."]},
+{"t": "go", "to": "acad", "x": "Open the Academic list"}
+]},
+{"h": "2. Read in Daily Life (short)", "b": [
+{"t": "p", "x": "You read something from ordinary life: a text message, an email, a flyer, a campus notice, an invoice. It is about 40 to 80 words, followed by two questions."},
+{"t": "h", "x": "Question types"},
+{"t": "ul", "x": ["Main idea: What is the purpose of this text?", "Detail: What does the text say about one specific thing?", "Negative detail: Which of these is NOT mentioned?", "Inference: What can you reasonably conclude?"]},
+{"t": "p", "x": "Main idea and detail questions are the most common."},
+{"t": "h", "x": "Practice example"},
+{"t": "ex", "x": "From: Priya\nTo: Marco\n\nThe gym just emailed to say the swimming pool will close for cleaning on Friday morning. I have a class until noon, so could you move my locker items to the main changing room before nine? They said anything left in the pool area will be thrown away. Thanks a lot!\n\n1. Why did Priya write to Marco?\nA. To invite him to swim\nB. To ask for help with her belongings\nC. To complain about the gym\nD. To cancel her class\n\n2. What will happen to items left in the pool area?\nA. They will be cleaned\nB. They will be moved to a locker\nC. They will be discarded\nD. They will be returned on Monday"},
+{"t": "ans", "x": "1. B   2. C"},
+{"t": "tips", "x": ["Don’t overthink this one. It’s the easiest part of the section.", "Skim the whole text quickly. It is short enough to read in full.", "Correct answers usually paraphrase the text. Don’t choose an option just because it repeats the same words.", "Watch dates, times, and amounts.", "Keep track of who does what. Who is asking, and who is being asked?", "Move on quickly."]}
+]},
+{"h": "3. Read in Daily Life (long)", "b": [
+{"t": "p", "x": "Same idea, but longer: about 100 to 130 words, with three questions. The text might be a welcome email, a notice from a service, or a longer message thread."},
+{"t": "tips", "x": ["Start by working out why the text was written.", "While skimming, note deadlines, requirements, benefits, and who is responsible for what.", "Be ready for simple inferences. For example, if a company asks for your job title “to send more relevant resources,” the purpose (better recommendations) is implied, not stated.", "Beware of tricky distractors. Sometimes an answer choice is mentioned in the text but is not what the question asks about."]}
+]},
+{"h": "4. Academic Reading", "b": [
+{"t": "p", "x": "You read a passage of about 200 words, like an excerpt from a magazine, website, or textbook. Five questions follow, and none tells you which paragraph to check."},
+{"t": "p", "x": "The topics are more everyday than on the old TOEFL. Think bees in cities, sports and social integration, or why too many choices in a shop can cause stress. Passages tend to follow a few patterns: a definition of something, pros and cons, a problem with possible solutions, or a concept followed by its applications."},
+{"t": "h", "x": "Question types"},
+{"t": "ul", "x": ["Factual information", "Negative factual information", "Vocabulary", "Rhetorical purpose", "Inference", "Insert sentence", "Paragraph relationships (new in 2026)", "Important idea (new in 2026)"]},
+{"t": "h", "x": "Practice example"},
+{"t": "ex", "x": "City Rooftops\n\nRooftops once sat empty in most cities, but many are now being turned into gardens. These green roofs soak up rainwater, which reduces flooding on the streets below. They also keep buildings cooler in summer, lowering the need for air conditioning.\n\nBeyond the practical gains, rooftop gardens give residents a place to relax and meet neighbors. Some even grow vegetables that are sold locally. Still, they are costly to install, and older buildings may not be strong enough to carry the extra weight.\n\n1. According to the passage, how do green roofs help with flooding? (factual)\nA. They block rain from reaching the street\nB. They absorb rainwater\nC. They store water for drinking\nD. They redirect water to parks\n\n2. Which of the following is NOT mentioned as a benefit? (negative factual)\nA. Cooler buildings\nB. Local food\nC. Lower rent\nD. A social space\n\n3. Why does the author mention the weight of the garden? (rhetorical purpose)\nA. To show a limitation of the idea\nB. To explain why roofs are empty\nC. To praise modern buildings\nD. To compare cities"},
+{"t": "ans", "x": "1. B   2. C   3. A"},
+{"t": "tips", "x": ["Skim the passage briefly, then go to the questions.", "Don’t pick an answer simply because it shares a word with the passage. In the real test, “helps people cope with heat” is not the same as “lowers temperatures.”", "Negative factual questions take longer, so budget a few extra seconds.", "Vocabulary questions are quick. Don’t linger.", "Paragraph relationship questions ask how one paragraph connects to another (for example, one defines a term and the next gives examples).", "Regular practice with academic vocabulary improves comprehension."]},
+{"t": "go", "to": "acad", "x": "Open the Academic list"}
+]},
+{"h": "The second module: easy and hard", "b": [
+{"t": "h", "x": "The easy second module"},
+{"t": "p", "x": "If your routing performance was weak, you get about 15 questions in roughly 10 minutes. It begins with a Complete the Words task at a similar difficulty level, followed by two or three Read in Daily Life tasks."},
+{"t": "h", "x": "The hard second module"},
+{"t": "p", "x": "If your routing performance was strong, you get about 15 questions in roughly 10 minutes. It begins with Complete the Words, followed by typically one Academic Reading passage at about the same level as in the routing module."}
+]}
+],
+"practice": {"text": "Practice the Reading tasks you have just read about.", "go": ["saved", "train", "acad"]}
+},
+{
+"id": "listening",
+"title": "Listening",
+"time": "About 29 minutes",
+"desc": "Audio tasks, notes, comprehension",
+"quick": [["Adaptive", "Yes, two modules"], ["Questions", "About 47 (about 32 + about 15)"], ["Time", "About 29 min (about 20 + about 9)"], ["Task types", "Listen and Choose, Conversation, Announcement, Academic Talk"], ["Navigation", "Forward only; each question has its own countdown"]],
+"parts": [
+{"h": "Overview", "open": true, "b": [
+{"t": "p", "x": "Like Reading, Listening is adaptive and has two modules:"},
+{"t": "ul", "x": ["Routing module: about 32 questions in roughly 20 minutes.", "Second module: about 15 questions in roughly 9 minutes."]},
+{"t": "p", "x": "Based on observed test patterns, scoring about 60% or higher in the routing module usually sends you to the hard version. The easy version appears to limit your maximum listening score to about 3.0 to 3.5."},
+{"t": "note", "x": "ETS does not publish an exact percentage or score ceiling. Treat these numbers as observed patterns, not official rules."},
+{"t": "h", "x": "Timing and navigation"},
+{"t": "p", "x": "You’ll have around 47 questions in total. Unlike Reading, there is no master timer. Each question has its own countdown, either 20 or 30 seconds. You can only move forward, and you cannot return to a question once you’ve answered it."}
+]},
+{"h": "1. Listen and Choose", "b": [
+{"t": "p", "x": "About 12 questions. You hear one sentence from a conversation and pick the most natural response from four options. You get 20 seconds each. Five kinds of prompts appear:"},
+{"t": "h", "x": "Direct questions"},
+{"t": "ex", "x": "Where can I leave my suitcase until my room is ready?\nA. I packed everything last night.\nB. Check-in starts at three.\nC. This suitcase was expensive.\nD. The front desk can hold it for you."},
+{"t": "ans", "x": "D. It gives the exact information requested. A and C only borrow the word “suitcase.” B is related to hotels but doesn’t say where to leave the bag."},
+{"t": "h", "x": "Yes/no questions"},
+{"t": "ex", "x": "Have you sent the new schedule to everyone?\nA. The meeting room is upstairs.\nB. I’m waiting for Maria to approve it.\nC. We usually meet on Thursdays.\nD. There were many building changes."},
+{"t": "ans", "x": "B. It means “not yet” and explains why. Real answers often contain neither “yes” nor “no.”"},
+{"t": "h", "x": "Requests"},
+{"t": "ex", "x": "Would you mind watching my bag while I grab a coffee?\nA. The café closes early.\nB. I bought this bag last week.\nC. Sure, I’ll keep an eye on it.\nD. Coffee is in the lobby."},
+{"t": "ans", "x": "C. “Keep an eye on it” is an idiom for watching over something. Correct answers often use idioms. B simply repeats the word “bag.”"},
+{"t": "h", "x": "Choices and proposals"},
+{"t": "ex", "x": "Should we book a table now or wait until everyone replies?\nA. How many people have confirmed so far?\nB. The restaurant is across from the theater.\nC. I replied to that email yesterday.\nD. Dinner usually takes about an hour."},
+{"t": "ans", "x": "A. It doesn’t pick an option, but it asks for the information needed to decide. Correct answers often move the situation forward without answering directly."},
+{"t": "h", "x": "Statements"},
+{"t": "ex", "x": "I left my umbrella on the train this morning.\nA. It’s supposed to rain later.\nB. The train was ten minutes late.\nC. I usually carry a small umbrella.\nD. You could check the lost-and-found."},
+{"t": "ans", "x": "D. It reacts to the problem and offers help. C repeats “umbrella” but shifts the focus to the speaker."}
+]},
+{"h": "2. Listen to a Conversation", "b": [
+{"t": "p", "x": "Three conversations. Each is about 30 seconds, typically between a man and a woman, about everyday campus or off-campus matters. Two questions follow each one."},
+{"t": "h", "x": "Sample (transcript)"},
+{"t": "ex", "x": "Man: Did the print shop finish your poster?\nWoman: Not yet. They’re waiting for a new ink cartridge, and it should be done by tomorrow afternoon.\nMan: Do you still have time before the conference?\nWoman: Yes, the conference is on Friday. They said they’ll email me when it’s ready for pickup.\n\n1. When will the woman’s poster likely be ready?\n2. How will she find out it’s ready?"},
+{"t": "ans", "x": "1. Tomorrow afternoon.   2. By email."},
+{"t": "tips", "x": ["Split your note paper into two halves, one per speaker, and jot down keywords.", "Listen closely to the last sentence, because a question like “What will the man do next?” often depends on it.", "Be ready for simple inferences."]}
+]},
+{"h": "3. Listen to an Announcement", "b": [
+{"t": "p", "x": "Three announcements. Each lasts 20 to 30 seconds and usually covers an upcoming event or a change to a campus service. Two questions follow, with 20 seconds each."},
+{"t": "h", "x": "Sample (transcript)"},
+{"t": "ex", "x": "Good morning, everyone. The career center will host a résumé workshop this Wednesday at 3 p.m. in the Student Union, room 105. Advisors will review your documents and answer questions about job applications. Students from every year are welcome, and you don’t need to sign up in advance. Please bring a printed copy of your résumé.\n\nLikely questions: What is the main purpose? What should listeners bring?"},
+{"t": "ans", "x": "To invite students to a résumé workshop. / A printed résumé."},
+{"t": "tips", "x": ["Take short notes.", "Expect one question about the main topic and one about a detail, which is sometimes something the listeners are asked to do at the very end."]}
+]},
+{"h": "4. Listen to an Academic Talk", "b": [
+{"t": "p", "x": "Two talks. Each talk runs about 90 seconds and is followed by four questions, with 30 seconds each. Topics resemble first-year university subjects: history, science, art, literature, politics, film, astronomy, and so on."},
+{"t": "h", "x": "Short sample (transcript)"},
+{"t": "ex", "x": "Today I want to talk about something called the “spotlight effect.” It’s the tendency to believe that other people notice us far more than they actually do. Imagine you spill coffee on your shirt before a class. You feel certain everyone is staring. In reality, most people are busy thinking about their own concerns. Researchers tested this by asking students to wear an embarrassing T-shirt into a room. The students guessed about half the people would notice. In fact, only a small fraction did. Understanding this can reduce anxiety in everyday situations. In our next session, we’ll look at how this effect shapes public speaking.\n\nPossible questions:\n1. What is the talk mainly about?\n2. Why does the speaker mention the coffee stain?\n3. What can be inferred about the students in the study?\n4. What will the class probably discuss next?"},
+{"t": "ans", "x": "1. A common belief that others notice us more than they do.\n2. To give a relatable example.\n3. They overestimated how much others noticed.\n4. How the spotlight effect affects public speaking."},
+{"t": "h", "x": "Question types"},
+{"t": "ul", "x": ["Main idea: often answered near the beginning of the talk.", "Detail: a specific fact from the talk.", "Purpose: why did the speaker mention something?", "Inference: a reasonable conclusion from what was said.", "Do-next: what happens afterward, answered by the closing lines."]},
+{"t": "tips", "x": ["Take detailed notes, and practice this skill beforehand.", "Don’t choose an answer just because it repeats a word you heard. Correct options often paraphrase.", "Pay special attention to examples, because questions often refer to them.", "Listen for signals like “next time we will…” and note exactly what follows."]}
+]},
+{"h": "The second module: easy and hard", "b": [
+{"t": "h", "x": "The easy second module"},
+{"t": "p", "x": "Probably seven Listen and Choose items, two conversations, and two announcements. There are no academic talks."},
+{"t": "h", "x": "The hard second module"},
+{"t": "p", "x": "Probably three Listen and Choose items, two conversations, and two academic talks. There are no announcements."}
+]}
+],
+"practice": {"text": "Listening practice is coming later, together with audio on the website.", "go": []}
+},
+{
+"id": "writing",
+"title": "Writing",
+"time": "About 23 minutes",
+"desc": "Sentence building, emails, discussions",
+"quick": [["Adaptive", "No"], ["Items", "12 (ten sentences, an email, a discussion post)"], ["Time", "About 23 minutes"], ["Tasks", "Build a Sentence, Write an Email, Write for an Academic Discussion"], ["Scoring", "Partly automated (AI) scoring"]],
+"parts": [
+{"h": "Overview", "open": true, "b": [
+{"t": "p", "x": "The Writing section has three tasks: Build a Sentence, Write an Email, and Write for an Academic Discussion. It is not adaptive."}
+]},
+{"h": "Task 1: Build a Sentence", "b": [
+{"t": "p", "x": "You see ten scrambled sentences, one at a time. Each is about 5 to 7 words, and you drag the words into the correct order."},
+{"t": "ul", "x": ["Some sentences are questions, and some are statements.", "Occasionally one extra word is included that you shouldn’t use.", "You have about seven minutes for all ten, and you can move back and forth between them.", "You earn one point per sentence that is perfectly correct. One mistake means zero for that sentence.", "Contexts include campus service situations or casual chats with friends."]},
+{"t": "h", "x": "Grammar you need"},
+{"t": "ul", "x": ["Subject-verb-object order with negation", "Subject-verb inversion", "Auxiliary verbs after wh-words", "Embedded questions (where inversion is cancelled)", "Indirect questions", "Relative clauses"]},
+{"t": "h", "x": "Easy example (negation)"},
+{"t": "ex", "x": "Did the library send you the receipt?\nNo, ___ ___ ___ ___ ___\nsent me / a receipt / it / not / has"},
+{"t": "ans", "x": "No, it has not sent me a receipt."},
+{"t": "h", "x": "Medium example (indirect question)"},
+{"t": "ex", "x": "You are lost on campus.\n___ ___ ___ ___ ___ ?\ntell me / the bookstore / is / could you / where"},
+{"t": "ans", "x": "Could you tell me where the bookstore is?"},
+{"t": "h", "x": "Hard example (relative clause)"},
+{"t": "ex", "x": "I can’t find last week’s notes.\n\nare / the notes / in the group folder / that / Dana shared"},
+{"t": "ans", "x": "The notes that Dana shared are in the group folder."}
+]},
+{"h": "Task 2: Write an Email", "b": [
+{"t": "p", "x": "You read a scenario about campus or social life and write an email that includes three required elements listed in the prompt. You have seven minutes."},
+{"t": "p", "x": "You’ll be judged on: politeness and social conventions, cohesion, completeness, grammar, vocabulary, and punctuation. Responses are scored partly by automated (AI) scoring."},
+{"t": "p", "x": "Length: aim for about 130 to 140 words. Writing more is fine, since there is no penalty."},
+{"t": "tips", "x": ["Cover all three required points.", "Add extra details and explanations of your own to strengthen the message.", "Mix compound and complex sentences.", "Avoid repeating the same words, and use synonyms.", "Be very polite. Use softeners like “Would it be possible to…” and “Please let me know…” instead of blunt commands.", "Two short paragraphs make the email clearer."]},
+{"t": "h", "x": "Sample prompt"},
+{"t": "ex", "x": "You booked a study room in the library for Tuesday evening, but when you arrived, another group was already using it. Write an email to the library staff. In your email:\n• Explain what happened.\n• Ask whether the room can be rebooked.\n• Ask when you can expect an answer."},
+{"t": "ans", "x": "Dear Library Staff,\n\nI am writing about a problem I encountered with my reservation on Tuesday evening. I had booked Study Room 4 for a group project, but when my teammates and I arrived, another group was already inside. They told us they had also made a booking, so we assumed there had been a scheduling error, and we were forced to work in a noisy common area.\n\nWould it be possible to reserve the same room for this Thursday evening instead? Our presentation is next week, and we need a quiet space to rehearse properly. I understand that mistakes can happen with online systems, and I truly appreciate your help. Please let me know when I can expect a reply.\n\nThank you very much,\nDaniel Reyes"}
+]},
+{"h": "Task 3: Write for an Academic Discussion", "b": [
+{"t": "p", "x": "You read a professor’s question posted on a class message board, along with two student replies. You then write your own contribution. You have ten minutes, including reading time."},
+{"t": "p", "x": "You’ll be judged on the quality of your ideas, grammar, and vocabulary. Responses are scored partly by automated (AI) scoring."},
+{"t": "p", "x": "Length: about 120 words or more. Longer answers are not penalized. This task is the same as on the 2023 to 2025 version of the test, so older practice materials are still useful."},
+{"t": "tips", "x": ["Skim the prompt quickly instead of reading every word closely.", "Aim for around 120 to 130 words.", "Include an example, either personal or hypothetical.", "Mix simple, compound, and complex sentences.", "Avoid repeating words.", "Leave a minute or two for proofreading, since each grammar mistake lowers your score.", "You may ignore the two students, but be careful not to accidentally repeat their points."]},
+{"t": "h", "x": "Sample prompt"},
+{"t": "ex", "x": "Professor: Many universities now require every student to take at least one course outside their major. Some believe this broadens learning, while others say it wastes time. What do you think? Should universities make such courses mandatory?\n\nMaya: I support the requirement. Studying other subjects can expose students to new ideas and make them more well-rounded.\n\nKevin: I disagree. Students already have limited time, and extra required courses can distract from their main field."},
+{"t": "ans", "x": "I agree with Maya that students benefit from exploring other fields, although I would not say the requirement needs to be strict. Many students enter university without knowing exactly what interests them. For example, a friend of mine, who was studying engineering, took a philosophy course only because it was required. She discovered that the class improved her ability to argue clearly, and those skills later helped her in team projects and presentations. At the same time, Kevin is right that schedules are demanding. Therefore, universities should offer flexible options, such as short courses or online classes, so students can broaden their knowledge without sacrificing time for their major. In the end, a balanced approach serves everyone best."},
+{"t": "p", "x": "What comes next: Writing is followed by Speaking, which begins with “Listen and Repeat.”"}
+]}
+],
+"practice": {"text": "Writing practice is coming later.", "go": []}
+},
+{
+"id": "speaking",
+"title": "Speaking",
+"time": "About 8 minutes",
+"desc": "Repetition, interviews, speaking strategies",
+"quick": [["Adaptive", "No"], ["Questions", "11 (7 + 4)"], ["Time", "About 8 minutes"], ["Parts", "Listen and Repeat, Take an Interview"], ["Order", "The final section of the TOEFL"]],
+"parts": [
+{"h": "Overview", "open": true, "b": [
+{"t": "p", "x": "The Speaking section contains 11 questions in two parts: Listen and Repeat (questions 1 to 7) and Take an Interview (questions 8 to 11). It is the final section of the TOEFL."}
+]},
+{"h": "Part A: Listen and Repeat", "b": [
+{"t": "p", "x": "Questions 1 to 7. You hear seven sentences connected to a single situation, such as guiding visitors around a campus facility, following lab safety steps, or booking an appointment online. Simple pictures accompany each sentence. After every sentence there is a brief pause and a beep, and only after the beep do you repeat what you heard. You may say it only once."},
+{"t": "h", "x": "The sentences get longer"},
+{"t": "ul", "x": ["Sentences 1 to 2: 9 to 11 syllables (easy)", "Sentences 3 to 5: 14 to 16 syllables (medium)", "Sentences 6 to 7: 19 to 23 syllables (hard)"]},
+{"t": "p", "x": "American accents are the most common, but you may also hear British, Australian, or New Zealand speakers."},
+{"t": "h", "x": "Sample set (a campus recreation center tour)"},
+{"t": "ex", "x": "1. The recreation center opens at seven.\n2. Our tour begins at the front desk.\n3. The ground floor has a pool and a small climbing wall.\n4. Upstairs, students can use the weights and cardio machines.\n5. Towels are free, but you need to return them afterward.\n6. If you want to join a class, you can register at the reception counter or online.\n7. Next to the exit, there’s a juice bar where members can relax after their workout."},
+{"t": "h", "x": "Scoring"},
+{"t": "ul", "x": ["Each sentence is scored separately and carries equal weight.", "Accuracy and clear pronunciation both matter. The top score needs a fully intelligible, accurate repetition, and a slip can lower it.", "If you notice a slip, it’s fine to correct yourself and keep going.", "If you forget a word, make your best guess and move on."]},
+{"t": "tips", "x": ["Practice a lot. This is a trainable skill.", "Focus on getting the first five sentences right. Since every sentence counts equally, strong early scores can make up for trouble with the last two.", "Break sentences into chunks. “Upstairs, the media room // has laptops you can borrow” is easier to remember than nine separate words.", "You don’t need to speak the instant the beep sounds. Take two or three seconds to replay the sentence in your head.", "Identify the English sounds that give you trouble and drill them.", "Shadowing (repeating right after a speaker) is an excellent exercise."]}
+]},
+{"h": "Part B: Take an Interview", "b": [
+{"t": "p", "x": "Questions 8 to 11. You watch a short looping video of an interviewer who asks four questions on one everyday topic, such as exercise, study habits, reading, or travel. You have 45 seconds to answer each one. There is no preparation time and no beep. You only hear the questions, and you can’t read them. The topics are intentionally ordinary, so nothing strange should appear."},
+{"t": "h", "x": "Three question styles"},
+{"t": "p", "x": "They can come in any combination, even the same one four times."},
+{"t": "ul", "x": ["Opinion or preference: What do you think about something?", "Aspect of your life: Describe something about your life.", "Event or experience: Describe a time when something happened."]},
+{"t": "h", "x": "Sample interview (topic: studying)"},
+{"t": "ex", "x": "Q1 (event). Think back to a time when you studied for something important. What happened, and how did it go?\n\nQ2 (aspect of life). How do you usually study, and why do you do it that way?\n\nQ3 (opinion). Do you think students should study in groups or alone?"},
+{"t": "ans", "x": "Q1: A few months ago I had a major chemistry exam, and I realized the night before that I had barely reviewed the second half of the course. I felt quite anxious, so I made a plan, divided the topics into small sections, and asked a classmate to quiz me. That approach helped me stay calm and focused. In the end, I earned a good grade, and I learned how valuable it is to start preparing early.\n\nQ2: I prefer studying in short sessions with frequent breaks. Personally, I find it difficult to concentrate for more than an hour, so I set a timer and switch tasks regularly. Moreover, I usually study in a quiet library, since my home can be distracting. That’s how I keep my energy levels up throughout the day.\n\nQ3: Personally, I strongly believe that a mixture works best. Studying alone allows you to concentrate and absorb the material at your own pace. However, group sessions are great for testing your understanding, because explaining something to others shows you what you really know. That’s why I feel students should use both methods."},
+{"t": "tips", "x": ["Read the official scoring rubrics. High scores require nearly flawless grammar.", "Speak at a natural pace, neither too quickly nor too slowly.", "Avoid long pauses.", "Vary your grammar and use basic linking words, both coordinating and subordinating.", "Don’t repeat the same words too often.", "Simple transitions like “moreover” and “as a result” give your answer structure.", "Don’t recite long lists, because raters don’t like them."]},
+{"t": "h", "x": "Handy templates"},
+{"t": "ex", "x": "Opinion or preference\nPersonally, I strongly believe that…\nI feel this way because…\nFor instance…\nThat’s why I feel that…\n\nDescribing an event\nI remember a time when…\nIt happened…\nIt was meaningful because…\n\nDescribing an aspect of your life\nPersonally, I…\nMoreover…\nThat’s how I…"}
+]},
+{"h": "After the test", "b": [
+{"t": "p", "x": "When you finish, take off your headphones, close your eyes, and breathe for a moment. If you’re at a test center, you may hear other test-takers answering their own questions, and those will be different from yours. Don’t rush out. Calming down helps you click the right buttons at the end so that your scores are reported correctly."}
+]}
+],
+"practice": {"text": "Speaking practice is coming later.", "go": []}
+}
+]
+}
