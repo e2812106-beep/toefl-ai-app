@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "id": "present-tenses",
+      "title": "Present Tenses",
+      "desc": "Present Simple, Present Continuous, Present Perfect and more.",
+      "icon": "clock",
+      "file": "grammar/present-tenses.json",
+      "lessons": [
+        { "id": "present-simple-meaning", "title": "Present Simple: Meaning and Uses", "level": "A1" }
+      ]
+    }
+  ]
+}
