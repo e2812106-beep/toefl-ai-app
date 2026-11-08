@@ -109,7 +109,7 @@ body.sh main{padding-bottom:110px}
 <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6"/></symbol> <symbol id="i-head" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></symbol> <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
 </svg>
 <header id="top" hidden><span class="lg"><svg class="mi" aria-hidden="true"><use href="#i-chat"/></svg></span><b>Your English Studio</b></header>
-<main id="app" aria-live="polite"></main>
+<script src="grammar.js?v=1"></script><main id="app" aria-live="polite"></main>
 <nav id="tabs" hidden aria-label="Main menu"><button class="tab" data-tab="toefl"><svg class="mi" aria-hidden="true"><use href="#i-grad"/></svg>TOEFL</button><button class="tab" data-tab="grammar"><svg class="mi" aria-hidden="true"><use href="#i-pencil"/></svg>Grammar</button><button class="tab" data-tab="vocab"><svg class="mi" aria-hidden="true"><use href="#i-book"/></svg>Vocabulary</button><button class="tab" data-tab="account"><svg class="mi" aria-hidden="true"><use href="#i-user"/></svg>Account</button></nav>
 <script>
 // ===== SETTINGS =====
@@ -291,7 +291,7 @@ window.addEventListener("popstate",e=>{
 });
 const acard=(id,ic,t,d,n)=>`<button class="mc ac" id="${id}"><span class="mb"><svg class="mi" aria-hidden="true"><use href="#i-${ic}"/></svg></span><span class="mt"><span class="mh">${t}</span><span class="md">${d}</span></span><b class="cnt">${n}</b><svg class="ma" aria-hidden="true"><use href="#i-go"/></svg></button>`;
 function soonPage(){app.innerHTML=`<h1>Coming soon</h1><div class="card">This part of the app is coming soon.</div><div class="row"><button class="btn alt" id="bk">Back</button></div>`;document.getElementById("bk").onclick=goBack}
-function grammar(){rs("grammar");app.innerHTML=`<h1>Grammar</h1><div class="card"><b>Coming soon</b><p class="muted" style="margin:6px 0 0">Grammar practice is coming later.</p></div>`}
+function grammar(){if(typeof grMenu=="function")grMenu();else{rs("grammar");app.innerHTML=`<h1>Grammar</h1><div class="card"><b>Coming soon</b><p class="muted" style="margin:6px 0 0">Grammar practice is coming later.</p></div>`}} function grWrap(){typeof grLib=="function"?grLib():grammar()}
 async function fillWord(){  const tok=GEN,box=document.getElementById("wdb");  try{   const ws=await loadAcad();   if(tok!==GEN||!box)return;   const day=Math.floor((Date.now()-new Date().getTimezoneOffset()*60000)/864e5);   const w=ws[(day*7919)%ws.length],ex=w.examples[0]||"",saved=()=>hasV(w.word);   box.innerHTML=`<p class="wdw">${esc(w.word)} <span class="wdp">${esc(w.pos)}</span></p><p class="wdt">${esc(w.ru)}</p><hr><p class="wdt">${wrap(ex)}</p>${w.ex_ru?`<p class="wdt wdm">${esc(w.ex_ru)}</p>`:""}<button class="wdb" id="wsv"></button>`;   const b=document.getElementById("wsv"),paint=()=>{b.textContent=saved()?"Saved \u2713":"Save to vocabulary";b.disabled=saved()};   paint();   b.onclick=()=>{V.push({word:w.word,pos:w.pos,translation:w.ru.slice(0,60),example:ex,example_ru:w.ex_ru||""});saveV();paint();const c=document.querySelector("#wc .cnt");if(c)c.textContent=V.length};  }catch(e){if(tok===GEN&&box)box.innerHTML=`<p class="wdt">Couldn't load the word. Check your connection.</p>`} } function home(){rs("home");
  if(!ACC){login();return}
  app.innerHTML=`<p class="eyebrow">YOUR DAILY DOSE OF ENGLISH</p><div class="hrow"><h1>My Account</h1><button class="streak" id="sk"><svg class="mi" aria-hidden="true"><use href="#i-flame"/></svg>5-day streak</button></div><p class="muted">Welcome back, ${esc(ACC.label)}.</p>${quotaHTML()}${acard("tc","exam","Tests","TOEFL exams completed",P.length)}${acard("wc","pencil","Word count","Your personal vocabulary",V.length)}<div class="wd"><div class="wdh"><b>WORD OF THE DAY</b><span class="snd" aria-hidden="true"><svg class="mi"><use href="#i-sound"/></svg></span></div><div id="wdb"><p class="wdt">Loading\u2026</p></div></div><div class="row2"><button class="sm" id="bg"><svg class="mi" aria-hidden="true"><use href="#i-bug"/></svg>Bug</button><button class="sm" id="so">Sign out</button></div><p class="muted" style="text-align:center;margin-top:18px">Unofficial practice, not an ETS test.</p>`;
@@ -792,9 +792,9 @@ try{const s=JSON.parse(localStorage.getItem("toefl_session")||"null");if(s&&/^[A
 let SY={vd:{},ad:{},dirty:false};
 try{const s=JSON.parse(localStorage.getItem("toefl_sync")||"{}");if(s&&typeof s=="object"){if(s.vd&&typeof s.vd=="object")SY.vd=s.vd;if(s.ad&&typeof s.ad=="object")SY.ad=s.ad;SY.dirty=!!s.dirty}}catch(e){}
 const saveSY=()=>{try{localStorage.setItem("toefl_sync",JSON.stringify(SY))}catch(e){}};
-let ST=null,SYNCING=false,PEND=false,CHG=0,LS=0;
+let ST=null,SYNCING=false,PEND=false,CHG=0,LS=0; let GP={};try{const x=JSON.parse(localStorage.getItem("toefl_grammar")||"{}");if(x&&typeof x=="object"&&!Array.isArray(x))GP=x}catch(e){} const saveGP=()=>{try{localStorage.setItem("toefl_grammar",JSON.stringify(GP))}catch(e){}changed()};
 function changed(){CHG++;SY.dirty=true;saveSY();if(!ACC)return;clearTimeout(ST);ST=setTimeout(syncNow,2000)}
-const EMPTYD={v:[],vd:{},p:[],la:{},ad:{}};
+const EMPTYD={v:[],vd:{},p:[],la:{},ad:{},g:{}};
 const st=o=>JSON.stringify(o,(k,v)=>v&&typeof v=="object"&&!Array.isArray(v)?Object.fromEntries(Object.entries(v).sort()):v);
 // Combines two copies of a student's data. Words and learned marks are merged one by one
 // (the newest change wins, and removals are remembered); finished tests are joined together.
@@ -809,10 +809,10 @@ function mergeDoc(a,b){
  const pm={};
  [...arr(a.p),...arr(b.p)].forEach(x=>{if(x&&Array.isArray(x.s)&&x.s.length==2&&x.s.every(y=>y&&y.t>0))pm[x.d]=x});
  const p=Object.keys(pm).map(k=>pm[k]).sort((x,y)=>x.d-y.d).slice(-200);
- return {v,vd,p,la,ad};
+ const gn=x=>({t:x.t||0,o:x.o||0,pr:Array.isArray(x.pr)?[...x.pr].sort():[],sc:typeof x.sc=="number"?x.sc:null,ok:x.ok?1:0}),g={};  [obj(a.g),obj(b.g)].forEach(s=>{for(const k in s){const x=s[k];if(!x||typeof x!="object")continue;const u=gn(x),y=g[k];if(!y){g[k]=u;continue}const nw=u.t>=y.t?u:y,od=nw===u?y:u,os=[u.o,y.o].filter(Boolean);g[k]={t:Math.max(u.t,y.t),o:os.length?Math.min(...os):0,pr:[...new Set([...u.pr,...y.pr])].sort(),sc:nw.sc!=null?nw.sc:od.sc,ok:u.ok||y.ok?1:0}}});  return {v,vd,p,la,ad,g};
 }
 function applyDoc(d){
- V=d.v;P=d.p;AL=d.la;SY.vd=d.vd;SY.ad=d.ad;
+ V=d.v;P=d.p;AL=d.la;SY.vd=d.vd;SY.ad=d.ad;GP=d.g||{};try{localStorage.setItem("toefl_grammar",JSON.stringify(GP))}catch(e){}
  try{localStorage.setItem("toefl_vocab",JSON.stringify(V));localStorage.setItem("toefl_progress",JSON.stringify(P));localStorage.setItem("toefl_academic",JSON.stringify({learned:AL}))}catch(e){}
  saveSY();
 }
@@ -826,7 +826,7 @@ async function syncNow(){
    const r=await callAI({task:"load"});
    if(ACC!==acc)return;
    const cloud=r&&r.data&&typeof r.data=="object"?r.data:EMPTYD;
-   const merged=mergeDoc({v:V,vd:SY.vd,p:P,la:AL,ad:SY.ad},cloud);
+   const merged=mergeDoc({v:V,vd:SY.vd,p:P,la:AL,ad:SY.ad,g:GP},cloud);
    applyDoc(merged);
    if(st(merged)===st(mergeDoc(cloud,EMPTYD))){if(CHG===c0)SY.dirty=false;saveSY();break}
    const s=await callAI({task:"save",data:merged,base:(r&&r.ver)||0});
@@ -855,8 +855,8 @@ function limitDialog(){
  document.body.appendChild(o);document.getElementById("limok").onclick=()=>o.remove();
 }
 function wipe(){
- ["toefl_vocab","toefl_progress","toefl_academic","toefl_sync","toefl_session"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
- V=[];P=[];AL={};SY={vd:{},ad:{},dirty:false};ACC=null;QT=null;clearTimeout(ST);clearInterval(S.tick);
+ ["toefl_vocab","toefl_progress","toefl_academic","toefl_sync","toefl_session","toefl_grammar"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
+ V=[];P=[];AL={};SY={vd:{},ad:{},dirty:false};GP={};ACC=null;QT=null;clearTimeout(ST);clearInterval(S.tick);
 }
 function endSession(msg){wipe();R.length=1;R[0]=home;idx=0;guard=false;login(msg)}
 async function signOut(){
@@ -885,7 +885,7 @@ function login(msg){
  inp.focus();
 }
 let TAB="account";
-const TM={home:"account",progress:"account",examMenu:"toefl",guide:"toefl",savedTests:"toefl",textMenu:"toefl",grammar:"grammar",vocab:"vocab",vocabMenu:"vocab",acad:"vocab",acadLists:"vocab"};
+const TM={home:"account",progress:"account",examMenu:"toefl",guide:"toefl",savedTests:"toefl",textMenu:"toefl",grammar:"grammar",gLib:"grammar",vocab:"vocab",vocabMenu:"vocab",acad:"vocab",acadLists:"vocab"};
 function shell(){const on=!!ACC&&!guard;document.body.classList.toggle("sh",on);document.getElementById("top").hidden=!on;document.getElementById("tabs").hidden=!on;
  document.querySelectorAll(".tab").forEach(b=>{const a=b.dataset.tab==TAB;b.classList.toggle("on",a);b.setAttribute("aria-current",a?"page":"false")})}
 new MutationObserver(shell).observe(app,{childList:true});
@@ -900,7 +900,7 @@ const CH={
  vocab:[home,vocab],
  acad:[home,vocab,acad],
  acadLists:[home,vocab,acad,acadLists],
- grammar:[home,grammar],
+ grammar:[home,grammar],gLib:[home,grammar,grWrap],
  progress:[home,progress]
 };
 function resume(){
