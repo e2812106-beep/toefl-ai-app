@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "id": "present-tenses",
+  "title": "Present Tenses",
+  "desc": "Learn how to talk about habits, current situations, experiences and ongoing actions.",
+  "icon": "clock",
+  "lessons": [
+    {
+      "id": "present-simple-meaning",
+      "title": "Present Simple: Meaning and Uses",
+      "desc": "Habits, routines, facts, permanent situations and feelings.",
+      "level": "A1",
+      "sections": [
+        {
+          "h": "What is the Present Simple?",
+          "b": [
+            { "t": "p", "x": "The Present Simple is the most common tense in English. We use it to talk about things that are *generally true* or that happen *regularly*, not about what is happening at this exact moment." },
+            { "t": "p", "x": "Despite its name, the Present Simple is not only about \"now\". It describes the present as a general period: your life these days, your habits and the way the world works." },
+            { "t": "eg", "label": "Four sentences, four different ideas", "x": ["I *work* from home.", "She *doesn't drink* coffee.", "*Do* you *play* tennis?", "The Earth *revolves* around the Sun."] },
+            { "t": "p", "x": "None of these sentences is about one moment right now. The first describes a regular situation, the second a habit, the third asks about a habit, and the fourth states a fact." }
+          ]
+        },
+        {
+          "h": "1. Habits and daily routines",
+          "b": [
+            { "t": "p", "x": "We use the Present Simple for the things we do regularly: our daily routine." },
+            { "t": "eg", "x": ["I *wake up* at 7.", "He *takes* the bus to work.", "We *have* lunch at one o'clock.", "My sister *goes* to the gym after work."] },
+            { "t": "note", "x": "Ask yourself: \"Do I do this again and again?\" If the answer is yes, the Present Simple is usually the right tense." }
+          ]
+        },
+        {
+          "h": "2. Repeated actions",
+          "b": [
+            { "t": "p", "x": "We also use it for actions that repeat at regular times, even if they are not part of a daily routine. Time expressions such as *every Sunday* or *once a week* often appear in these sentences." },
+            { "t": "eg", "x": ["She *visits* her parents every Sunday.", "They *play* football on Fridays.", "My team *meets* once a week.", "The bus *leaves* every twenty minutes."] }
+          ]
+        },
+        {
+          "h": "3. Facts and general truths",
+          "b": [
+            { "t": "p", "x": "Facts, scientific truths and things that are always true use the Present Simple. They do not depend on a particular time, so we do not need a time expression." },
+            { "t": "eg", "x": ["Water *boils* at 100°C.", "The Earth *revolves* around the Sun.", "Cats *sleep* for many hours a day.", "The Nile *flows* through Egypt."] }
+          ]
+        },
+        {
+          "h": "4. Permanent situations",
+          "b": [
+            { "t": "p", "x": "We use the Present Simple to describe situations that are permanent or last for a long time: where someone lives, where they work, what something is like." },
+            { "t": "eg", "x": ["He *works* for an international company.", "My grandparents *live* in a small town by the sea.", "Our school *has* about 500 students."] },
+            { "t": "p", "x": "For a *temporary* situation, English usually prefers the Present Continuous: \"I'm staying with friends this week.\" You will study this contrast in a later lesson." }
+          ]
+        },
+        {
+          "h": "5. Feelings, opinions and preferences",
+          "b": [
+            { "t": "p", "x": "Verbs that describe feelings, opinions and preferences are normally used in the Present Simple, even when we mean \"right now\"." },
+            { "t": "eg", "x": ["I *love* traveling.", "She *likes* classical music.", "We *think* it's a good idea.", "I *want* a glass of water."] },
+            { "t": "p", "x": "Common verbs of this type:" },
+            { "t": "chips", "x": ["love", "like", "hate", "prefer", "think", "know", "want", "need", "believe"] },
+            { "t": "note", "x": "These verbs describe states, not actions, so we usually do not use them in the Present Continuous. We say \"I know\", not \"I am knowing\"." }
+          ]
+        },
+        {
+          "h": "6. Time expressions",
+          "b": [
+            { "t": "p", "x": "Some words and phrases often go with the Present Simple. They show that something is regular or general." },
+            { "t": "table", "head": ["Type", "Examples", "In a sentence"], "x": [
+              ["How often", "every day, every week, once a week, twice a month", "I check my email *every day*."],
+              ["Which day or time", "on Mondays, on weekends, in the morning, at night", "He plays tennis *on Mondays*."],
+              ["Frequency adverbs", "always, usually, often, sometimes, rarely, never", "She *usually* walks to work."]
+            ] },
+            { "t": "note", "x": "You will practice frequency adverbs in more detail in a later lesson." }
+          ]
+        },
+        {
+          "h": "A quick look at the form",
+          "b": [
+            { "t": "p", "x": "The form has its own lesson. For now, remember these three patterns:" },
+            { "t": "table", "head": ["", "I / you / we / they", "he / she / it"], "x": [
+              ["Affirmative", "I *work*.", "She *works*."],
+              ["Negative", "We *don't work*.", "He *doesn't work*."],
+              ["Question", "*Do* you *work*?", "*Does* she *work*?"]
+            ] },
+            { "t": "note", "x": "In negative sentences and questions, the main verb has no -s: \"She doesn't work\", not \"She doesn't works\"." }
+          ]
+        },
+        {
+          "h": "Present Simple or Present Continuous?",
+          "b": [
+            { "t": "p", "x": "Both tenses talk about the present, but they show different things. The Present Simple is for what is regular or general. The Present Continuous is for what is happening now or for a short time." },
+            { "t": "table", "head": ["Present Simple", "Present Continuous"], "x": [
+              ["I *work* from home. (my usual situation)", "I'm *working* from home today. (just today)"],
+              ["She *drinks* tea every morning.", "She's *drinking* tea right now."]
+            ] },
+            { "t": "note", "x": "We will compare these two tenses in detail in a later lesson." }
+          ]
+        },
+        {
+          "h": "Common mistakes",
+          "b": [
+            { "t": "mistakes", "x": [
+              ["He work in a bank.", "He works in a bank.", "With he, she and it, add -s or -es to the verb."],
+              ["I am go to school every day.", "I go to school every day.", "Do not use am, is or are before the verb in the Present Simple."],
+              ["She don't like coffee.", "She doesn't like coffee.", "Use *doesn't*, not *don't*, with he, she and it."],
+              ["Does she works here?", "Does she work here?", "After *do* or *does*, the verb has no -s."],
+              ["I'm going to the gym every day.", "I go to the gym every day.", "For habits and routines, use the Present Simple."]
+            ] }
+          ]
+        },
+        {
+          "h": "Key points",
+          "b": [
+            { "t": "tips", "x": [
+              "Use the Present Simple for habits, routines and repeated actions.",
+              "Use it for facts, general truths and permanent situations.",
+              "Use it for feelings, opinions and preferences: *love*, *like*, *think*, *want*.",
+              "Time expressions such as *every day*, *on Mondays* and *usually* often go with it.",
+              "With he, she and it, add -s or -es to the verb in positive sentences."
+            ] }
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "id": "ps1",
+          "title": "Choose and complete",
+          "intro": "Pick the best answer or type the correct form of the verb.",
+          "items": [
+            { "t": "choice", "q": "Choose the correct sentence about a daily routine.", "options": ["I am wake up at 7 every day.", "I wake up at 7 every day.", "I wakes up at 7 every day.", "I waking up at 7 every day."], "answer": 1, "explain": "With *I*, use the base form of the verb: *I wake up*. Do not add *am* or -s." },
+            { "t": "choice", "q": "Which sentence describes a habit?", "options": ["I'm working now.", "I work every day.", "I worked yesterday.", "I will work tomorrow."], "answer": 1, "explain": "*Every day* shows a regular action, so we use the Present Simple. *Now* goes with the Present Continuous." },
+            { "t": "choice", "q": "Which sentence states a general truth?", "options": ["Water boils at 100°C.", "Water is boiling now.", "The water boiled yesterday.", "I am boiling water."], "answer": 0, "explain": "A general truth is always true, so we use the Present Simple." },
+            { "t": "choice", "q": "Your sister has taught at a primary school for years. How do you describe this permanent situation?", "options": ["She teaches at a primary school.", "She is teaching at a primary school.", "She teach at a primary school.", "She teached at a primary school."], "answer": 0, "explain": "A long-term job is a permanent situation: Present Simple, with -s after *she*." },
+            { "t": "typed", "q": "My brother ___ (work) in a bank.", "answers": ["works"], "explain": "*My brother* means *he*, so add -s: *works*." },
+            { "t": "typed", "q": "Water ___ (freeze) at 0°C.", "answers": ["freezes"], "explain": "This is a fact, so use the Present Simple. *Water* means *it*, so add -es: *freezes*." },
+            { "t": "typed", "q": "We ___ (go) to the gym every Tuesday.", "answers": ["go"], "explain": "With *we*, use the base form of the verb: *go*." },
+            { "t": "typed", "q": "Maria ___ (visit) her parents every Sunday.", "answers": ["visits"], "explain": "*Maria* means *she*, so add -s: *visits*." }
+          ]
+        },
+        {
+          "id": "ps2",
+          "title": "Habit, fact, opinion or situation?",
+          "intro": "Decide what each sentence describes, then build two sentences and write about your own routine.",
+          "items": [
+            { "t": "choice", "q": "What does this sentence describe? \u201cI wake up at 7 every day.\u201d", "options": ["Habit", "Fact", "Opinion or feeling", "Permanent situation"], "answer": 0, "explain": "*Every day* shows a regular routine." },
+            { "t": "choice", "q": "What does this sentence describe? \u201cThe Earth revolves around the Sun.\u201d", "options": ["Habit", "Fact", "Opinion or feeling", "Permanent situation"], "answer": 1, "explain": "It is always true, whatever the time." },
+            { "t": "choice", "q": "What does this sentence describe? \u201cHe works for an international company.\u201d", "options": ["Habit", "Fact", "Opinion or feeling", "Permanent situation"], "answer": 3, "explain": "It describes his long-term job." },
+            { "t": "choice", "q": "What does this sentence describe? \u201cI love traveling.\u201d", "options": ["Habit", "Fact", "Opinion or feeling", "Permanent situation"], "answer": 2, "explain": "*Love* expresses a feeling or preference." },
+            { "t": "choice", "q": "What does this sentence describe? \u201cWater freezes at 0°C.\u201d", "options": ["Habit", "Fact", "Opinion or feeling", "Permanent situation"], "answer": 1, "explain": "It is a scientific fact." },
+            { "t": "choice", "q": "What does this sentence describe? \u201cShe visits her parents every Sunday.\u201d", "options": ["Habit", "Fact", "Opinion or feeling", "Permanent situation"], "answer": 0, "explain": "A regular, repeated action works like a habit." },
+            { "t": "order", "q": "Put the words in the correct order.", "answer": "She doesn't drink coffee.", "explain": "Subject + *doesn't* + base verb: *She doesn't drink coffee*." },
+            { "t": "order", "q": "Put the words in the correct order.", "answer": "Do you play tennis?", "explain": "Present Simple questions start with *Do* or *Does*." },
+            { "t": "write", "q": "Write five sentences about your own daily routine. Use the Present Simple.", "model": "I wake up at 7 o'clock. I have breakfast at home. I go to work by bus. I finish work at 5 p.m. In the evening, I watch TV with my family.", "explain": "Check that every verb is in the Present Simple. Add -s only when you write about he, she or it." }
+          ]
+        }
+      ],
+      "test": {
+        "pass": 70,
+        "items": [
+          { "t": "choice", "q": "Anna introduces herself at a party: \u201cHi, I'm Anna. I ___ in a hospital.\u201d", "options": ["work", "works", "am work", "working"], "answer": 0, "explain": "Anna says *I*, so use the base form: *work*." },
+          { "t": "choice", "q": "A: What does your father do? B: He ___ for a software company.", "options": ["work", "works", "is work", "working"], "answer": 1, "explain": "*He* needs -s in a positive Present Simple sentence: *works*." },
+          { "t": "choice", "q": "Which sentence states a fact?", "options": ["The sun rises in the east.", "I'm having lunch now.", "She called me last night.", "They are playing tennis."], "answer": 0, "explain": "Facts about the world use the Present Simple." },
+          { "t": "typed", "q": "My sister ___ (not / like) spicy food.", "answers": ["doesn't like", "does not like"], "explain": "With *she*, the negative is *doesn't* + base verb." },
+          { "t": "typed", "q": "___ you play tennis on Saturdays?", "answers": ["Do"], "explain": "Questions with *you* start with *Do*." },
+          { "t": "choice", "q": "Which sentence expresses a preference?", "options": ["I love traveling.", "I'm traveling to Spain.", "I traveled last summer.", "I will travel in July."], "answer": 0, "explain": "*Love* shows what you like, and verbs of feeling use the Present Simple." },
+          { "t": "choice", "q": "Which sentence has a mistake?", "options": ["Water boils at 100°C.", "She visits her parents every Sunday.", "He work for an international company.", "I don't eat meat."], "answer": 2, "explain": "It should be *He works*. With he, she and it, add -s." },
+          { "t": "order", "q": "Put the words in the correct order.", "answer": "My parents live in a small town.", "explain": "Subject + verb + place. *Parents* means *they*, so no -s: *live*." }
+        ]
+      }
+    }
+  ],
+  "assessments": [
+    {
+      "id": "present-tenses-midterm-1",
+      "kind": "midterm",
+      "title": "Midterm 1: Present Simple",
+      "desc": "A mixed assessment on the Present Simple.",
+      "afterLabel": "After lesson 3",
+      "note": "Recommended after the first three mini-topics. You can take it at any time.",
+      "after": ["present-simple-meaning", "present-simple-structure", "frequency-adverbs"],
+      "pass": 70,
+      "items": []
+    },
+    {
+      "id": "present-tenses-final",
+      "kind": "final",
+      "title": "Final mini-exam",
+      "desc": "A comprehensive test on all Present Tenses topics.",
+      "afterLabel": "Final assessment",
+      "note": "Recommended after all mini-topics and midterms. Pass mark: 80%.",
+      "after": "all",
+      "pass": 80,
+      "items": []
+    }
+  ]
+}
